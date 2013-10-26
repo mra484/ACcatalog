@@ -1,23 +1,25 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 public class DisplayField extends JPanel{
-	private ItemLabel prev1 = new ItemLabel("");
-	private ItemLabel prev2 = new ItemLabel("");
-	private ItemLabel prev3 = new ItemLabel("");
-	private ItemLabel curr = new ItemLabel("");
-	private ItemLabel next1 = new ItemLabel("");
-	private ItemLabel next2 = new ItemLabel("");
-	private ItemLabel next3 = new ItemLabel("");
+	private ArrayList<ItemLabel> labelList = new ArrayList<ItemLabel>();
 	
 	public DisplayField(){
 		this.setSize(300, 300);
 		this.setLayout(new GridLayout(1, 0, 10, 15));
-		this.add(prev3);
-		this.add(prev2);
-		this.add(prev1);
-		this.add(curr);
-		this.add(next1);
-		this.add(next2);
-		this.add(next3);
+		for( int i = 0 ; i < 7 ; i++ ){
+			labelList.add(new ItemLabel(""));
+		}
+	}
+	
+	public void updateList(Entry current, boolean match){
+		for( int i = 0 ; i < 7 && current != null; i++ ){
+			
+			//if the item was in the list, skip the third iteration
+			if( i == 3 && match )
+				continue;
+			labelList.get(i).setText(current.displayName);
+			current = current.next;
+		}
 	}
 }

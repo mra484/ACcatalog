@@ -7,11 +7,11 @@ public class filer {
 	private Scanner fileReader;
 	private PrintStream fileWriter;
 	private HashMap<String, Entry> itemList = new HashMap<String, Entry>();
-	private HashSet<Entry> userList = new HashSet<Entry>();
+	private HashSet<String> userList = new HashSet<String>();
 
-	public filer() throws IOException{
+	public filer(){
 
-		openFileRead("index.txt");
+		openFileRead("masterIndex.txt");
 		readReferenceList();
 		fileReader.close();
 
@@ -20,7 +20,7 @@ public class filer {
 		fileReader.close();
 	}
 
-	private void openFileRead(String fileName) throws IOException{
+	private void openFileRead(String fileName){
 
 		try
 		{
@@ -29,15 +29,20 @@ public class filer {
 		}
 		catch (FileNotFoundException ex)
 		{
-			if(!input.createNewFile()){
+			try 
+			{
+				if(input.createNewFile())
+					fileReader = new Scanner(input);
+			} 
+			catch (IOException e) 
+			{
 				System.out.println("Error opening file");
-				System.exit(-1);
+				System.exit(-1);				
 			}
-			fileReader = new Scanner(input);
 		}
 	}
 	
-	private void openFileWrite(String fileName) throws IOException{
+	private void openFileWrite(String fileName){
 		try
 		{
 			input = new File(fileName);
@@ -45,11 +50,15 @@ public class filer {
 		}
 		catch (FileNotFoundException ex)
 		{
-			if(!input.createNewFile()){
-				System.out.println("Error opening file");
+			try 
+			{
+				if(input.createNewFile())
+					fileWriter = new PrintStream(input);	
+			} 
+			catch (IOException e) {
+				System.out.println("Error opening file for writing");
 				System.exit(-1);
 			}
-			fileWriter = new PrintStream(input);
 		}
 	}
 	private void readReferenceList(){
@@ -84,24 +93,24 @@ public class filer {
 			}
 			
 			//add to the userlist and update references
-			userList.add(current);
+			userList.add(current.displayName);
 			if( prev != null )
 				prev.addNext(current);
 			prev = current;
 		}
 	}
 	
-	public void saveFiles() throws IOException{
-		openFileWrite("index.txt.temp");
+	public void saveFiles(){
+		openFileWrite("masterIndex.txt.temp");
 		for(Entry a: itemList.values()){
 			fileWriter.println(a);
 		}
-		input2 = new File("index.txt");
+		input2 = new File("masterIndex.txt");
 		input2.delete();
 		input.renameTo(input2);
 		
 		openFileWrite("userIndex.txt.temp");
-		for(Entry a: userList){
+		for(String a: userList){
 			fileWriter.println(a);
 		}
 		input2 = new File("userIndex.txt");
@@ -110,46 +119,37 @@ public class filer {
 	}
 
 
-	public void searchList(String item){
-
+	public Entry searchList(String item){
+		String prev = null;
+		boolean breakNext = false;
+		
+		//return the node for the item if it exists
+		if( userList.contains(item) )
+			return itemList.get(item);
+		
+		//if it does not exist, temporarily enter it into the list and find the node that preceeds it
+		userList.add(item);
+		for(String a: userList){
+			if( item.compareTo(a) == 0 || breakNext){
+				if( prev == null)
+					breakNext = true;
+				else
+					break;
+			}
+			prev = a;
+		}
+		userList.remove(item);
+		return itemList.get(prev);
+		
+		
 	}
-}
-
-class Entry implements Comparable<Entry>{
-	public String displayName;
-	public String searchName;
-	private int set = 0;
-	private int type = 0;
-	public Entry next;
-	public Entry prev;
-
-	public Entry(String a, Entry prev){
-		
-		//item name displayed by the program will be different than what is searched
-		displayName = a;
-		
-		//item names will be forced lower case with spaces, periods and hyphens removed to cut down on the chance of duplicate items
+	
+	public String normalizeText(String a){
+		String searchName;
 		searchName = a.toLowerCase();
 		searchName = searchName.replace(".", "");
 		searchName = searchName.replace(" ", "");
-		searchName = searchName.replace("-", "");
-
-		this.prev = prev;
-	}
-
-	public int compareTo(Entry a){
-		return displayName.compareTo(a.displayName);
-	}
-
-	public void addNext(Entry a){
-		next = a;
-	}
-
-	public void addPrev(Entry a){
-		prev = a;
+		return searchName.replace("-", "");
 	}
 	
-	public String toString(){
-		return displayName;
-	}
 }
