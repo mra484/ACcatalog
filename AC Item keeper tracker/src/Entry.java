@@ -29,6 +29,9 @@ public class Entry implements Comparable<Entry>{
 		sortName = a.toLowerCase();
 		searchName = sortName.replace(".", "");
 		searchName = searchName.replace(" ", "");
+		searchName = searchName.replace("'", "");
+		searchName = searchName.replace("`", "");
+		searchName = searchName.replace("&", "");
 		searchName = searchName.replace("-", "");
 
 		this.prev = prev;

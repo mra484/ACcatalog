@@ -120,7 +120,8 @@ public class filer {
 			prev = current;
 		}
 		last = current;
-		current.setLast(true);
+		if( current != null)
+			current.setLast(true);
 		
 	}
 
@@ -150,6 +151,10 @@ public class filer {
 		int state;
 		
 		result = searchList(item);
+		if( result == item ){
+			field.updateList(item, 2);
+			return;
+		}
 		state = item.searchName.compareTo(result.searchName);
 		
 		if( state == 0 ){} else state = ( state < 0 ? -1 : 1 );
@@ -197,6 +202,9 @@ public class filer {
 		searchName = a.toLowerCase();
 		searchName = searchName.replace(".", "");
 		searchName = searchName.replace(" ", "");
+		searchName = searchName.replace("'", "");
+		searchName = searchName.replace("`", "");
+		searchName = searchName.replace("&", "");
 		return searchName.replace("-", "");
 	}
 
@@ -224,6 +232,13 @@ public class filer {
 
 		userSearchList.add(word.searchName);
 		userList.add(word);
+		if( userSearchList.size() == 1 ){
+			last = word;
+			head = word;
+			word.setHead(true);
+			word.setLast(true);
+			return;
+		}
 
 		for(Entry a: userList){
 			if( valueFound ){
@@ -237,11 +252,13 @@ public class filer {
 		if( valueFound && next == null ){
 			last.next = word;
 			word.prev = last;
-			last = word;
+			last.setLast(false);
+			last = word;			
 			word.setLast(true);
-		} else if ( next.searchName.compareTo(head.searchName) == 0 ){
+		} else if ( next.getHead() ){
 			next.prev = word;
 			word.next = next;
+			head.setHead(false);
 			head = word;
 			word.setHead(true);
 		} else {
@@ -255,13 +272,15 @@ public class filer {
 
 	public boolean removeWord(Entry word){
 		//if the item is not in the list ignore the action
-		if( !userSearchList.contains(word.searchName) )
+		if( !userSearchList.contains(word.searchName) || userSearchList.size() == 0)
 			return false;
 		else{
 			//find entry containing the item and remove it
 			for(Entry a : userList){
 				if( a.searchName.compareTo(word.searchName) == 0){
-					if( a == head ){
+					if( userSearchList.size() == 1 ){
+
+					}else if( a == head ){
 						a.next.prev = null;
 						head = a.next;
 					} else if( a == last ){

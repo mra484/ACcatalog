@@ -1,5 +1,5 @@
-1-up cap
-3d glasses
+1-Up cap
+3D glasses
 academy paper
 acid-washed pants
 afro wig
@@ -34,7 +34,6 @@ ankylo torso
 apato skull
 apato tail
 apato torso
-apple
 aqua polka tank
 arcade machine
 archaeopteryx
@@ -50,19 +49,19 @@ armor suit
 aroma pot
 arrow sign
 astro bed
-astro cd player
+astro CD player
 astro clock
 astro floor
 astro lamp
 astro sofa
 astro table
-astro tv
+astro TV
 aurora knit shirt
 automatic washer
 azalea bonsai
+Baby bear
+Baby panda
 baby's hat
-baby bear
-baby panda
 backyard fence
 backyard pool
 bad bro's stache
@@ -81,7 +80,7 @@ balloon hat
 balloon lamp
 balloon sofa
 balloon table
-balloon tv
+balloon TV
 balloon vanity
 balloon wall
 bamboo flooring
@@ -100,7 +99,7 @@ bathroom sink
 bathroom stall
 bathtub paper
 batter's helmet
-bb tee
+BB tee
 beach umbrella
 beaded shirt
 beaded tank
@@ -115,9 +114,9 @@ beetle chair
 beige emblem blazer
 beige tights
 bejeweled paper
-benedict's pic
+Benedict's pic
 bicycle helmet
-big ben
+Big Ben
 big bro's hat
 big bro's mustache
 big bro's tee
@@ -145,7 +144,7 @@ black pumps
 black rain boots
 black tights
 black track pants
-block
+Block
 blossom lantern
 blue aloha tee
 blue argyle tee
@@ -160,7 +159,7 @@ blue corner
 blue diamond shirt
 blue dot parasol
 blue dresser
-blue falcon
+Blue Falcon
 blue flannel shirt
 blue flooring
 blue frames
@@ -173,7 +172,7 @@ blue jacket
 blue lace up dress
 blue letter jacket
 blue nightcap
-blue pikmin
+blue Pikmin
 blue pj bottoms
 blue pj shirt
 blue plaid fedora
@@ -249,7 +248,7 @@ cabin wall
 cabin wall clock
 cabin wardrobe
 cactus
-cafe kk
+Cafe K.K.
 cafe tee
 caladium
 camel shirt
@@ -274,8 +273,8 @@ caterpillar sofa
 cat tower
 cavalier hat
 caveman shorts
-cd player
-cd shelf
+CD player
+CD shelf
 cement mixer
 ceramic tile
 chain-gang shirt
@@ -328,7 +327,7 @@ cloud flooring
 cloudy paper
 coat hanger
 coconut palm
-coin
+Coin
 colorful sneakers
 colorful socks
 colorful wheel
@@ -381,7 +380,7 @@ cyber shades
 cycling shirt
 daffodil
 daisy umbrella
-dala horse
+Dala horse
 dandy hat
 danger tee
 dartboard
@@ -425,10 +424,10 @@ dishwasher
 display shelf
 display stand
 diving mask
-DJ'S turntable
-dj cap
+DJ cap
 djimbe drum
-dj kk
+DJ KK
+DJ'S turntable
 doctor's coat
 doctor's mask
 doctor's mirror
@@ -492,9 +491,9 @@ fern fossil
 fern shirt
 fern tee
 festival lantern
-fi mask
+Fi mask
 firefighter pants
-fire flower
+Fire Flower
 fireman's hat
 fireplace
 fireworks paper
@@ -549,13 +548,13 @@ garbage pail
 garden gnome
 gas mask
 gas pump
-gaudi's lizard
+Gaudi's lizard
 geisha wig
 gelato tee
 gelato umbrella
-genie's lamp
 genie pants
 genie shirt
+genie's lamp
 genie vest
 geometric paper
 gerbera
@@ -565,11 +564,11 @@ giant dharma
 giraffe ruler
 glass display case
 glass-top table
-goal pole
+Goal Pole
 go board
 goggles
 go-go shirt
-go kk rider
+Go K.K. Rider
 gold-armor shoes
 gold-bar tee
 gold bug trophy
@@ -580,8 +579,8 @@ golden screen
 golden wall
 golden woman
 goldfish paper
-gold hha plaque
-gold hha trophy
+gold HHA plaque
+gold HHA trophy
 gold stereo
 golf bag
 grandpa hat
@@ -621,7 +620,7 @@ green pantry
 green plaid shorts
 green rug
 green sandals
-green shell
+Green Shell
 green-stripe shoes
 green-stripe socks
 green-stripe tank
@@ -651,9 +650,9 @@ hero's boots
 hero's cap
 hero's clothes
 hero's pants
-hha jacket
-hha pennant
-hha tee
+HHA jacket
+HHA pennant
+HHA tee
 hibachi
 hieroglyph paper
 hi-fi stereo
@@ -661,7 +660,7 @@ high-end stereo
 high-jump mat
 hiking boots
 hiking gaiters
-hmd
+HMD
 hockey mask
 holly bonsai
 hologram machine
@@ -670,7 +669,7 @@ homework set
 hopscotch floor
 hospital bed
 hospital screen
-hospital tv
+hospital TV
 hot-dog hat
 hot-dog tank
 hot spring tee
@@ -685,7 +684,7 @@ ichthyo torso
 iguanodon skull
 iguanodon tail
 iguanodon torso
-I love you
+I love You
 imperial pants
 imperial paper
 imperial shirt
@@ -707,11 +706,11 @@ jester tank
 jinbei shorts
 jinbei top
 jockey's helmet
-jolly roger
+Jolly Roger
 jomon pottery
 judge's bell
 juicy-apple clock
-juicy-apple tv
+juicy-apple TV
 jukebox
 jungle-camo pants
 jungle-camo shorts
@@ -742,9 +741,9 @@ kids' smock
 kilt
 kimono
 kimono sandals
+King K.K.
 king's beard
-king kk
-king tut mask
+King Tut mask
 kitchen corner
 kitchen flooring
 kitchen scale
@@ -755,41 +754,41 @@ kiwi hat
 kiwi stool
 kiwi tank
 kiwi tee
-kk adventure
-kk aria
-kk ballad
-kk bazaar
-Kk calypso
-kk casbah
-kk condor
-kk coutnry
-kk d&b
-kk dirge
-kk disco
-kk etude
-kk faire
-kk folk
-kk fusion
-kk groove
-kk house
-kk lament
-kk love song
-kk lullaby
-kk mambo
-kk marathon
-kk march
-kk milonga
-kk parade
-kk ragtime
-kk reggae
-kk rock
-kk salsa
-kk ska
-kk sonata
-kk song
-kk soul
-kk swing
-kk waltz
+K.K. Adventure
+K.K. Aria
+K.K. Ballad
+K.K. Bazaar
+K.K. Calypso
+K.K. Casbah
+K.K. Condor
+K.K. Coutnry
+K.K. D&B
+K.K. Dirge
+K.K. Disco
+K.K. Etude
+K.K. Faire
+K.K. Folk
+K.K. Fusion
+K.K. Groove
+K.K. House
+K.K. Lament
+K.K. Love Song
+K.K. Lullaby
+K.K. Mambo
+K.K. Marathon
+K.K. March
+K.K. Milonga
+K.K. Parade
+K.K. Ragtime
+K.K. Reggae
+K.K. Rock
+K.K. Salsa
+K.K. Ska
+K.K. Sonata
+K.K. Song
+K.K. Soul
+K.K. Swing
+K.K. Waltz
 knight
 knight's helmet
 kotatsu
@@ -830,9 +829,9 @@ leopard skirt
 leopard tank
 leopard umbrella
 letter set
-li'l bro's hat
 library wall
 light-blue cap
+li'l bro's hat
 lily-pad table
 lined paper
 lion-dance mask
@@ -868,9 +867,10 @@ lucky kk
 lunar surface
 lunch tray
 mahjong table
-majora's mask
-mama bear
-mama polar bear
+Majora's Mask
+Makar's Mask
+Mama bear
+Mama polar bear
 mammoth skull
 mammoth torso
 mandarin hat
@@ -883,7 +883,7 @@ marine song 2001
 marshmallow chair
 mary janes
 masquerade mask
-master sword
+Master Sword
 matryoshka
 maze floor
 maze wall
@@ -895,16 +895,16 @@ melon shirt
 melon tee
 melon umbrella
 men's toilet
-merlion
+Merlion
 mermaid carpet
 mermaid dresser
 mermaid statue
 mermaid table
 mermaid wall
-metroid
+Metroid
 metronome
 microscope
-midna's mask
+Midna's Mask
 military pants
 military uniform
 milkmaid hat
@@ -957,7 +957,7 @@ modern wood shelf
 modern wood sofa
 modern wood stool
 modern wood table
-modern wood tv
+modern wood TV
 modern wood wall
 mohawk wig
 moldy dress
@@ -972,12 +972,12 @@ moth orchid
 motocross helmet
 mountain bike
 mountain standee
-mouth of truth
+Mouth of Truth
 Mrs. Flamingo
 mugho bonsai
-mummy's casket
 mummy mask
 mummy pants
+mummy's casket
 mummy shirt
 museum chair
 museum floor
@@ -985,9 +985,9 @@ museum wall
 mushroom mural
 mushroom paper
 music stand
-mvp shirt
-mvp tee
-my place
+MVP shirt
+MVP tee
+My Place
 natty shirt
 natty skirt
 natty tee
@@ -1008,12 +1008,12 @@ ninja pants
 ninja sandals
 ninja shirt
 ninja sword
-no 1 shirt
-no 23 shirt
-no 2 shirt
-no 3 shirt
-no 4 shirt
-no 5 shirt
+No. 1 shirt
+No. 23 shirt
+No. 2 shirt
+No. 3 shirt
+No. 4 shirt
+No. 5 shirt
 noble shirt
 noodle tee
 nook paper
@@ -1057,7 +1057,7 @@ palace tile
 palace wall
 palatial tank dress
 palm-tree lamp
-papa panda
+Papa panda
 paperboy cap
 paper lantern
 paper parasol
@@ -1078,7 +1078,7 @@ pawn
 paw-print wall
 paw tee
 paw umbrella
-peach's parasol
+Peach's parasol
 peacock chair
 pear dresser
 peking man
@@ -1095,7 +1095,7 @@ picnic basket
 picnic skirt
 picnic table
 piggy bank
-pikmin
+Pikmin
 pilot's cap
 pilot shades
 pinafore
@@ -1115,7 +1115,7 @@ pink tartan tee
 pink velvet stool
 pink wave tank
 pink-zap suit
-pipe
+Pipe
 pipe stool
 plaid paper
 plain black cap
@@ -1147,7 +1147,7 @@ polka-dot rain boots
 polka-dot socks
 polka-dot sofa
 polka-dot table
-polka-dot tv
+polka-dot TV
 poncho
 pondering
 ponderosa bonsai
@@ -1167,7 +1167,7 @@ prism tee
 ptera left wing
 ptera right wing
 ptera skull
-puffer-fish tv
+puffer-fish TV
 puffy hat
 pulse tank
 purple cap
@@ -1225,7 +1225,7 @@ red gym tee
 red headgear
 red hood
 red nose
-red pikmin
+red Pikmin
 red plaid skirt
 red polka skirt
 red ribbon
@@ -1264,7 +1264,7 @@ relay shorts
 retro fridge
 retro helmet
 retro stereo
-retro tv
+retro TV
 reversi piece
 revolving spice rack
 ribboned straw hat
@@ -1284,7 +1284,7 @@ robo-lamp
 robo-sofa
 robo-stereo
 robo-table
-robo-tv
+robo-TV
 robo-wall
 robo-wall clock
 rock guitar
@@ -1303,7 +1303,7 @@ rococo table
 rococo vanity
 rococo wall
 rococo wardrobe
-roman helmet
+Roman helmet
 rook
 rope partition
 rose-sky tank dress
@@ -1325,14 +1325,14 @@ sabertooth torso
 saddle fence
 safety helmet
 sailor's hat
-sailor's shirt
 sailor skirt
+sailor's shirt
 salad bar
 samgyetang
 samurai helmet
 samurai shirt
 samurai suit
-samus mask
+Samus mask
 sandwich tank
 satellite
 sawhorse
@@ -1366,8 +1366,8 @@ shogi piece
 shower cap
 shower stall
 silver frames
-silver hha plaque
-silver hha trophy
+silver HHA plaque
+silver HHA trophy
 simple armchair
 simple kettle
 simple love seat
@@ -1398,7 +1398,7 @@ sleek table
 sleek wall
 slide puzzle
 slippers
-small led display
+small LED display
 small magazine rack
 small spotlight
 smb3 paper
@@ -1424,7 +1424,7 @@ southwest paper
 space captain's seat
 space heater
 space helmet
-spaceman sam
+Spaceman Sam
 space pants
 space shuttle
 space station
@@ -1432,7 +1432,7 @@ spade tee
 sparkly paper
 speed bag
 spherical radar
-sphinx
+Sphinx
 spider umbrella
 spiderweb tee
 spino skull
@@ -1456,7 +1456,7 @@ spring kimono
 spring shirt
 sprinkler
 spunky knit shirt
-SS dolphin
+S.S. Dolphin
 stache & glasses
 stained glass
 stained-glass lamp
@@ -1497,7 +1497,7 @@ stripe lamp
 stripe shoes
 stripe sofa
 stripe table
-stripe tv	
+stripe TV	
 stripe wall
 student cap
 styraco skull
@@ -1511,14 +1511,11 @@ sunny parasol
 sunrise lamp
 sunset tank
 superhero mask
-super mushroom
-super star
+Super Mushroom
+Super Star
 super toilet
 surveillance camera
 sweets bed
-sweets dresser
-sweets player
-sweets sofa
 swell shirt
 swell tee
 swimming cap
@@ -1541,14 +1538,14 @@ tasseled loafers
 tatami bed
 tea case
 teacher's chair
-team ntdo tee
+team NTDO tee
 tearoom wall
 tea set
 tea table
 tea tansu
 tea vase
 telescope
-ten billion barrel
+Ten Billion Barrel
 tennis table
 terry-cloth do-rag
 the k funk
@@ -1561,18 +1558,18 @@ tiki torch
 tile paper
 tin shirt
 tiny shades
-toad hat
-toad parasol
+Toad hat
+Toad parasol
 toad shirt
 toga
-to the edge
-tower of pisa
+To the Edge
+Tower of Pisa
 traffic cone
 trash bin
 tree standee
-T rex skull
-t rex tail
-t rex torso
+T.rex skull
+T.rex tail
+T.rex torso
 triangle shades
 tribal mask
 tricera skull
@@ -1580,8 +1577,8 @@ tricera tail
 tricera torso
 tricycle
 trilobite
-triple bananas
-triple red shells
+Triple Bananas
+Triple Red Shells
 tropical sandals
 tropical tank
 tropical tee
@@ -1591,19 +1588,19 @@ tuk-tuk
 tulip hat
 tumbleweed
 turban
-tv camera
+TV camera
 twinkle tank
 twinkle tee
 two-ball tee
 typewriter
-ultra hand
-ultra machine
+Ultra Hand
+Ultra Machine
 underwater floor
 unknown machine
 upright piano
 upright vacuum
-varia suit
-varia suit pants
+Varia Suit
+Varia Suit pants
 vegetarian shirt
 vegetarian tee
 ventilation fan
@@ -1615,7 +1612,7 @@ vine paper
 vintage camera
 vintage radio
 vintage telephone
-virtual boy
+Virtual Boy
 volleyball net
 waffle shirt
 waitress dress
@@ -1625,7 +1622,7 @@ wall-mounted monitor
 wall-mounted speaker
 wandering
 warbonnet
-wario hat
+Wario hat
 washbasin
 washer/dryer
 water bird
@@ -1652,8 +1649,8 @@ white pot
 white socks
 white stockings
 white-team cap
-wide-screen tv
-wii balance board
+wide-screen TV
+Wii Balance Board
 wildflower floor
 witch's hat
 witch's robe
@@ -1669,13 +1666,13 @@ yellow-bar shirt
 yellow buckled shoes
 yellow cap
 yellow glasses
-yellow pikmin
+yellow Pikmin
 yellow rain boots
 yellow ribbon
 yellow sneakers
 yellow umbrella
 yodel dress
-yoshi's egg
+Yoshi's Egg
 zap boots
 zebra tank
 zebra umbrella
