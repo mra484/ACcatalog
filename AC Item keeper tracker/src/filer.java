@@ -6,8 +6,8 @@ public class filer {
 	private File input2;
 	private Scanner fileReader;
 	private PrintStream fileWriter;
-	private HashMap<String, Entry> itemList = new HashMap<String, Entry>();
-	private HashSet<String> userList = new HashSet<String>();
+	private TreeMap<String, Entry> itemList = new TreeMap<String, Entry>();
+	private TreeSet<String> userList = new TreeSet<String>();
 
 	public filer(){
 
@@ -67,6 +67,8 @@ public class filer {
 		//for now only the reference file will only contain proper names for display
 		while(fileReader.hasNext()){
 			name = fileReader.nextLine();
+			if( normalizeText(name).compareTo("") == 0)
+				continue;
 			itemList.put(name, new Entry(name, null));
 		}
 	}
@@ -79,6 +81,9 @@ public class filer {
 
 		while(fileReader.hasNext()){
 			name = fileReader.nextLine();
+			
+			if( normalizeText(name).compareTo("") == 0)
+				continue;
 
 			//take entry from main list if it exists
 			if(itemList.containsKey(name)){
@@ -105,17 +110,19 @@ public class filer {
 		for(Entry a: itemList.values()){
 			fileWriter.println(a);
 		}
+		fileWriter.close();
 		input2 = new File("masterIndex.txt");
 		input2.delete();
-		input.renameTo(input2);
+		input.renameTo(new File("masterIndex.txt"));
 		
 		openFileWrite("userIndex.txt.temp");
 		for(String a: userList){
 			fileWriter.println(a);
 		}
+		fileWriter.close();
 		input2 = new File("userIndex.txt");
 		input2.delete();
-		input.renameTo(input2);
+		input.renameTo(new File("userIndex.txt"));
 	}
 
 
@@ -124,17 +131,19 @@ public class filer {
 		boolean breakNext = false;
 		
 		//return the node for the item if it exists
-		if( userList.contains(item) )
+		if( itemList.containsKey(item) )
 			return itemList.get(item);
 		
-		//if it does not exist, temporarily enter it into the list and find the node that preceeds it
+		//if it does not exist, temporarily enter it into the list and find the node that precedes it
 		userList.add(item);
 		for(String a: userList){
 			if( item.compareTo(a) == 0 || breakNext){
 				if( prev == null)
 					breakNext = true;
-				else
+				else{
+					prev = a;
 					break;
+				}
 			}
 			prev = a;
 		}

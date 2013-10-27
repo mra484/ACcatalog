@@ -4,22 +4,40 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class DisplayWindow extends JFrame{
+	
+	//must be odd and >= 3
+	public static final int listHeight = 15;
 	private DisplayField listField = new DisplayField();
-	private JTextField textEntry = new JTextField();
+	private JTextField textEntry = new JTextField(15);
 	private JButton search = new JButton("Search");
+	private JButton add = new JButton ("Add");
+	private JButton remove = new JButton ("Remove");
 	private ActionClass action = new ActionClass();
 	private filer listReader = new filer();
+	private JPanel bottomPanel = new JPanel();
+	private JPanel buttonPanel = new JPanel();
 	
 	public DisplayWindow(){
 		this.setLayout(new BorderLayout());
+
+		bottomPanel.setLayout(new FlowLayout(FlowLayout.LEADING, 20, 10));
+		buttonPanel.setLayout(new FlowLayout());
 		search.setSize(100,50);
 		search.addActionListener(action);
-		textEntry.setSize(300,100);
-		this.add(listField, BorderLayout.WEST);
-		this.add(textEntry, BorderLayout.SOUTH);
-		this.add(search, BorderLayout.NORTH);
+		add.setSize(100,50);
+		add.addActionListener(action);
+		remove.setSize(100,50);
+		remove.addActionListener(action);
+		bottomPanel.add(textEntry);
+		buttonPanel.add(search);
+		buttonPanel.add(add);
+		buttonPanel.add(remove);
+		bottomPanel.add(buttonPanel);
+		
+		this.add(bottomPanel, BorderLayout.SOUTH);
+		this.add(listField, BorderLayout.CENTER);
 		this.setVisible( true );
-		this.setSize( 300, 400 );
+		this.setSize( 500, 400 );
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 	}
@@ -29,11 +47,12 @@ public class DisplayWindow extends JFrame{
 	}
 	
 	
+	
 
 private class ActionClass implements ActionListener{
 	public void actionPerformed(ActionEvent e){
 		Entry result = null;
-		boolean match = false;
+		int state = 0;
 		String searchText = textEntry.getText();
 		if( searchText != null ){
 			searchText = listReader.normalizeText(searchText);
@@ -41,12 +60,12 @@ private class ActionClass implements ActionListener{
 		}
 		else
 			return;
-		if( searchText.compareTo(result.searchName) == 0){
-			match = true;
+		state = searchText.compareTo(result.searchName);
+		if( state == 0)
 			result = result.prev;
-		}
 		
-		listField.updateList(result, match);
+		listField.updateList(result, state);
+		listReader.saveFiles();
 		
 		
 		System.out.println();
