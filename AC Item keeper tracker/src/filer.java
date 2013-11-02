@@ -155,7 +155,7 @@ public class filer {
 			field.updateList(item, 2);
 			return;
 		}
-		state = item.searchName.compareTo(result.searchName);
+		state = item.compareTo(result);
 		
 		if( state == 0 ){} else state = ( state < 0 ? -1 : 1 );
 		
@@ -176,7 +176,7 @@ public class filer {
 		if( userSearchList.contains(item.searchName) )
 			return itemList.get(item.searchName);
 
-
+		
 		//if it does not exist, temporarily enter it into the list and find the node that precedes it
 		userList.add(item);
 		for(Entry a: userList){

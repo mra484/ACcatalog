@@ -38,6 +38,8 @@ public class Entry implements Comparable<Entry>{
 	}
 
 	public int compareTo(Entry a){
+		if( searchName.compareTo(a.searchName) == 0)
+			return 0;
 		return sortName.compareTo(a.sortName);
 	}
 

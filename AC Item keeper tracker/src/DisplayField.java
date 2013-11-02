@@ -28,7 +28,7 @@ public class DisplayField extends JPanel{
 
 		//move up from the center item
 		for( int i = (DisplayWindow.listHeight / 2) ; i >= 0 ; i-- ){
-			if( state < 0 || state == 2){
+			if( state <= -1){
 				labelList.get(i).setText("--------------");
 				continue;
 			}
@@ -51,7 +51,7 @@ public class DisplayField extends JPanel{
 			labelList.get(DisplayWindow.listHeight / 2 + 1).setText("--------------");
 			labelList.get(DisplayWindow.listHeight / 2 + 1).setBorder(BorderFactory.createBevelBorder(1));
 		}
-		if ( state >= 0 && state <= 1 || state == -2){
+		if ( state == 1 || state == 0 || state == -2){
 			if( current.next != null)
 				current = current.next;
 			else
@@ -60,10 +60,10 @@ public class DisplayField extends JPanel{
 		
 		//move down from center item
 		for( int i = (DisplayWindow.listHeight / 2 + 2 ) ; i < DisplayWindow.listHeight ; i++ ){
-			if( state > 0 ){
-				labelList.get(i).setText("--------------");
-				continue;
-			}
+//			if( state > 0 ){
+//				labelList.get(i).setText("--------------");
+//				continue;
+//			}
 			labelList.get(i).setText(current.displayName);
 			if( current.next != null )
 				current = current.next;

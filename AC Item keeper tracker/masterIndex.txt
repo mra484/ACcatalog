@@ -758,8 +758,10 @@ K.K. Adventure
 K.K. Aria
 K.K. Ballad
 K.K. Bazaar
+kk blitz
 K.K. Calypso
 K.K. Casbah
+kk cc
 K.K. Condor
 K.K. Coutnry
 K.K. D&B
@@ -789,6 +791,7 @@ K.K. Song
 K.K. Soul
 K.K. Swing
 K.K. Waltz
+kk zz
 knight
 knight's helmet
 kotatsu
@@ -1677,3 +1680,5 @@ zap boots
 zebra tank
 zebra umbrella
 zipper shirt
+zz
+zzz
