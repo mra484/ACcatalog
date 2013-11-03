@@ -14,21 +14,25 @@ import java.awt.event.KeyListener;
 public class DisplayWindow extends JFrame{
 
 	//must be odd and >= 3
-	public static final int listHeight = 15;
+	public static final int listHeight = 13;
 	private DisplayField listField = new DisplayField();
+	private itemPane itemInfo = new itemPane();
 	private JTextField textEntry = new JTextField(15);
+	private Entry currentEntry = new Entry("", null);
 	private JButton search = new JButton("Search");
 	private JButton add = new JButton ("Add");
 	private JButton remove = new JButton ("Remove");
 	private ActionClass action = new ActionClass();
 	private KeyClass key = new KeyClass();
 	private filer listReader = new filer();
+	private JPanel centerPanel = new JPanel();
 	private JPanel bottomPanel = new JPanel();
 	private JPanel buttonPanel = new JPanel();
 
 	public DisplayWindow(){
 		super("Animal Crossing Item Catalog");
 		this.setLayout(new BorderLayout());
+		itemInfo.setFiler(listReader);
 
 		bottomPanel.setLayout(new FlowLayout(FlowLayout.LEADING, 20, 10));
 		buttonPanel.setLayout(new FlowLayout());
@@ -51,8 +55,13 @@ public class DisplayWindow extends JFrame{
 		buttonPanel.add(remove);
 		bottomPanel.add(buttonPanel);
 
+		listField.setBorder(BorderFactory.createEtchedBorder(1));
+		centerPanel.setLayout(new BorderLayout());
+		centerPanel.add(listField, BorderLayout.CENTER);
+		centerPanel.add(itemInfo, BorderLayout.EAST);
+
 		this.add(bottomPanel, BorderLayout.SOUTH);
-		this.add(listField, BorderLayout.CENTER);
+		this.add(centerPanel, BorderLayout.CENTER);
 		this.setVisible( true );
 		this.setSize( 500, 500 );
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -80,14 +89,15 @@ public class DisplayWindow extends JFrame{
 
 		@Override
 		public void keyTyped(KeyEvent e) {
-			//dynamic search didn't work under this method, after the first letter, it was always 1 letter behind
+			//dynamic search didn't work well under this method, after the first letter, it was always 1 letter behind
 		}
 
 		@Override
 		public void keyReleased(KeyEvent e) {
 			//perform search as user types
 			if(e.getKeyCode() != KeyEvent.VK_ENTER && textEntry.getText() != null){
-				listReader.searchList(new Entry(textEntry.getText(), null), listField);
+				currentEntry = listReader.searchList(new Entry(textEntry.getText(), null), listField);
+				itemInfo.update(currentEntry);
 			}
 			
 		}
@@ -110,13 +120,15 @@ public class DisplayWindow extends JFrame{
 			if( e.getSource() == add ){
 					listReader.addWord(searchWord);
 					listReader.saveFiles();
-					listReader.searchList(searchWord, listField);
+					currentEntry = listReader.searchList(searchWord, listField);
+					itemInfo.update(currentEntry);
 			}
 
 			if( e.getSource() == remove){
 					listReader.removeWord(searchWord);
 					listReader.saveFiles();
-					listReader.searchList(searchWord, listField);
+					currentEntry = listReader.searchList(searchWord, listField);
+					itemInfo.update(currentEntry);
 			}
 		}
 	}

@@ -29,6 +29,7 @@ public class filer {
 		openFileRead("userIndex.txt");
 		readUserList();
 		fileReader.close();
+		saveFiles();
 	}
 
 	private void openFileRead(String fileName){
@@ -75,13 +76,19 @@ public class filer {
 	private void readReferenceList(){
 
 		String name;
+		byte type, series, set, theme;
 
 		//for now only the reference file will only contain proper names for display
 		while(fileReader.hasNext()){
+			type = fileReader.nextByte();
+			series = fileReader.nextByte();
+			set = fileReader.nextByte();
+			theme = fileReader.nextByte();
 			name = fileReader.nextLine();
 			if( normalizeText(name).compareTo("") == 0)
 				continue;
-			itemList.put(normalizeText(name), new Entry(name, null));
+			itemList.put(normalizeText(name), new Entry(name, type, series, set, theme, null));
+//			itemList.put(normalizeText(name), new Entry(name, null));
 		}
 	}
 	
@@ -146,18 +153,23 @@ public class filer {
 		input.renameTo(new File("userIndex.txt"));
 	}
 
-	public void searchList(Entry item, DisplayField field){
-		Entry result = null;
+	public Entry searchList(Entry item, DisplayField field){
+		Entry result = null, currentEntry = null;
 		int state;
 		
 		result = searchList(item);
 		if( result == item ){
 			field.updateList(item, 2);
-			return;
+			return result;
 		}
 		state = item.compareTo(result);
 		
-		if( state == 0 ){} else state = ( state < 0 ? -1 : 1 );
+		if( state == 0 ){
+			currentEntry = result;
+		} else {
+			currentEntry = item;
+			state = ( state < 0 ? -1 : 1 );
+		}
 		
 		if( state == 0 && !result.getHead())
 			result = result.prev;
@@ -166,6 +178,7 @@ public class filer {
 			state = -2;		
 
 		field.updateList(result, state);
+		return currentEntry;
 	}
 	
 	public Entry searchList(Entry item){

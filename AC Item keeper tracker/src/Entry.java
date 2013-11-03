@@ -11,8 +11,10 @@ public class Entry implements Comparable<Entry>{
 	public String displayName;
 	public String sortName;
 	public String searchName;
-	private int set = 0;
-	private int type = 0;
+	private byte type = 0;
+	private byte series = 0;
+	private byte set = 0;
+	private byte theme = 0;
 	public Entry next;
 	public Entry prev;
 	private boolean isHead = false;
@@ -21,12 +23,33 @@ public class Entry implements Comparable<Entry>{
 	public Entry(String a, Entry prev){
 		
 		//item name displayed by the program will be different than what is searched
-		displayName = a;
+		displayName = a.trim();
 		
 
 		
 		//item names will be forced lower case with spaces, periods and hyphens removed to cut down on the chance of duplicate items
-		sortName = a.toLowerCase();
+		sortName = displayName.toLowerCase();
+		searchName = sortName.replace(".", "");
+		searchName = searchName.replace(" ", "");
+		searchName = searchName.replace("'", "");
+		searchName = searchName.replace("`", "");
+		searchName = searchName.replace("&", "");
+		searchName = searchName.replace("-", "");
+
+		this.prev = prev;
+	}
+	
+	public Entry(String a, byte type, byte series, byte set, byte theme, Entry prev){
+		
+		this.type = type;
+		this.series = series;
+		this.set = set;
+		this.theme = theme;
+		//item name displayed by the program will be different than what is searched
+		displayName = a.trim();
+				
+		//item names will be forced lower case with spaces, periods and hyphens removed to cut down on the chance of duplicate items
+		sortName = displayName.toLowerCase();
 		searchName = sortName.replace(".", "");
 		searchName = searchName.replace(" ", "");
 		searchName = searchName.replace("'", "");
@@ -52,7 +75,7 @@ public class Entry implements Comparable<Entry>{
 	}
 	
 	public String toString(){
-		return displayName;
+		return String.format("%d %d %d %d %s", type, series, set, theme, displayName);
 	}
 	
 	public void setHead(boolean a){
@@ -67,5 +90,37 @@ public class Entry implements Comparable<Entry>{
 	}
 	public boolean getLast(){
 		return isLast;
+	}
+	
+	public byte getType(){
+		return type;
+	}
+	
+	public byte getSeries(){
+		return series;
+	}
+	
+	public byte getSet(){
+		return set;
+	}
+	
+	public byte getTheme(){
+		return theme;
+	}
+	
+	public void setType(byte a){
+		type = a;
+	}
+	
+	public void setSeries(byte a){
+		series = a;
+	}
+	
+	public void setSet(byte a){
+		set = a;
+	}
+	
+	public void setTheme(byte a){
+		theme = a;
 	}
 }

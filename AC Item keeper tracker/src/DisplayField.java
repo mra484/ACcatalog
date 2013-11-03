@@ -13,9 +13,7 @@ public class DisplayField extends JPanel{
 
 	//list that makes up the search results
 	public DisplayField(){
-		this.setVisible(true);
 		this.setBackground(Color.WHITE);
-		this.setSize(300, 300);
 		this.setLayout(new GridLayout(DisplayWindow.listHeight, 0, 10, 15));
 		for( int i = 0 ; i < DisplayWindow.listHeight ; i++ ){
 			labelList.add(new JLabel("--------------------"));

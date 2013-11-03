@@ -1,1684 +1,1760 @@
-1-Up cap
-3D glasses
-academy paper
-acid-washed pants
-afro wig
-air condition
-airmail paper
-alarm clock
-aloe
-Aloha K.K.
-aloha shorts
-alpine bed
-alpine chair
-alpine closet
-alpine dresser
-alpine kitchen cart
-alpine lamp
-alpine low table
-alpine panel
-alpine rug
-alpine shelf
-alpine sofa
-alpine wall
-alpinist dress
-alpinist hat
-amber
-amethyst tee
-ammonite
-amp
-anatomical model
-ankylo skull
-ankylo tail
-ankylo torso
-apato skull
-apato tail
-apato torso
-aqua polka tank
-arcade machine
-archaeopteryx
-arched window
-archelon skull
-archelon torso
-arctic-camo pants
-arctic-camo tee
-argyle socks
-argyle tights
-armor shoes
-armor suit
-aroma pot
-arrow sign
-astro bed
-astro CD player
-astro clock
-astro floor
-astro lamp
-astro sofa
-astro table
-astro TV
-aurora knit shirt
-automatic washer
-azalea bonsai
-Baby bear
-Baby panda
-baby's hat
-backyard fence
-backyard pool
-bad bro's stache
-badge hat
-bad plaid shirt
-bad plaid tee
-ballet slippers
-balloon bed
-balloon chair
-balloon clock
-balloon closet
-balloon-dog lamp
-balloon dresser
-balloon floor
-balloon hat
-balloon lamp
-balloon sofa
-balloon table
-balloon TV
-balloon vanity
-balloon wall
-bamboo flooring
-banana-split hat
-bandage
-bandana
-barbecue
-barber's pole
-barber tee
-baseball pants
-basketball hoop
-basketball shoes
-bass
-bathhouse wall
-bathroom sink
-bathroom stall
-bathtub paper
-batter's helmet
-BB tee
-beach umbrella
-beaded shirt
-beaded tank
-beak
-bear cap
-bear costume
-bear-costume pants
-bear tee
-beatnik tank
-beatnik tee
-beetle chair
-beige emblem blazer
-beige tights
-bejeweled paper
-Benedict's pic
-bicycle helmet
-Big Ben
-big bro's hat
-big bro's mustache
-big bro's tee
-big-dot tank
-big-dot tee
-big-star tee
-billiard table
-birch flooring
-birdbath
-birdcage
-birthday card
-bishop
-biwa lute
-black ankle socks
-black-denim pants
-black-denim skirt
-black flannel shirt
-black formal pants
-black formal skirt
-black katana
-black leggings
-black letter jacket
-black loafers
-black pumps
-black rain boots
-black tights
-black track pants
-Block
-blossom lantern
-blue aloha tee
-blue argyle tee
-blue bookcase
-blue boxing shorts
-blue bureau
-blue certificate
-blue chair
-blue-check tee
-blue clock
-blue corner
-blue diamond shirt
-blue dot parasol
-blue dresser
-Blue Falcon
-blue flannel shirt
-blue flooring
-blue frames
-blue-grid shirt
-blue-grid tee
-blue gym shorts
-blue gym tee
-blue headgear
-blue jacket
-blue lace up dress
-blue letter jacket
-blue nightcap
-blue Pikmin
-blue pj bottoms
-blue pj shirt
-blue plaid fedora
-blue polka shorts
-blue pom pom hat
-blue pumps
-blue ribbon
-blue sneakers 
-blue-stripe pants
-blue-stripe shirt
-blue-stripe tee
-blue-stripe tights
-blue table
-blue tartan tee
-blue tie-dye tank
-blue track jacket
-blue-trim wall
-blue umbrella
-blue vase
-blue wall shelf
-blue wrestling shoes
-blue-zap helmet
-blue-zap pants
-bobby socks
-bone pants
-boomerang
-bow
-boxed figurine
-box of tissues
-box sofa
-braided wig
-breaker
-bromeliaceae
-brown argyle skirt
-brown formal pants
-brown glasses
-brown loafers
-brown pumps
-brown slip-ons
-brown socks
-brown-stripe socks
-bubble-gum tee
-bubble paper
-bubble tank
-bucket
-bug mask
-bug zapper
-bulb bopper
-bunk bed
-bunny hood
-bunny tee
-bun wig
-busted umbrella
-buttercup paper
-butterfly paper
-cabana bed
-cabana dresser
-cabana flooring
-cabana screen
-cabana table
-cabana wall radio
-cabin armchair
-cabin bed
-cabin bookcase
-cabin chair
-cabin clock
-cabin couch
-cabin dresser
-cabin low table
-cabin rug
-cabin table
-cabin wall
-cabin wall clock
-cabin wardrobe
-cactus
-Cafe K.K.
-cafe tee
-caladium
-camel shirt
-camouflage paper
-camo umbrella
-candle
-candy gingham tee
-candy jar
-candy machine
-candy umbrella
-captain's jacket
-cardboard box
-cardboard chair
-card paper
-cargo pants
-cash register
-cassette player
-casual outfit
-cat cap
-catcher's mask
-caterpillar sofa
-cat tower
-cavalier hat
-caveman shorts
-CD player
-CD shelf
-cement mixer
-ceramic tile
-chain-gang shirt
-chain-gang tee
-chaise lounge
-chalkboard
-charcoal tile
-checkerboard shirt
-checkerboard skirt
-checkerboard tee
-checkered socks
-checkered tee
-checkered tile
-cheese wall
-chef's outfit
-cherry-blossom clock
-cherry tee
-chichi-print tee
-chick tee
-chic paper
-chic wall
-chocolate fountain
-cicada stereo
-circuit tank
-citrus carpet
-citrus tank
-citrus tee
-citrus wall
-cityscape wall
-classic bed
-classic bookcase
-classic buffet
-classic carpet
-classic clock
-classic desk
-classic sofa
-classic table
-classic vanity
-classic wall
-classic wall shelf
-classic wardrobe
-claw-foot tub
-clear model
-cleats
-climbing shoes
-clogs
-clothes closet
-clothesline pole
-cloud flooring
-cloudy paper
-coat hanger
-coconut palm
-Coin
-colorful sneakers
-colorful socks
-colorful wheel
-combat helmet
-common bed
-common chair
-common floor
-common wall
-compass
-complex machine
-composer paper
-computer
-computer desk
-comrade kk
-conveyor belt sushi
-cool dress
-cool paper
-cool tank
-coprolite
-copy machine
-corinthian post
-corkboard
-corn plant
-corseted shirt
-corseted skirt
-country guitar
-covered wagon
-cow bone
-cowboy boots
-cowhide rug
-cow paper
-cow skull
-cradle
-crane game
-crater paper
-cream sofa
-crewel tee
-crossing shirt
-croton
-crown
-cubbyhole
-cube clock
-cuckoo clock
-cucumber pack
-cuffed pants
-cupid bench
-curly mustache
-cyan argyle shirt
-cyber shades
-cycling shirt
-daffodil
-daisy umbrella
-Dala horse
-dandy hat
-danger tee
-dartboard
-dawn tank
-dawn tee
-dazed tee
-deep-blue tank
-deep-blue tee
-deer scare
-deluxe range
-denim jacket
-denim skirt
-denim vest
-dentist's chair
-desert cactus
-desert-camo shirt
-desert-camo tee
-desk light
-dessert tee
-detective hat
-detour arrow
-dharma
-diamond tee
-dice stereo
-dice tank
-dig-site floor
-dimetrodon skull
-dimetrodon tail
-dimetrodon torso
-diner tile
-dinosaur egg
-dinosaur track
-diplo chest
-diplo hip
-diplo neck
-diplo skull
-diplo tail
-director's chair
-dirt-clod wall
-dishwasher
-display shelf
-display stand
-diving mask
-DJ cap
-djimbe drum
-DJ KK
-DJ'S turntable
-doctor's coat
-doctor's mask
-doctor's mirror
-doghouse
-dogtooth shirt
-dollhouse
-do-rag
-dotted rug
-dotted wall
-double-neck guitar
-dracaena
-dragon leggings
-dragon suit
-dream catcher
-dress socks
-drinking fountain
-drip pail
-Dr. Shrunk's jacket
-dry-denim pants
-dry-denim skirt
-eagle pole
-editor's desk
-effects rack
-eggy parasol
-Eiffel Tower
-eight-ball tee
-eight lamp
-elder mask
-electric guitar
-electric kettle
-elegant paper
-elephant shirt
-elephant slide
-embroidered dress
-emerald polka skirt
-exhibit partition
-exit sign
-exotic bench
-exotic bureau
-exotic end table
-exotic lamp
-exotic rug
-exotic screen
-exotic table
-exotic wall
-exotic wall shelf
-explorer pants
-exquisite rug
-exquisite wall
-eye mask
-eye patch
-facial mask
-fairy-tale dress
-fan
-fancy doll
-fancy frame
-fan palm
-female mask
-fencing mask
-fern fossil
-fern shirt
-fern tee
-festival lantern
-Fi mask
-firefighter pants
-Fire Flower
-fireman's hat
-fireplace
-fireworks paper
-fireworks table
-fishing vest
-fishnet tights
-fish tee
-five-ball tee
-flame umbrella
-flan tank
-flat display case
-flat-screen TV
-fleece dress
-flight-crew shirt
-floral paper
-florence flask
-flounder table
-flower loafers
-flower pop carpet
-flower pop wall
-flower table
-flowery paper
-flowery tee
-fluffy dress
-flying saucer
-folding chair
-folk guitar
-folk tunic
-foosball table
-football helmet
-Forest Life
-forest paper
-forest umbrella
-four-ball tee
-four-leaf paper
-freezer
-fresh tank
-fresh tee
-frock coat
-frog costume
-frog-costume pants
-frog tee
-frog-woman pole
-full-moon vanity
-funky-dot skirt
-funky glasses
-funky wig
-funny glasses
-future tank
-garbage can
-garbage pail
-garden gnome
-gas mask
-gas pump
-Gaudi's lizard
-geisha wig
-gelato tee
-gelato umbrella
-genie pants
-genie shirt
-genie's lamp
-genie vest
-geometric paper
-gerbera
-ghost mask
-ghost umbrella
-giant dharma
-giraffe ruler
-glass display case
-glass-top table
-Goal Pole
-go board
-goggles
-go-go shirt
-Go K.K. Rider
-gold-armor shoes
-gold-bar tee
-gold bug trophy
-golden chair
-golden dresser
-golden man
-golden screen
-golden wall
-golden woman
-goldfish paper
-gold HHA plaque
-gold HHA trophy
-gold stereo
-golf bag
-grandpa hat
-grapefruit table
-grape hat
-grape-stripe tee
-grass standee
-gray formal pants
-gray formal skirt
-gray leggings
-gray parka
-gray socks
-gray-stripe pants
-gray sweatpants
-gray tartan shirt
-gray tartan tee
-gray tights
-green-bar shirt
-green-bar tee
-green bed
-green bench
-green buckled shoes
-green cap
-green chair
-green counter
-green desk
-green dress
-green dresser
-green emblem blazer
-green glasses
-green gym shorts
-green gym tee
-green headgear
-green knit hat
-green lamp
-green pantry
-green plaid shorts
-green rug
-green sandals
-Green Shell
-green-stripe shoes
-green-stripe socks
-green-stripe tank
-green table
-green tartan pants
-green tights
-green umbrella
-green wall
-green wall clock
-green wardrobe
-green warm-up pants
-green-zap helmet
-green-zap pants
-groovy wall
-gumdrop tee
-halo
-hamburger paper
-hammock
-happi tee
-hawthorn bonsai
-heart bopper
-hearth
-heart-print tights
-heart tee
-hedge standee
-hero's boots
-hero's cap
-hero's clothes
-hero's pants
-HHA jacket
-HHA pennant
-HHA tee
-hibachi
-hieroglyph paper
-hi-fi stereo
-high-end stereo
-high-jump mat
-hiking boots
-hiking gaiters
-HMD
-hockey mask
-holly bonsai
-hologram machine
-home-computer rack
-homework set
-hopscotch floor
-hospital bed
-hospital screen
-hospital TV
-hot-dog hat
-hot-dog tank
-hot spring tee
-hourglass
-huge shades
-hula doll
-humidifier
-hunter's cap
-hurdle
-ichthyo skull
-ichthyo torso
-iguanodon skull
-iguanodon tail
-iguanodon torso
-I love You
-imperial pants
-imperial paper
-imperial shirt
-imperial tile
-imperial wall
-incense burner
-industrial wall
-ionian post
-ironing set
-ivy wall
-jade plaid shirt
-jade plaid tee
-jagged tank
-jagged tee
-jester's cap
-jester's mask
-jester's shoes
-jester tank
-jinbei shorts
-jinbei top
-jockey's helmet
-Jolly Roger
-jomon pottery
-judge's bell
-juicy-apple clock
-juicy-apple TV
-jukebox
-jungle-camo pants
-jungle-camo shorts
-jungle-camo tee
-jungle floor
-kaffiyeh
-kagamimochi
-kanji tee
-karaoke system
-kart
-kayak
-keg
-kiddie bed
-kiddie bookcase
-kiddie bureau
-kiddie carpet
-kiddie chair
-kiddie clock
-kiddie couch
-kiddie dresser
-kiddie stereo
-kiddie table
-kiddie tee
-kiddie wall
-kiddie wall clock
-kiddie wardrobe
-kids' smock
-kilt
-kimono
-kimono sandals
-King K.K.
-king's beard
-King Tut mask
-kitchen corner
-kitchen flooring
-kitchen scale
-kitschy clock
-kitschy tile
-kitschy wall
-kiwi hat
-kiwi stool
-kiwi tank
-kiwi tee
-K.K. Adventure
-K.K. Aria
-K.K. Ballad
-K.K. Bazaar
-kk blitz
-K.K. Calypso
-K.K. Casbah
-kk cc
-K.K. Condor
-K.K. Coutnry
-K.K. D&B
-K.K. Dirge
-K.K. Disco
-K.K. Etude
-K.K. Faire
-K.K. Folk
-K.K. Fusion
-K.K. Groove
-K.K. House
-K.K. Lament
-K.K. Love Song
-K.K. Lullaby
-K.K. Mambo
-K.K. Marathon
-K.K. March
-K.K. Milonga
-K.K. Parade
-K.K. Ragtime
-K.K. Reggae
-K.K. Rock
-K.K. Salsa
-K.K. Ska
-K.K. Sonata
-K.K. Song
-K.K. Soul
-K.K. Swing
-K.K. Waltz
-kk zz
-knight
-knight's helmet
-kotatsu
-kung-fu pants
-kung-fu shirt
-lab chair
-lab floor
-lab wall
-lace-up boots
-lacy paper
-lacy parasol
-ladder shades
-ladybug carpet
-ladybug chair
-lady palm
-lantern
-laptop
-large alpine table
-large magazine rack
-lat pulldown machine
-lattice wall
-lava lamp
-lawn chair
-lazy-Susan table
-leaf
-leaf tee
-leaf umbrella
-LED display
-left platform
-lefty lucky cat
-leg warmers
-lemon-lime paper
-lemon pack
-lemon table
-lemon umbrella
-leopard paper
-leopard skirt
-leopard tank
-leopard umbrella
-letter set
-library wall
-light-blue cap
-li'l bro's hat
-lily-pad table
-lined paper
-lion-dance mask
-lite polka skirt
-lite polka tee
-lotus lamp
-lotus paper
-lotus tank dress
-lotus tee
-loud bloom tee
-lovely armoire
-lovely bed
-lovely carpet
-lovely chair
-lovely doll
-lovely dresser
-lovely end table
-lovely kitchen
-lovely lamp
-lovely love seat
-lovely paper
-lovely phone
-lovely table
-lovely vanity
-lovely wall
-lovely wall clcok
-low screen
-lucky black cat
-lucky cat
-lucky frog
-lucky gold cat
-lucky kk
-lunar surface
-lunch tray
-mahjong table
-Majora's Mask
-Makar's Mask
-Mama bear
-Mama polar bear
-mammoth skull
-mammoth torso
-mandarin hat
-manhole cover
-manor wall
-maple bonsai
-maple leaf paper
-marine pop wall
-marine song 2001
-marshmallow chair
-mary janes
-masquerade mask
-Master Sword
-matryoshka
-maze floor
-maze wall
-megacero skull
-megacero tail
-megacero torso 
-melon hat
-melon shirt
-melon tee
-melon umbrella
-men's toilet
-Merlion
-mermaid carpet
-mermaid dresser
-mermaid statue
-mermaid table
-mermaid wall
-Metroid
-metronome
-microscope
-Midna's Mask
-military pants
-military uniform
-milkmaid hat
-miniature car
-mini cactus
-mini dharma
-mini lamp
-minimalist bed
-minimalist chair
-minimalist clock
-minimalist dresser
-minimalist lamp
-minimalist minitable
-minimalist ottoman
-minimalist sofa
-minimalist table
-minimalist vanity
-minimalist wardrobe
-mint gingham shirt
-mint gingham skirt
-mint glasses
-mint shirt
-mint umbrella
-misty tee
-mixer
-moai statue
-mobile
-mochi pestle
-modern bed
-modern cabinet
-modern chair
-modern desk
-modern dresser
-modern end table
-modern lamp
-modern screen
-modern sofa
-modern table
-modern tile
-modern wall clock
-modern wardrobe
-modern wood bed
-modern wood chair
-modern wood chest
-modern wood clock
-modern wood closet
-modern wood flooring
-modern wood lamp
-modern wood shelf
-modern wood sofa
-modern wood stool
-modern wood table
-modern wood TV
-modern wood wall
-mohawk wig
-moldy dress
-monocle
-monster mask
-moon hairpin
-morning glory
-mortar wall
-mosaic paper
-mosaic tile
-moth orchid
-motocross helmet
-mountain bike
-mountain standee
-Mouth of Truth
-Mrs. Flamingo
-mugho bonsai
-mummy mask
-mummy pants
-mummy's casket
-mummy shirt
-museum chair
-museum floor
-museum wall
-mushroom mural
-mushroom paper
-music stand
-MVP shirt
-MVP tee
-My Place
-natty shirt
-natty skirt
-natty tee
-navy formal pants
-navy formal skirt
-navy socks
-nebula shirt
-nebula tee
-neon sign
-neutral corner
-neutral floor
-neutral wall
-new year's cards
-night-sky paper
-night-sky tee
-nine-ball tee
-ninja pants
-ninja sandals
-ninja shirt
-ninja sword
-No. 1 shirt
-No. 23 shirt
-No. 2 shirt
-No. 3 shirt
-No. 4 shirt
-No. 5 shirt
-noble shirt
-noodle tee
-nook paper
-notebook paper
-nurse's cap
-nurse's uniform
-nutcracker
-ocean paper
-octopus chair
-odd clock
-office chair
-office desk
-office locker
-ogre mask
-old board floor
-old brick wall
-one-ball tee
-optical tank
-opulent rug
-orange cone
-orange jacket
-orange knit hat
-orange lace-up dress
-orange pants
-orange sandals
-orange shoes
-ornate rug
-ornate wall
-outback hat
-outdoor bath
-oval shades
-overall dress
-owl clock
-pachira
-pachy skull
-pachy tail
-pachy torso
-pacifier
-painting set
-palace tile
-palace wall
-palatial tank dress
-palm-tree lamp
-Papa panda
-paperboy cap
-paper lantern
-paper parasol
-paper tiger
-paper wall lamp
-parasaur skull
-parasaur tail
-parasaur torso
-parquet floor
-party wall
-pastel-check skirt
-pastel-dot wall
-patchwork chair
-patchwork sofa
-patchwork table
-paulownia closet
-pawn
-paw-print wall
-paw tee
-paw umbrella
-Peach's parasol
-peacock chair
-pear dresser
-peking man
-pendulum clock
-pep-squad skirt
-pep-squad tee
-petal paper
-pharaoh's outfit
-phone box
-phonograph
-piano paper
-pickle jar
-picnic basket
-picnic skirt
-picnic table
-piggy bank
-Pikmin
-pilot's cap
-pilot shades
-pinafore
-pinball machine
-pineapple bed
-pine bonsai
-pine chair
-pine table
-pink argyle shirt
-pink glasses
-pink nightcap
-pink pj bottoms
-pink polka dress
-pink slip-ons
-pink sneakers
-pink tartan tee
-pink velvet stool
-pink wave tank
-pink-zap suit
-Pipe
-pipe stool
-plaid paper
-plain black cap
-planked tatami
-plank flooring
-plaster wall
-plate armor
-playroom rug
-playroom wall
-plaza tile
-plaza wall
-pleather vest
-plesio neck
-plesio skull
-plesio torso
-plum bonsai
-plush carpet
-podium
-poinsettia
-police cap
-polka-dot bed
-polka-dot chair
-polka-dot clock
-polka-dot dress
-polka-dot dresser
-polka-dot low table
-polka-dot paper
-polka-dot rain boots
-polka-dot socks
-polka-dot sofa
-polka-dot table
-polka-dot TV
-poncho
-pondering
-ponderosa bonsai
-pop bloom tee
-popcorn machine
-portable toilet
-poster stand
-post-on patch
-potbelly stove
-pothos
-pot rack
-potted ivy
-potty
-powdered wig
-prim outfit
-prism tee
-ptera left wing
-ptera right wing
-ptera skull
-puffer-fish TV
-puffy hat
-pulse tank
-purple cap
-purple dot shoes
-purple glasses
-purple-imp hood
-purple knit hat
-purple pumps
-purple star socks
-purple-stripe tights
-purple tie-dye shirt
-purple tie-dye tee
-pyramid
-quazoid
-quince bonsai
-raccoon figurine
-raccoon wall clock
-racer 6 tee
-racer tee
-racing pants
-racing shirt
-radiator
-raglad tee
-rainbow paper
-rainbow screen
-rainbow tights
-ramshackle floor
-ramshackle wall
-ranch armchair
-ranch bed
-ranch chair
-ranch dresser
-ranch flooring
-ranch hutch
-ranch table
-ranch tea table
-ranch wall
-ranch wall rack
-ranch wardrobe
-range
-raptor skull
-raptor torso
-reception table
-record player
-red aloha tee
-red argyle tee
-red-bar shirt
-red-bar tee
-red boat shoes
-red cap
-red flannel shirt
-red glasses
-red gym shorts
-red gym tee
-red headgear
-red hood
-red nose
-red Pikmin
-red plaid skirt
-red polka skirt
-red ribbon
-red shoes
-red-stripe pants
-red-tasseled lantern
-red-team cap
-red tie-dye tank
-red tie-dye tee
-red tights
-red tile
-red tile wall
-red umbrella
-red vase
-red wrestling shoes
-red-zap helmet
-red-zap pants
-reel-to-reel
-refrigerator
-regal armoire
-regal bed
-regal bookcase
-regal carpet
-regal chair
-regal clock
-regal dresser
-regal lamp
-regal sofa
-regal table
-regal vanity
-regal wall
-regal wall lamp
-reggae tank
-reggae tee
-relay shorts
-retro fridge
-retro helmet
-retro stereo
-retro TV
-reversi piece
-revolving spice rack
-ribboned straw hat
-ribbon paper
-ribbon umbrella
-rice-plant bed
-righty desk
-rimmed glasses
-ringside table
-robo-bed
-robo-chair
-robo-clock
-robo-closet
-robo-dresser
-robo-floor
-robo-lamp
-robo-sofa
-robo-stereo
-robo-table
-robo-TV
-robo-wall
-robo-wall clock
-rock guitar
-rocking chair
-rocking horse
-rococo bed
-rococo candlestick
-rococo chair
-rococo clock
-rococo dresser
-rococo floor
-rococo lamp
-rococo shelf
-rococo sofa
-rococo table
-rococo vanity
-rococo wall
-rococo wardrobe
-Roman helmet
-rook
-rope partition
-rose-sky tank dress
-rose-sky tee
-rose tee
-rose wall
-round cactus
-round carpet
-round clock
-round glasses
-round mini cactus
-royal crown
-royal shorts
-rubber tree
-rugby shirt
-running pants
-sabertooth skull
-sabertooth torso
-saddle fence
-safety helmet
-sailor's hat
-sailor skirt
-sailor's shirt
-salad bar
-samgyetang
-samurai helmet
-samurai shirt
-samurai suit
-Samus mask
-sandwich tank
-satellite
-sawhorse
-scale
-scale-armor pants
-scale-armor suit
-scale-print tee
-school chair
-school hat
-school jacket
-school speaker
-science table
-sconce
-screen
-sea captain's coat
-sea view
-security tee
-seven-ball tee
-seweing machine
-shamrock clock
-shanty mat
-shanty wall
-shark tooth
-sharp outfit
-shaved-ice lamp
-shaved-ice maker
-shearling coat
-ship compass
-shogi board
-shogi piece
-shower cap
-shower stall
-silver frames
-silver HHA plaque
-silver HHA trophy
-simple armchair
-simple kettle
-simple love seat
-sink
-six-ball tee
-six lamp
-skeleton
-skeleton figurine
-skeleton hood
-ski mask
-skull shirt
-skull tee
-sky dress
-sky wall
-slate flooring
-sleek bed
-sleek carpet
-sleek chair
-sleek clock
-sleek closet
-sleek dresser
-sleek lamp
-sleek sideboard
-sleek side table
-sleek sofa
-sleek stereo
-sleek table
-sleek wall
-slide puzzle
-slippers
-small LED display
-small magazine rack
-small spotlight
-smb3 paper
-snail clock
-snake plant
-sno-cone tank
-sno-cone tee
-snorkel mask
-snow boots
-snow globe
-snow shirt
-snowy paper
-snowy sweater
-soccer shirt
-soccer shorts
-soccer socks
-soccer tee
-soda case
-soda fountain
-soft-serve lamp
-Soulful k.k.
-southwest paper
-space captain's seat
-space heater
-space helmet
-Spaceman Sam
-space pants
-space shuttle
-space station
-spade tee
-sparkly paper
-speed bag
-spherical radar
-Sphinx
-spider umbrella
-spiderweb tee
-spino skull
-spino tail
-spino torso
-splendid tee
-spooky bed
-spooky carpet
-spooky chair
-spooky clock
-spooky dresser
-spooky sofa
-spooky table
-spooky vanity
-spooky wall
-spooky wall lamp
-spooky wardrobe
-sporty shades
-spring blossoms
-spring kimono
-spring shirt
-sprinkler
-spunky knit shirt
-S.S. Dolphin
-stache & glasses
-stained glass
-stained-glass lamp
-stair dresser
-stale cupcakes
-standing spotlight
-star cap
-star globe
-star hairpin
-star paper
-star shades
-star tights
-stately wall
-steampunk glasses
-steamroller
-steel-toed boots
-stego skull
-stego tail
-stego torso
-stepladder
-stone tile
-stool
-storage case
-storefront
-strawberry hat
-strawberry tank
-strawberry tee
-straw boater
-straw umbrella hat
-stripe bathroom sink
-stripe carpet
-stripe chair
-stripe clock
-stripe closet
-stripe dresser
-stripe knit cap
-stripe lamp
-stripe shoes
-stripe sofa
-stripe table
-stripe TV	
-stripe wall
-student cap
-styraco skull
-styraco tail
-styraco torso
-subdued-print tee
-sundae tank
-sunflower
-sunflower tee
-sunny parasol
-sunrise lamp
-sunset tank
-superhero mask
-Super Mushroom
-Super Star
-super toilet
-surveillance camera
-sweets bed
-swell shirt
-swell tee
-swimming cap
-sword
-table lamp
-tabletop game
-taiko drum
-tall cactus
-tall display case
-tan dogtooth pants
-tan dogtooth shirt
-tan dogtooth tee
-tangerine chair
-tan puffy vest
-tape deck
-tapestry
-tartan paper
-tartan rug
-tasseled loafers
-tatami bed
-tea case
-teacher's chair
-team NTDO tee
-tearoom wall
-tea set
-tea table
-tea tansu
-tea vase
-telescope
-Ten Billion Barrel
-tennis table
-terry-cloth do-rag
-the k funk
-theremin
-thermohygrometer
-thick glasses
-three lamp
-throne
-tiki torch
-tile paper
-tin shirt
-tiny shades
-Toad hat
-Toad parasol
-toad shirt
-toga
-To the Edge
-Tower of Pisa
-traffic cone
-trash bin
-tree standee
-T.rex skull
-T.rex tail
-T.rex torso
-triangle shades
-tribal mask
-tricera skull
-tricera tail
-tricera torso
-tricycle
-trilobite
-Triple Bananas
-Triple Red Shells
-tropical sandals
-tropical tank
-tropical tee
-tsunokakushi
-tube socks
-tuk-tuk
-tulip hat
-tumbleweed
-turban
-TV camera
-twinkle tank
-twinkle tee
-two-ball tee
-typewriter
-Ultra Hand
-Ultra Machine
-underwater floor
-unknown machine
-upright piano
-upright vacuum
-Varia Suit
-Varia Suit pants
-vegetarian shirt
-vegetarian tee
-ventilation fan
-vertigo shirt
-vertigo tee
-vibraphone
-viking helmet
-vine paper
-vintage camera
-vintage radio
-vintage telephone
-Virtual Boy
-volleyball net
-waffle shirt
-waitress dress
-wall fan
-wall flowerpot
-wall-mounted monitor
-wall-mounted speaker
-wandering
-warbonnet
-Wario hat
-washbasin
-washer/dryer
-water bird
-water cooler
-watering trough
-watermelon chair
-watermelon hat
-watermelon shirt
-watermelon table
-watermelon tee
-weathered paper
-weeping fig
-well
-werewolf hood
-western fence
-wheat bundle
-white ankle socks
-whiteboard
-white cap
-white katana
-white-lace socks
-white patent shoes
-white pot
-white socks
-white stockings
-white-team cap
-wide-screen TV
-Wii Balance Board
-wildflower floor
-witch's hat
-witch's robe
-wizard's cap
-wobbelina
-wooden clogs
-wood paneling
-work shirt
-wrap shirt
-wrestler pants
-writing chair
-yellow-bar shirt
-yellow buckled shoes
-yellow cap
-yellow glasses
-yellow Pikmin
-yellow rain boots
-yellow ribbon
-yellow sneakers
-yellow umbrella
-yodel dress
-Yoshi's Egg
-zap boots
-zebra tank
-zebra umbrella
-zipper shirt
-zz
-zzz
+0 0 0 0 1-Up cap
+0 0 0 0 3D glasses
+0 0 0 0 academy paper
+0 0 0 0 acid-washed jacket
+0 0 0 0 acid-washed pants
+0 0 0 0 afro wig
+0 0 0 0 air condition
+0 0 0 0 airmail paper
+0 0 0 0 alarm clock
+0 0 0 0 aloe
+0 0 0 0 Aloha K.K.
+0 0 0 0 aloha shorts
+0 0 0 0 alpine bed
+0 0 0 0 alpine chair
+0 0 0 0 alpine closet
+0 0 0 0 alpine dresser
+0 0 0 0 alpine kitchen cart
+0 0 0 0 alpine lamp
+0 0 0 0 alpine low table
+0 0 0 0 alpine panel
+0 0 0 0 alpine rug
+0 0 0 0 alpine shelf
+0 0 0 0 alpine sofa
+0 0 0 0 alpine wall
+0 0 0 0 alpinist dress
+0 0 0 0 alpinist hat
+0 0 0 0 amazing machine
+0 0 0 0 amber
+0 0 0 0 amethyst shirt
+0 0 0 0 amethyst tee
+0 0 0 0 ammonite
+0 0 0 0 amp
+0 0 0 0 anatomical model
+0 0 0 0 ankylo skull
+0 0 0 0 ankylo tail
+0 0 0 0 ankylo torso
+0 0 0 0 antique clock
+0 0 0 0 apato skull
+0 0 0 0 apato tail
+0 0 0 0 apato torso
+0 0 0 0 aqua polka tank
+0 0 0 0 arcade machine
+0 0 0 0 Arc de Triomphe
+0 0 0 0 archaeopteryx
+0 0 0 0 arched window
+0 0 0 0 archelon skull
+0 0 0 0 archelon torso
+0 0 0 0 arctic-camo pants
+0 0 0 0 arctic-camo tee
+0 0 0 0 argyle socks
+0 0 0 0 argyle tights
+0 0 0 0 armor shoes
+0 0 0 0 armor suit
+0 0 0 0 aroma pot
+0 0 0 0 arrow sign
+0 0 0 0 astro bed
+0 0 0 0 astro CD player
+0 0 0 0 astro clock
+0 0 0 0 astro floor
+0 0 0 0 astro lamp
+0 0 0 0 astro sofa
+0 0 0 0 astro table
+0 0 0 0 astro TV
+0 0 0 0 aurora knit shirt
+0 0 0 0 automatic washer
+0 0 0 0 azalea bonsai
+0 0 0 0 Baby bear
+0 0 0 0 Baby panda
+0 0 0 0 baby's hat
+0 0 0 0 backyard fence
+0 0 0 0 backyard pool
+0 0 0 0 bad bro's stache
+0 0 0 0 badge hat
+0 0 0 0 bad plaid shirt
+0 0 0 0 bad plaid tee
+0 0 0 0 bagpipes
+0 0 0 0 ballet slippers
+0 0 0 0 balloon bed
+0 0 0 0 balloon chair
+0 0 0 0 balloon clock
+0 0 0 0 balloon closet
+0 0 0 0 balloon-dog lamp
+0 0 0 0 balloon dresser
+0 0 0 0 balloon floor
+0 0 0 0 balloon hat
+0 0 0 0 balloon lamp
+0 0 0 0 balloon sofa
+0 0 0 0 balloon table
+0 0 0 0 balloon TV
+0 0 0 0 balloon vanity
+0 0 0 0 balloon wall
+0 0 0 0 ball return
+0 0 0 0 bamboo flooring
+0 0 0 0 banana-split hat
+0 0 0 0 bandage
+0 0 0 0 bandana
+0 0 0 0 barbecue
+0 0 0 0 barber's pole
+0 0 0 0 barber tee
+0 0 0 0 baseball pants
+0 0 0 0 basketball hoop
+0 0 0 0 basketball shoes
+0 0 0 0 basketball shorts
+0 0 0 0 bass
+0 0 0 0 bathhouse wall
+0 0 0 0 bathroom sink
+0 0 0 0 bathroom stall
+0 0 0 0 bathtub paper
+0 0 0 0 batter's helmet
+0 0 0 0 BB tee
+0 0 0 0 beach umbrella
+0 0 0 0 beaded shirt
+0 0 0 0 beaded tank
+0 0 0 0 beak
+0 0 0 0 bear cap
+0 0 0 0 bear costume
+0 0 0 0 bear-costume pants
+0 0 0 0 bear pole
+0 0 0 0 bear tee
+0 0 0 0 beatnik tank
+0 0 0 0 beatnik tee
+0 0 0 0 beetle chair
+0 0 0 0 beige emblem blazer
+0 0 0 0 beige tights
+0 0 0 0 bejeweled paper
+0 0 0 0 Benedict's pic
+0 0 0 0 bicycle helmet
+0 0 0 0 Big Ben
+0 0 0 0 big bro's hat
+0 0 0 0 big bro's mustache
+0 0 0 0 big bro's tee
+0 0 0 0 big-dot tank
+0 0 0 0 big-dot tee
+0 0 0 0 big-star tee
+0 0 0 0 billiard table
+0 0 0 0 bingo wheel
+0 0 0 0 birch flooring
+0 0 0 0 birdbath
+0 0 0 0 birdcage
+0 0 0 0 birdhouse
+0 0 0 0 birthday card
+0 0 0 0 bishop
+0 0 0 0 biwa lute
+0 0 0 0 black ankle socks
+0 0 0 0 black-denim pants
+0 0 0 0 black-denim skirt
+0 0 0 0 black flannel shirt
+0 0 0 0 black formal pants
+0 0 0 0 black formal skirt
+0 0 0 0 black katana
+0 0 0 0 black leggings
+0 0 0 0 black letter jacket
+0 0 0 0 black loafers
+0 0 0 0 black pumps
+0 0 0 0 black rain boots
+0 0 0 0 black tights
+0 0 0 0 black track pants
+0 0 0 0 Block
+0 0 0 0 blossom lantern
+0 0 0 0 blue aloha tee
+0 0 0 0 blue argyle tee
+0 0 0 0 blue bookcase
+0 0 0 0 blue boxing shorts
+0 0 0 0 blue bureau
+0 0 0 0 blue certificate
+0 0 0 0 blue chair
+0 0 0 0 blue-check tee
+0 0 0 0 blue clock
+0 0 0 0 blue corner
+0 0 0 0 blue diamond shirt
+0 0 0 0 blue dot parasol
+0 0 0 0 blue dresser
+0 0 0 0 Blue Falcon
+0 0 0 0 blue flannel shirt
+0 0 0 0 blue flooring
+0 0 0 0 blue frames
+0 0 0 0 blue-grid shirt
+0 0 0 0 blue-grid tee
+0 0 0 0 blue gym shorts
+0 0 0 0 blue gym tee
+0 0 0 0 blue headgear
+0 0 0 0 blue jacket
+0 0 0 0 blue lace up dress
+0 0 0 0 blue letter jacket
+0 0 0 0 blue nightcap
+0 0 0 0 blue Pikmin
+0 0 0 0 blue pj bottoms
+0 0 0 0 blue pj shirt
+0 0 0 0 blue plaid fedora
+0 0 0 0 blue polka shorts
+0 0 0 0 blue pom pom hat
+0 0 0 0 blue pumps
+0 0 0 0 blue ribbon
+0 0 0 0 blue sneakers
+0 0 0 0 blue-stripe pants
+0 0 0 0 blue-stripe shirt
+0 0 0 0 blue-stripe tee
+0 0 0 0 blue-stripe tights
+0 0 0 0 blue table
+0 0 0 0 blue tartan tee
+0 0 0 0 blue tie-dye tank
+0 0 0 0 blue track jacket
+0 0 0 0 blue-trim wall
+0 0 0 0 blue umbrella
+0 0 0 0 blue vase
+0 0 0 0 blue wall shelf
+0 0 0 0 blue wrestling shoes
+0 0 0 0 blue-zap helmet
+0 0 0 0 blue-zap pants
+0 0 0 0 bobby socks
+0 0 0 0 bone pants
+0 0 0 0 bone shirt
+0 0 0 0 bonfire
+0 0 0 0 boomerang
+0 0 0 0 bow
+0 0 0 0 boxed figurine
+0 0 0 0 boxing mat
+0 0 0 0 box of tissues
+0 0 0 0 box sofa
+0 0 0 0 braided wig
+0 0 0 0 breaker
+0 0 0 0 broken post
+0 0 0 0 bromeliaceae
+0 0 0 0 brown argyle skirt
+0 0 0 0 brown formal pants
+0 0 0 0 brown glasses
+0 0 0 0 brown loafers
+0 0 0 0 brown pumps
+0 0 0 0 brown slip-ons
+0 0 0 0 brown socks
+0 0 0 0 brown-stripe socks
+0 0 0 0 bubble-gum tee
+0 0 0 0 bubble paper
+0 0 0 0 bubble tank
+0 0 0 0 bucket
+0 0 0 0 bug mask
+0 0 0 0 bug zapper
+0 0 0 0 bulb bopper
+0 0 0 0 bunk bed
+0 0 0 0 bunny hood
+0 0 0 0 bunny tee
+0 0 0 0 bun wig
+0 0 0 0 busted umbrella
+0 0 0 0 buttercup paper
+0 0 0 0 butterfly paper
+0 0 0 0 cabana bed
+0 0 0 0 cabana dresser
+0 0 0 0 cabana flooring
+0 0 0 0 cabana screen
+0 0 0 0 cabana table
+0 0 0 0 cabana wall radio
+0 0 0 0 cabin armchair
+0 0 0 0 cabin bed
+0 0 0 0 cabin bookcase
+0 0 0 0 cabin chair
+0 0 0 0 cabin clock
+0 0 0 0 cabin couch
+0 0 0 0 cabin dresser
+0 0 0 0 cabin low table
+0 0 0 0 cabin rug
+0 0 0 0 cabin table
+0 0 0 0 cabin wall
+0 0 0 0 cabin wall clock
+0 0 0 0 cabin wardrobe
+0 0 0 0 cactus
+0 0 0 0 Cafe K.K.
+0 0 0 0 cafe tee
+0 0 0 0 caladium
+0 0 0 0 camel shirt
+0 0 0 0 camouflage paper
+0 0 0 0 camo umbrella
+0 0 0 0 candle
+0 0 0 0 candy gingham tee
+0 0 0 0 candy jar
+0 0 0 0 candy machine
+0 0 0 0 candy umbrella
+0 0 0 0 captain's jacket
+0 0 0 0 cardboard box
+0 0 0 0 cardboard chair
+0 0 0 0 card paper
+0 0 0 0 cargo pants
+0 0 0 0 cash register
+0 0 0 0 cassette player
+0 0 0 0 casual outfit
+0 0 0 0 cat cap
+0 0 0 0 catcher's mask
+0 0 0 0 caterpillar sofa
+0 0 0 0 cat tower
+0 0 0 0 cavalier hat
+0 0 0 0 caveman shorts
+0 0 0 0 CD player
+0 0 0 0 CD shelf
+0 0 0 0 cement mixer
+0 0 0 0 ceramic hot pot
+0 0 0 0 ceramic tile
+0 0 0 0 chain-gang shirt
+0 0 0 0 chain-gang tee
+0 0 0 0 chain-link fence
+0 0 0 0 chaise lounge
+0 0 0 0 chalkboard
+0 0 0 0 charcoal tile
+0 0 0 0 checkerboard shirt
+0 0 0 0 checkerboard skirt
+0 0 0 0 checkerboard tee
+0 0 0 0 checkered socks
+0 0 0 0 checkered tee
+0 0 0 0 checkered tile
+0 0 0 0 cheese wall
+0 0 0 0 chef's outfit
+0 0 0 0 cherry-blossom clock
+0 0 0 0 cherry tee
+0 0 0 0 chevron shirt
+0 0 0 0 chichi-print tee
+0 0 0 0 chick tee
+0 0 0 0 chic paper
+0 0 0 0 chic wall
+0 0 0 0 chocolate fountain
+0 0 0 0 cicada stereo
+0 0 0 0 circuit tank
+0 0 0 0 citrus carpet
+0 0 0 0 citrus tank
+0 0 0 0 citrus tee
+0 0 0 0 citrus wall
+0 0 0 0 cityscape wall
+0 0 0 0 classic bed
+0 0 0 0 classic bookcase
+0 0 0 0 classic buffet
+0 0 0 0 classic carpet
+0 0 0 0 classic clock
+0 0 0 0 classic desk
+0 0 0 0 classic sofa
+0 0 0 0 classic table
+0 0 0 0 classic vanity
+0 0 0 0 classic wall
+0 0 0 0 classic wall shelf
+0 0 0 0 classic wardrobe
+0 0 0 0 claw-foot tub
+0 0 0 0 clear model
+0 0 0 0 cleats
+0 0 0 0 climbing shoes
+0 0 0 0 clogs
+0 0 0 0 clothes closet
+0 0 0 0 clothesline pole
+0 0 0 0 cloud flooring
+0 0 0 0 cloudy paper
+0 0 0 0 coat hanger
+0 0 0 0 coconut palm
+0 0 0 0 Coin
+0 0 0 0 colorful sneakers
+0 0 0 0 colorful socks
+0 0 0 0 colorful wheel
+0 0 0 0 combat helmet
+0 0 0 0 common bed
+0 0 0 0 common chair
+0 0 0 0 common floor
+0 0 0 0 common wall
+0 0 0 0 compass
+0 0 0 0 complex machine
+0 0 0 0 composer paper
+0 0 0 0 computer
+0 0 0 0 computer desk
+0 0 0 0 comrade kk
+0 0 0 0 conga drum
+0 0 0 0 conveyor belt sushi
+0 0 0 0 cool dress
+0 0 0 0 cool paper
+0 0 0 0 cool tank
+0 0 0 0 coprolite
+0 0 0 0 copy machine
+0 0 0 0 corinthian post
+0 0 0 0 corkboard
+0 0 0 0 corn plant
+0 0 0 0 corseted shirt
+0 0 0 0 corseted skirt
+0 0 0 0 country guitar
+0 0 0 0 covered wagon
+0 0 0 0 cow bone
+0 0 0 0 cowboy boots
+0 0 0 0 cowhide rug
+0 0 0 0 cow paper
+0 0 0 0 cow skull
+0 0 0 0 cradle
+0 0 0 0 crane game
+0 0 0 0 crater paper
+0 0 0 0 cream sofa
+0 0 0 0 creepy bat stone
+0 0 0 0 creepy cauldron
+0 0 0 0 creepy clock
+0 0 0 0 creepy coffin
+0 0 0 0 creepy crystal
+0 0 0 0 creepy floor
+0 0 0 0 creepy skeleton
+0 0 0 0 creepy statue
+0 0 0 0 creepy stone
+0 0 0 0 creepy wall
+0 0 0 0 crewel tee
+0 0 0 0 crossing shirt
+0 0 0 0 croton
+0 0 0 0 crown
+0 0 0 0 cubbyhole
+0 0 0 0 cube clock
+0 0 0 0 cuckoo clock
+0 0 0 0 cucumber pack
+0 0 0 0 cuffed pants
+0 0 0 0 cupid bench
+0 0 0 0 curly mustache
+0 0 0 0 cushion
+0 0 0 0 cyan argyle shirt
+0 0 0 0 cyber shades
+0 0 0 0 cycling shirt
+0 0 0 0 daffodil
+0 0 0 0 daisy umbrella
+0 0 0 0 Dala horse
+0 0 0 0 dandy hat
+0 0 0 0 danger tee
+0 0 0 0 dartboard
+0 0 0 0 dawn tank
+0 0 0 0 dawn tee
+0 0 0 0 dazed tee
+0 0 0 0 deep-blue tank
+0 0 0 0 deep-blue tee
+0 0 0 0 deer scare
+0 0 0 0 deluxe range
+0 0 0 0 denim jacket
+0 0 0 0 denim skirt
+0 0 0 0 denim vest
+0 0 0 0 dentist's chair
+0 0 0 0 desert cactus
+0 0 0 0 desert-camo shirt
+0 0 0 0 desert-camo tee
+0 0 0 0 desk light
+0 0 0 0 dessert tee
+0 0 0 0 detective hat
+0 0 0 0 detour arrow
+0 0 0 0 dharma
+0 0 0 0 diamond tee
+0 0 0 0 dice stereo
+0 0 0 0 dice tank
+0 0 0 0 dig-site floor
+0 0 0 0 dimetrodon skull
+0 0 0 0 dimetrodon tail
+0 0 0 0 dimetrodon torso
+0 0 0 0 diner tile
+0 0 0 0 dinosaur egg
+0 0 0 0 dinosaur track
+0 0 0 0 diplo chest
+0 0 0 0 diplo hip
+0 0 0 0 diplo neck
+0 0 0 0 diplo skull
+0 0 0 0 diplo tail
+0 0 0 0 director's chair
+0 0 0 0 dirt-clod wall
+0 0 0 0 dishwasher
+0 0 0 0 display shelf
+0 0 0 0 display stand
+0 0 0 0 diving mask
+0 0 0 0 DJ cap
+0 0 0 0 djimbe drum
+0 0 0 0 DJ KK
+0 0 0 0 DJ'S turntable
+0 0 0 0 doctor's coat
+0 0 0 0 doctor's mask
+0 0 0 0 doctor's mirror
+0 0 0 0 doghouse
+0 0 0 0 dogtooth shirt
+0 0 0 0 dollhouse
+0 0 0 0 do-rag
+0 0 0 0 dotted rug
+0 0 0 0 dotted wall
+0 0 0 0 double-neck guitar
+0 0 0 0 dracaena
+0 0 0 0 dragon leggings
+0 0 0 0 dragon suit
+0 0 0 0 dream catcher
+0 0 0 0 dress socks
+0 0 0 0 drinking fountain
+0 0 0 0 drip pail
+0 0 0 0 Dr. Shrunk's jacket
+0 0 0 0 dry-denim pants
+0 0 0 0 dry-denim skirt
+0 0 0 0 eagle pole
+0 0 0 0 ebony piano
+0 0 0 0 editor's desk
+0 0 0 0 effects rack
+0 0 0 0 eggy parasol
+0 0 0 0 Eiffel Tower
+0 0 0 0 eight-ball tee
+0 0 0 0 eight lamp
+0 0 0 0 elder mask
+0 0 0 0 electric guitar
+0 0 0 0 electric kettle
+0 0 0 0 elegant paper
+0 0 0 0 elephant shirt
+0 0 0 0 elephant slide
+0 0 0 0 embroidered dress
+0 0 0 0 emerald polka skirt
+0 0 0 0 exhibit partition
+0 0 0 0 exit sign
+0 0 0 0 exotic bench
+0 0 0 0 exotic bureau
+0 0 0 0 exotic end table
+0 0 0 0 exotic lamp
+0 0 0 0 exotic rug
+0 0 0 0 exotic screen
+0 0 0 0 exotic table
+0 0 0 0 exotic wall
+0 0 0 0 exotic wall shelf
+0 0 0 0 explorer pants
+0 0 0 0 exquisite rug
+0 0 0 0 exquisite wall
+0 0 0 0 extinguisher
+0 0 0 0 eye mask
+0 0 0 0 eye patch
+0 0 0 0 facial mask
+0 0 0 0 fairy-tale dress
+0 0 0 0 fall leaf shirt
+0 0 0 0 fan
+0 0 0 0 fancy doll
+0 0 0 0 fancy frame
+0 0 0 0 fan palm
+0 0 0 0 female mask
+0 0 0 0 fencing mask
+0 0 0 0 fern fossil
+0 0 0 0 fern shirt
+0 0 0 0 fern tee
+0 0 0 0 festival lantern
+0 0 0 0 Fi mask
+0 0 0 0 firefighter pants
+0 0 0 0 firefighter shirt
+0 0 0 0 Fire Flower
+0 0 0 0 fire hydrant
+0 0 0 0 fireman's hat
+0 0 0 0 fireplace
+0 0 0 0 fireworks paper
+0 0 0 0 fireworks table
+0 0 0 0 fishing vest
+0 0 0 0 fishnet tights
+0 0 0 0 fish tee
+0 0 0 0 five-ball tee
+0 0 0 0 flame umbrella
+0 0 0 0 flan tank
+0 0 0 0 flat display case
+0 0 0 0 flat-screen TV
+0 0 0 0 fleece dress
+0 0 0 0 flight-crew shirt
+0 0 0 0 floral paper
+0 0 0 0 florence flask
+0 0 0 0 flounder table
+0 0 0 0 flower loafers
+0 0 0 0 flower pop carpet
+0 0 0 0 flower pop wall
+0 0 0 0 flower table
+0 0 0 0 flowery paper
+0 0 0 0 flowery tee
+0 0 0 0 fluffy dress
+0 0 0 0 flying saucer
+0 0 0 0 folding chair
+0 0 0 0 folk guitar
+0 0 0 0 folk tunic
+0 0 0 0 foosball table
+0 0 0 0 football helmet
+0 0 0 0 Forest Life
+0 0 0 0 forest paper
+0 0 0 0 forest umbrella
+0 0 0 0 four-ball tee
+0 0 0 0 four-leaf paper
+0 0 0 0 freezer
+0 0 0 0 fresh tank
+0 0 0 0 fresh tee
+0 0 0 0 frock coat
+0 0 0 0 frog costume
+0 0 0 0 frog-costume pants
+0 0 0 0 frog tee
+0 0 0 0 frog-woman pole
+0 0 0 0 full-moon vanity
+0 0 0 0 funky-dot skirt
+0 0 0 0 funky glasses
+0 0 0 0 funky wig
+0 0 0 0 funny glasses
+0 0 0 0 future tank
+0 0 0 0 garbage can
+0 0 0 0 garbage pail
+0 0 0 0 garden gnome
+0 0 0 0 gas mask
+0 0 0 0 gas pump
+0 0 0 0 Gaudi's lizard
+0 0 0 0 geisha wig
+0 0 0 0 gelato tee
+0 0 0 0 gelato umbrella
+0 0 0 0 genie pants
+0 0 0 0 genie shirt
+0 0 0 0 genie's lamp
+0 0 0 0 genie vest
+0 0 0 0 geometric paper
+0 0 0 0 gerbera
+0 0 0 0 ghost mask
+0 0 0 0 ghost umbrella
+0 0 0 0 giant dharma
+0 0 0 0 giraffe ruler
+0 0 0 0 glass display case
+0 0 0 0 glass-top table
+0 0 0 0 Goal Pole
+0 0 0 0 go board
+0 0 0 0 goggles
+0 0 0 0 go-go shirt
+0 0 0 0 Go K.K. Rider
+0 0 0 0 gold-armor shoes
+0 0 0 0 gold-bar tee
+0 0 0 0 gold bug trophy
+0 0 0 0 golden chair
+0 0 0 0 golden dresser
+0 0 0 0 golden man
+0 0 0 0 golden screen
+0 0 0 0 golden wall
+0 0 0 0 golden woman
+0 0 0 0 goldfish paper
+0 0 0 0 gold HHA plaque
+0 0 0 0 gold HHA trophy
+0 0 0 0 gold stereo
+0 0 0 0 golf bag
+0 0 0 0 grandpa hat
+0 0 0 0 grapefruit table
+0 0 0 0 grape hat
+0 0 0 0 grape-stripe tee
+0 0 0 0 grass standee
+0 0 0 0 gray formal pants
+0 0 0 0 gray formal skirt
+0 0 0 0 gray leggings
+0 0 0 0 gray parka
+0 0 0 0 gray socks
+0 0 0 0 gray-stripe pants
+0 0 0 0 gray sweatpants
+0 0 0 0 gray tartan shirt
+0 0 0 0 gray tartan tee
+0 0 0 0 gray tights
+0 0 0 0 green-bar shirt
+0 0 0 0 green-bar tee
+0 0 0 0 green bed
+0 0 0 0 green bench
+0 0 0 0 green buckled shoes
+0 0 0 0 green cap
+0 0 0 0 green chair
+0 0 0 0 green counter
+0 0 0 0 green desk
+0 0 0 0 green dress
+0 0 0 0 green dresser
+0 0 0 0 green emblem blazer
+0 0 0 0 green glasses
+0 0 0 0 green gym shorts
+0 0 0 0 green gym tee
+0 0 0 0 green headgear
+0 0 0 0 green knit hat
+0 0 0 0 green lamp
+0 0 0 0 green pantry
+0 0 0 0 green plaid shorts
+0 0 0 0 green-pumpkin head
+0 0 0 0 green rug
+0 0 0 0 green sandals
+0 0 0 0 Green Shell
+0 0 0 0 green-stripe shoes
+0 0 0 0 green-stripe socks
+0 0 0 0 green-stripe tank
+0 0 0 0 green table
+0 0 0 0 green tartan pants
+0 0 0 0 green tie-dye tee
+0 0 0 0 green tights
+0 0 0 0 green umbrella
+0 0 0 0 green wall
+0 0 0 0 green wall clock
+0 0 0 0 green wardrobe
+0 0 0 0 green warm-up pants
+0 0 0 0 green-zap helmet
+0 0 0 0 green-zap pants
+0 0 0 0 groovy wall
+0 0 0 0 gumdrop tee
+0 0 0 0 halo
+0 0 0 0 hamburger paper
+0 0 0 0 hammock
+0 0 0 0 happi tee
+0 0 0 0 harvest mirror
+0 0 0 0 harvest wall
+0 0 0 0 hawthorn bonsai
+0 0 0 0 heart bopper
+0 0 0 0 hearth
+0 0 0 0 heart-print tights
+0 0 0 0 heart tee
+0 0 0 0 hedge standee
+0 0 0 0 hero's boots
+0 0 0 0 hero's cap
+0 0 0 0 hero's clothes
+0 0 0 0 hero's pants
+0 0 0 0 HHA jacket
+0 0 0 0 HHA pennant
+0 0 0 0 HHA tee
+0 0 0 0 hibachi
+0 0 0 0 hieroglyph paper
+0 0 0 0 hi-fi stereo
+0 0 0 0 high-end stereo
+0 0 0 0 high-jump mat
+0 0 0 0 hiking boots
+0 0 0 0 hiking gaiters
+0 0 0 0 hinaningyo
+0 0 0 0 HMD
+0 0 0 0 hockey mask
+0 0 0 0 holly bonsai
+0 0 0 0 hologram machine
+0 0 0 0 home-computer rack
+0 0 0 0 homework set
+0 0 0 0 hopscotch floor
+0 0 0 0 hospital bed
+0 0 0 0 hospital screen
+0 0 0 0 hospital TV
+0 0 0 0 hot-dog hat
+0 0 0 0 hot-dog tank
+0 0 0 0 hot spring tee
+0 0 0 0 hourglass
+0 0 0 0 huge shades
+0 0 0 0 hula doll
+0 0 0 0 humidifier
+0 0 0 0 hunter's cap
+0 0 0 0 hurdle
+0 0 0 0 ichthyo skull
+0 0 0 0 ichthyo torso
+0 0 0 0 iguanodon skull
+0 0 0 0 iguanodon tail
+0 0 0 0 iguanodon torso
+0 0 0 0 I love You
+0 0 0 0 imperial pants
+0 0 0 0 imperial paper
+0 0 0 0 imperial shirt
+0 0 0 0 imperial tile
+0 0 0 0 imperial wall
+0 0 0 0 incense burner
+0 0 0 0 industrial wall
+0 0 0 0 ionian post
+0 0 0 0 ironing set
+0 0 0 0 ivy wall
+0 0 0 0 jack-in-the-box
+0 0 0 0 jade plaid shirt
+0 0 0 0 jade plaid tee
+0 0 0 0 jagged tank
+0 0 0 0 jagged tee
+0 0 0 0 jester's cap
+0 0 0 0 jester's mask
+0 0 0 0 jester's shoes
+0 0 0 0 jester tank
+0 0 0 0 jinbei shorts
+0 0 0 0 jinbei top
+0 0 0 0 jockey's helmet
+0 0 0 0 Jolly Roger
+0 0 0 0 jomon pottery
+0 0 0 0 judge's bell
+0 0 0 0 juicy-apple clock
+0 0 0 0 juicy-apple TV
+0 0 0 0 jukebox
+0 0 0 0 jungle-camo pants
+0 0 0 0 jungle-camo shorts
+0 0 0 0 jungle-camo tee
+0 0 0 0 jungle floor
+0 0 0 0 kaffiyeh
+0 0 0 0 kagamimochi
+0 0 0 0 kanji tee
+0 0 0 0 karaoke system
+0 0 0 0 kart
+0 0 0 0 kayak
+0 0 0 0 keg
+0 0 0 0 kettle
+0 0 0 0 kiddie bed
+0 0 0 0 kiddie bookcase
+0 0 0 0 kiddie bureau
+0 0 0 0 kiddie carpet
+0 0 0 0 kiddie chair
+0 0 0 0 kiddie clock
+0 0 0 0 kiddie couch
+0 0 0 0 kiddie dresser
+0 0 0 0 kiddie stereo
+0 0 0 0 kiddie table
+0 0 0 0 kiddie tee
+0 0 0 0 kiddie wall
+0 0 0 0 kiddie wall clock
+0 0 0 0 kiddie wardrobe
+0 0 0 0 kids' smock
+0 0 0 0 kilt
+0 0 0 0 kimono
+0 0 0 0 kimono sandals
+0 0 0 0 King K.K.
+0 0 0 0 king's beard
+0 0 0 0 King Tut mask
+0 0 0 0 kitchen corner
+0 0 0 0 kitchen flooring
+0 0 0 0 kitchen scale
+0 0 0 0 kitschy clock
+0 0 0 0 kitschy tile
+0 0 0 0 kitschy wall
+0 0 0 0 kiwi hat
+0 0 0 0 kiwi stool
+0 0 0 0 kiwi tank
+0 0 0 0 kiwi tee
+0 0 0 0 K.K. Adventure
+0 0 0 0 K.K. Aria
+0 0 0 0 K.K. Ballad
+0 0 0 0 K.K. Bazaar
+0 0 0 0 K.K. Calypso
+0 0 0 0 K.K. Casbah
+0 0 0 0 K.K. Chorale
+0 0 0 0 K.K. Condor
+0 0 0 0 K.K. Coutnry
+0 0 0 0 K.K. D&B
+0 0 0 0 K.K. Dirge
+0 0 0 0 K.K. Disco
+0 0 0 0 K.K. Etude
+0 0 0 0 K.K. Faire
+0 0 0 0 K.K. Flamenco
+0 0 0 0 K.K. Folk
+0 0 0 0 K.K. Fusion
+0 0 0 0 K.K. Groove
+0 0 0 0 K.K. House
+0 0 0 0 K.K. Lament
+0 0 0 0 K.K. Love Song
+0 0 0 0 K.K. Lullaby
+0 0 0 0 K.K. Mambo
+0 0 0 0 K.K. Marathon
+0 0 0 0 K.K. March
+0 0 0 0 K.K. Metal
+0 0 0 0 K.K. Milonga
+0 0 0 0 K.K. Parade
+0 0 0 0 K.K. Ragtime
+0 0 0 0 K.K. Rally
+0 0 0 0 K.K. Reggae
+0 0 0 0 K.K. Rock
+0 0 0 0 K.K. Salsa
+0 0 0 0 K.K. Ska
+0 0 0 0 K.K. Sonata
+0 0 0 0 K.K. Song
+0 0 0 0 K.K. Soul
+0 0 0 0 K.K. Swing
+0 0 0 0 K.K. Waltz
+0 0 0 0 knight
+0 0 0 0 knight's helmet
+0 0 0 0 kotatsu
+0 0 0 0 kung-fu pants
+0 0 0 0 kung-fu shirt
+0 0 0 0 lab chair
+0 0 0 0 lab floor
+0 0 0 0 lab wall
+0 0 0 0 lace-up boots
+0 0 0 0 lacy paper
+0 0 0 0 lacy parasol
+0 0 0 0 ladder shades
+0 0 0 0 ladybug carpet
+0 0 0 0 ladybug chair
+0 0 0 0 lady palm
+0 0 0 0 lantern
+0 0 0 0 laptop
+0 0 0 0 large alpine table
+0 0 0 0 large magazine rack
+0 0 0 0 lat pulldown machine
+0 0 0 0 lattice wall
+0 0 0 0 lava lamp
+0 0 0 0 lawn chair
+0 0 0 0 lazy-Susan table
+0 0 0 0 leaf
+0 0 0 0 leaf tee
+0 0 0 0 leaf umbrella
+0 0 0 0 LED display
+0 0 0 0 left platform
+0 0 0 0 lefty lucky cat
+0 0 0 0 leg warmers
+0 0 0 0 lemon-lime paper
+0 0 0 0 lemon pack
+0 0 0 0 lemon table
+0 0 0 0 lemon umbrella
+0 0 0 0 leopard paper
+0 0 0 0 leopard skirt
+0 0 0 0 leopard tank
+0 0 0 0 leopard umbrella
+0 0 0 0 letter set
+0 0 0 0 library wall
+0 0 0 0 light-blue cap
+0 0 0 0 li'l bro's hat
+0 0 0 0 lily-pad table
+0 0 0 0 lined paper
+0 0 0 0 lion-dance mask
+0 0 0 0 lite polka skirt
+0 0 0 0 lite polka tee
+0 0 0 0 lotus lamp
+0 0 0 0 lotus paper
+0 0 0 0 lotus tank dress
+0 0 0 0 lotus tee
+0 0 0 0 loud bloom tee
+0 0 0 0 lovely armoire
+0 0 0 0 lovely bed
+0 0 0 0 lovely carpet
+0 0 0 0 lovely chair
+0 0 0 0 lovely doll
+0 0 0 0 lovely dresser
+0 0 0 0 lovely end table
+0 0 0 0 lovely kitchen
+0 0 0 0 lovely lamp
+0 0 0 0 lovely love seat
+0 0 0 0 lovely paper
+0 0 0 0 lovely phone
+0 0 0 0 lovely table
+0 0 0 0 lovely vanity
+0 0 0 0 lovely wall
+0 0 0 0 lovely wall clcok
+0 0 0 0 low screen
+0 0 0 0 lucky black cat
+0 0 0 0 lucky cat
+0 0 0 0 lucky frog
+0 0 0 0 lucky gold cat
+0 0 0 0 Lucky K.K.
+0 0 0 0 lunar surface
+0 0 0 0 lunch tray
+0 0 0 0 mahjong table
+0 0 0 0 Majora's Mask
+0 0 0 0 Makar's Mask
+0 0 0 0 Mama bear
+0 0 0 0 Mama polar bear
+0 0 0 0 mammoth skull
+0 0 0 0 mammoth torso
+0 0 0 0 mandarin hat
+0 0 0 0 manhole cover
+0 0 0 0 manor wall
+0 0 0 0 maple bonsai
+0 0 0 0 maple-leaf paper
+0 0 0 0 marine pop wall
+0 0 0 0 marine song 2001
+0 0 0 0 marshmallow chair
+0 0 0 0 mary janes
+0 0 0 0 masquerade mask
+0 0 0 0 massage chair
+0 0 0 0 Master Sword
+0 0 0 0 matryoshka
+0 0 0 0 maze floor
+0 0 0 0 maze wall
+0 0 0 0 megacero skull
+0 0 0 0 megacero tail
+0 0 0 0 megacero torso
+0 0 0 0 melon hat
+0 0 0 0 melon shirt
+0 0 0 0 melon tee
+0 0 0 0 melon umbrella
+0 0 0 0 men's toilet
+0 0 0 0 Merlion
+0 0 0 0 mermaid carpet
+0 0 0 0 mermaid dresser
+0 0 0 0 mermaid statue
+0 0 0 0 mermaid table
+0 0 0 0 mermaid wall
+0 0 0 0 metal guitar
+0 0 0 0 Metroid
+0 0 0 0 metronome
+0 0 0 0 microscope
+0 0 0 0 Midna's Mask
+0 0 0 0 military pants
+0 0 0 0 military uniform
+0 0 0 0 milkmaid hat
+0 0 0 0 miniature car
+0 0 0 0 mini cactus
+0 0 0 0 mini dharma
+0 0 0 0 mini lamp
+0 0 0 0 minimalist bed
+0 0 0 0 minimalist chair
+0 0 0 0 minimalist clock
+0 0 0 0 minimalist dresser
+0 0 0 0 minimalist lamp
+0 0 0 0 minimalist minitable
+0 0 0 0 minimalist ottoman
+0 0 0 0 minimalist sofa
+0 0 0 0 minimalist table
+0 0 0 0 minimalist vanity
+0 0 0 0 minimalist wardrobe
+0 0 0 0 mint gingham shirt
+0 0 0 0 mint gingham skirt
+0 0 0 0 mint glasses
+0 0 0 0 mint shirt
+0 0 0 0 mint umbrella
+0 0 0 0 misty tee
+0 0 0 0 mixer
+0 0 0 0 moai statue
+0 0 0 0 mobile
+0 0 0 0 mochi pestle
+0 0 0 0 modern bed
+0 0 0 0 modern cabinet
+0 0 0 0 modern chair
+0 0 0 0 modern desk
+0 0 0 0 modern dresser
+0 0 0 0 modern end table
+0 0 0 0 modern lamp
+0 0 0 0 modern screen
+0 0 0 0 modern sofa
+0 0 0 0 modern table
+0 0 0 0 modern tile
+0 0 0 0 modern wall clock
+0 0 0 0 modern wardrobe
+0 0 0 0 modern wood bed
+0 0 0 0 modern wood chair
+0 0 0 0 modern wood chest
+0 0 0 0 modern wood clock
+0 0 0 0 modern wood closet
+0 0 0 0 modern wood flooring
+0 0 0 0 modern wood lamp
+0 0 0 0 modern wood shelf
+0 0 0 0 modern wood sofa
+0 0 0 0 modern wood stool
+0 0 0 0 modern wood table
+0 0 0 0 modern wood TV
+0 0 0 0 modern wood wall
+0 0 0 0 mohawk wig
+0 0 0 0 moldy dress
+0 0 0 0 monocle
+0 0 0 0 monster mask
+0 0 0 0 moon hairpin
+0 0 0 0 morning glory
+0 0 0 0 mortar wall
+0 0 0 0 mosaic paper
+0 0 0 0 mosaic tile
+0 0 0 0 moth orchid
+0 0 0 0 motocross helmet
+0 0 0 0 mountain bike
+0 0 0 0 mountain standee
+0 0 0 0 Mouth of Truth
+0 0 0 0 Mrs. Flamingo
+0 0 0 0 mugho bonsai
+0 0 0 0 mummy mask
+0 0 0 0 mummy pants
+0 0 0 0 mummy's casket
+0 0 0 0 mummy shirt
+0 0 0 0 museum chair
+0 0 0 0 museum floor
+0 0 0 0 museum model
+0 0 0 0 museum wall
+0 0 0 0 mush bed
+0 0 0 0 mushroom mural
+0 0 0 0 mushroom paper
+0 0 0 0 music stand
+0 0 0 0 MVP shirt
+0 0 0 0 MVP tee
+0 0 0 0 My Place
+0 0 0 0 natty shirt
+0 0 0 0 natty skirt
+0 0 0 0 natty tee
+0 0 0 0 navy formal pants
+0 0 0 0 navy formal skirt
+0 0 0 0 navy socks
+0 0 0 0 nebula shirt
+0 0 0 0 nebula tee
+0 0 0 0 neon sign
+0 0 0 0 neutral corner
+0 0 0 0 neutral floor
+0 0 0 0 neutral wall
+0 0 0 0 new year's cards
+0 0 0 0 night-sky paper
+0 0 0 0 night-sky tee
+0 0 0 0 nine-ball tee
+0 0 0 0 nine lamp
+0 0 0 0 ninja pants
+0 0 0 0 ninja sandals
+0 0 0 0 ninja shirt
+0 0 0 0 ninja sword
+0 0 0 0 No. 1 shirt
+0 0 0 0 No. 23 shirt
+0 0 0 0 No. 2 shirt
+0 0 0 0 No. 3 shirt
+0 0 0 0 No. 4 shirt
+0 0 0 0 No. 5 shirt
+0 0 0 0 noble shirt
+0 0 0 0 noodle tee
+0 0 0 0 nook paper
+0 0 0 0 notebook paper
+0 0 0 0 nurse's cap
+0 0 0 0 nurse's uniform
+0 0 0 0 nutcracker
+0 0 0 0 ocean paper
+0 0 0 0 octopus chair
+0 0 0 0 odd clock
+0 0 0 0 office chair
+0 0 0 0 office desk
+0 0 0 0 office locker
+0 0 0 0 ogre mask
+0 0 0 0 old board floor
+0 0 0 0 old brick wall
+0 0 0 0 old flooring
+0 0 0 0 old wallpaper
+0 0 0 0 one-ball tee
+0 0 0 0 optical tank
+0 0 0 0 opulent rug
+0 0 0 0 orange cone
+0 0 0 0 orange jacket
+0 0 0 0 orange knit hat
+0 0 0 0 orange lace-up dress
+0 0 0 0 orange pants
+0 0 0 0 orange retro dress
+0 0 0 0 orange sandals
+0 0 0 0 orange shoes
+0 0 0 0 ornate rug
+0 0 0 0 ornate wall
+0 0 0 0 outback hat
+0 0 0 0 outdoor bath
+0 0 0 0 oval shades
+0 0 0 0 overall dress
+0 0 0 0 owl clock
+0 0 0 0 pachira
+0 0 0 0 pachy skull
+0 0 0 0 pachy tail
+0 0 0 0 pachy torso
+0 0 0 0 pacifier
+0 0 0 0 painting set
+0 0 0 0 palace tile
+0 0 0 0 palace wall
+0 0 0 0 palatial tank dress
+0 0 0 0 palm-tree lamp
+0 0 0 0 Papa panda
+0 0 0 0 paperboy cap
+0 0 0 0 paper lantern
+0 0 0 0 paper parasol
+0 0 0 0 paper tiger
+0 0 0 0 paper wall lamp
+0 0 0 0 parasaur skull
+0 0 0 0 parasaur tail
+0 0 0 0 parasaur torso
+0 0 0 0 parquet floor
+0 0 0 0 party wall
+0 0 0 0 pastel-check skirt
+0 0 0 0 pastel-dot wall
+0 0 0 0 patched hat
+0 0 0 0 patched pants
+0 0 0 0 patched shirt
+0 0 0 0 patched shoes
+0 0 0 0 patchwork chair
+0 0 0 0 patchwork sofa
+0 0 0 0 patchwork table
+0 0 0 0 paulownia closet
+0 0 0 0 pawn
+0 0 0 0 paw-print wall
+0 0 0 0 paw tee
+0 0 0 0 paw umbrella
+0 0 0 0 Peach's parasol
+0 0 0 0 peacock chair
+0 0 0 0 pear dresser
+0 0 0 0 peking man
+0 0 0 0 pendulum clock
+0 0 0 0 pep-squad skirt
+0 0 0 0 pep-squad tee
+0 0 0 0 petal paper
+0 0 0 0 pharaoh's outfit
+0 0 0 0 phone box
+0 0 0 0 phonograph
+0 0 0 0 piano paper
+0 0 0 0 pickle jar
+0 0 0 0 picnic basket
+0 0 0 0 picnic skirt
+0 0 0 0 picnic table
+0 0 0 0 piggy bank
+0 0 0 0 Pikmin
+0 0 0 0 pilot's cap
+0 0 0 0 pilot shades
+0 0 0 0 pinafore
+0 0 0 0 pinball machine
+0 0 0 0 pineapple bed
+0 0 0 0 pine bonsai
+0 0 0 0 pine chair
+0 0 0 0 pine table
+0 0 0 0 pink argyle shirt
+0 0 0 0 pink glasses
+0 0 0 0 pink nightcap
+0 0 0 0 pink pj bottoms
+0 0 0 0 pink polka dress
+0 0 0 0 pink slip-ons
+0 0 0 0 pink sneakers
+0 0 0 0 pink tartan tee
+0 0 0 0 pink velvet stool
+0 0 0 0 pink wave tank
+0 0 0 0 pink-zap suit
+0 0 0 0 Pipe
+0 0 0 0 pipe organ
+0 0 0 0 pipe stool
+0 0 0 0 plaid paper
+0 0 0 0 plain black cap
+0 0 0 0 planked tatami
+0 0 0 0 plank flooring
+0 0 0 0 planter
+0 0 0 0 plaster wall
+0 0 0 0 plate armor
+0 0 0 0 playroom rug
+0 0 0 0 playroom wall
+0 0 0 0 plaza tile
+0 0 0 0 plaza wall
+0 0 0 0 pleather vest
+0 0 0 0 plesio neck
+0 0 0 0 plesio skull
+0 0 0 0 plesio torso
+0 0 0 0 plum bonsai
+0 0 0 0 plush carpet
+0 0 0 0 podium
+0 0 0 0 poinsettia
+0 0 0 0 police cap
+0 0 0 0 polka-dot bed
+0 0 0 0 polka-dot chair
+0 0 0 0 polka-dot clock
+0 0 0 0 polka-dot dress
+0 0 0 0 polka-dot dresser
+0 0 0 0 polka-dot low table
+0 0 0 0 polka-dot paper
+0 0 0 0 polka-dot rain boots
+0 0 0 0 polka-dot socks
+0 0 0 0 polka-dot sofa
+0 0 0 0 polka-dot table
+0 0 0 0 polka-dot TV
+0 0 0 0 poncho
+0 0 0 0 pondering
+0 0 0 0 ponderosa bonsai
+0 0 0 0 pop bloom tee
+0 0 0 0 popcorn machine
+0 0 0 0 portable toilet
+0 0 0 0 poster stand
+0 0 0 0 post-on patch
+0 0 0 0 potbelly stove
+0 0 0 0 pothos
+0 0 0 0 pot rack
+0 0 0 0 potted ivy
+0 0 0 0 potty
+0 0 0 0 powdered wig
+0 0 0 0 prim outfit
+0 0 0 0 prism tee
+0 0 0 0 ptera left wing
+0 0 0 0 ptera right wing
+0 0 0 0 ptera skull
+0 0 0 0 puffer-fish TV
+0 0 0 0 puffy hat
+0 0 0 0 pulse tank
+0 0 0 0 pumpkin head
+0 0 0 0 purple cap
+0 0 0 0 purple dot shoes
+0 0 0 0 purple glasses
+0 0 0 0 purple-imp hood
+0 0 0 0 purple knit hat
+0 0 0 0 purple-pumpkin head
+0 0 0 0 purple pumps
+0 0 0 0 purple star socks
+0 0 0 0 purple-stripe tights
+0 0 0 0 purple tie-dye shirt
+0 0 0 0 purple tie-dye tee
+0 0 0 0 pyramid
+0 0 0 0 quazoid
+0 0 0 0 quince bonsai
+0 0 0 0 raccoon figurine
+0 0 0 0 raccoon wall clock
+0 0 0 0 racer 6 tee
+0 0 0 0 racer tee
+0 0 0 0 racing pants
+0 0 0 0 racing shirt
+0 0 0 0 radiator
+0 0 0 0 raglad tee
+0 0 0 0 rainbow paper
+0 0 0 0 rainbow screen
+0 0 0 0 rainbow tights
+0 0 0 0 ramshackle floor
+0 0 0 0 ramshackle wall
+0 0 0 0 ranch armchair
+0 0 0 0 ranch bed
+0 0 0 0 ranch chair
+0 0 0 0 ranch dresser
+0 0 0 0 ranch flooring
+0 0 0 0 ranch hutch
+0 0 0 0 ranch table
+0 0 0 0 ranch tea table
+0 0 0 0 ranch wall
+0 0 0 0 ranch wall rack
+0 0 0 0 ranch wardrobe
+0 0 0 0 range
+0 0 0 0 raptor skull
+0 0 0 0 raptor torso
+0 0 0 0 reception table
+0 0 0 0 record player
+0 0 0 0 red aloha tee
+0 0 0 0 red argyle tee
+0 0 0 0 red-bar shirt
+0 0 0 0 red-bar tee
+0 0 0 0 red boat shoes
+0 0 0 0 red cap
+0 0 0 0 red-check tee
+0 0 0 0 red flannel shirt
+0 0 0 0 red glasses
+0 0 0 0 red-grid shirt
+0 0 0 0 red gym shorts
+0 0 0 0 red gym tee
+0 0 0 0 red headgear
+0 0 0 0 red hood
+0 0 0 0 red nose
+0 0 0 0 red Pikmin
+0 0 0 0 red plaid skirt
+0 0 0 0 red polka skirt
+0 0 0 0 red-pumpkin head
+0 0 0 0 red ribbon
+0 0 0 0 red shoes
+0 0 0 0 red-stripe pants
+0 0 0 0 red tartan pants
+0 0 0 0 red-tasseled lantern
+0 0 0 0 red-team cap
+0 0 0 0 red tie-dye tank
+0 0 0 0 red tie-dye tee
+0 0 0 0 red tights
+0 0 0 0 red tile
+0 0 0 0 red tile wall
+0 0 0 0 red umbrella
+0 0 0 0 red vase
+0 0 0 0 red wrestling shoes
+0 0 0 0 red-zap helmet
+0 0 0 0 red-zap pants
+0 0 0 0 reel-to-reel
+0 0 0 0 refrigerator
+0 0 0 0 regal armoire
+0 0 0 0 regal bed
+0 0 0 0 regal bookcase
+0 0 0 0 regal carpet
+0 0 0 0 regal chair
+0 0 0 0 regal clock
+0 0 0 0 regal dresser
+0 0 0 0 regal lamp
+0 0 0 0 regal sofa
+0 0 0 0 regal table
+0 0 0 0 regal vanity
+0 0 0 0 regal wall
+0 0 0 0 regal wall lamp
+0 0 0 0 reggae tank
+0 0 0 0 reggae tee
+0 0 0 0 relay shorts
+0 0 0 0 retro fridge
+0 0 0 0 retro helmet
+0 0 0 0 retro stereo
+0 0 0 0 retro TV
+0 0 0 0 reversi piece
+0 0 0 0 revolving spice rack
+0 0 0 0 ribboned straw hat
+0 0 0 0 ribbon paper
+0 0 0 0 ribbon umbrella
+0 0 0 0 rice-plant bed
+0 0 0 0 righty desk
+0 0 0 0 rimmed glasses
+0 0 0 0 ringside table
+0 0 0 0 robo-bed
+0 0 0 0 robo-chair
+0 0 0 0 robo-clock
+0 0 0 0 robo-closet
+0 0 0 0 robo-dresser
+0 0 0 0 robo-floor
+0 0 0 0 robo-lamp
+0 0 0 0 robo-sofa
+0 0 0 0 robo-stereo
+0 0 0 0 robo-table
+0 0 0 0 robo-TV
+0 0 0 0 robo-wall
+0 0 0 0 robo-wall clock
+0 0 0 0 rock guitar
+0 0 0 0 rocking chair
+0 0 0 0 rocking horse
+0 0 0 0 Rockin' K.K.
+0 0 0 0 rococo bed
+0 0 0 0 rococo candlestick
+0 0 0 0 rococo chair
+0 0 0 0 rococo clock
+0 0 0 0 rococo dresser
+0 0 0 0 rococo floor
+0 0 0 0 rococo lamp
+0 0 0 0 rococo shelf
+0 0 0 0 rococo sofa
+0 0 0 0 rococo table
+0 0 0 0 rococo vanity
+0 0 0 0 rococo wall
+0 0 0 0 rococo wardrobe
+0 0 0 0 Roman helmet
+0 0 0 0 rook
+0 0 0 0 Rooster of Barcelos
+0 0 0 0 rope partition
+0 0 0 0 rose-sky tank dress
+0 0 0 0 rose-sky tee
+0 0 0 0 rose tee
+0 0 0 0 rose wall
+0 0 0 0 round cactus
+0 0 0 0 round carpet
+0 0 0 0 round clock
+0 0 0 0 round glasses
+0 0 0 0 round mini cactus
+0 0 0 0 royal crown
+0 0 0 0 royal shorts
+0 0 0 0 rubber tree
+0 0 0 0 rugby shirt
+0 0 0 0 running pants
+0 0 0 0 sabertooth skull
+0 0 0 0 sabertooth torso
+0 0 0 0 saddle fence
+0 0 0 0 safety helmet
+0 0 0 0 sailor's hat
+0 0 0 0 sailor skirt
+0 0 0 0 sailor's shirt
+0 0 0 0 salad bar
+0 0 0 0 samgyetang
+0 0 0 0 samurai helmet
+0 0 0 0 samurai shirt
+0 0 0 0 samurai suit
+0 0 0 0 Samus mask
+0 0 0 0 sandbag
+0 0 0 0 sandwich tank
+0 0 0 0 satellite
+0 0 0 0 sawhorse
+0 0 0 0 scale
+0 0 0 0 scale-armor pants
+0 0 0 0 scale-armor suit
+0 0 0 0 scale-print tee
+0 0 0 0 school chair
+0 0 0 0 school hat
+0 0 0 0 school jacket
+0 0 0 0 school speaker
+0 0 0 0 science table
+0 0 0 0 sconce
+0 0 0 0 screen
+0 0 0 0 sea captain's coat
+0 0 0 0 sea view
+0 0 0 0 security tee
+0 0 0 0 server
+0 0 0 0 seven-ball tee
+0 0 0 0 seweing machine
+0 0 0 0 shamrock clock
+0 0 0 0 shanty mat
+0 0 0 0 shanty wall
+0 0 0 0 shark tooth
+0 0 0 0 sharp outfit
+0 0 0 0 shaved-ice lamp
+0 0 0 0 shaved-ice maker
+0 0 0 0 shearling coat
+0 0 0 0 ship compass
+0 0 0 0 shogi board
+0 0 0 0 shogi piece
+0 0 0 0 shower cap
+0 0 0 0 shower stall
+0 0 0 0 silk hat
+0 0 0 0 silver frames
+0 0 0 0 silver HHA plaque
+0 0 0 0 silver HHA trophy
+0 0 0 0 simple armchair
+0 0 0 0 simple kettle
+0 0 0 0 simple love seat
+0 0 0 0 sink
+0 0 0 0 sitar
+0 0 0 0 six-ball tee
+0 0 0 0 six lamp
+0 0 0 0 skeleton
+0 0 0 0 skeleton figurine
+0 0 0 0 skeleton hood
+0 0 0 0 ski mask
+0 0 0 0 skull shirt
+0 0 0 0 skull tee
+0 0 0 0 sky dress
+0 0 0 0 sky wall
+0 0 0 0 slate flooring
+0 0 0 0 sleek bed
+0 0 0 0 sleek carpet
+0 0 0 0 sleek chair
+0 0 0 0 sleek clock
+0 0 0 0 sleek closet
+0 0 0 0 sleek dresser
+0 0 0 0 sleek lamp
+0 0 0 0 sleek sideboard
+0 0 0 0 sleek side table
+0 0 0 0 sleek sofa
+0 0 0 0 sleek stereo
+0 0 0 0 sleek table
+0 0 0 0 sleek wall
+0 0 0 0 slide puzzle
+0 0 0 0 slippers
+0 0 0 0 small LED display
+0 0 0 0 small magazine rack
+0 0 0 0 small spotlight
+0 0 0 0 smb3 paper
+0 0 0 0 snail clock
+0 0 0 0 snake plant
+0 0 0 0 sno-cone tank
+0 0 0 0 sno-cone tee
+0 0 0 0 snorkel mask
+0 0 0 0 snow boots
+0 0 0 0 snow globe
+0 0 0 0 snow shirt
+0 0 0 0 snowy paper
+0 0 0 0 snowy sweater
+0 0 0 0 soccer shirt
+0 0 0 0 soccer shorts
+0 0 0 0 soccer socks
+0 0 0 0 soccer tee
+0 0 0 0 soda case
+0 0 0 0 soda fountain
+0 0 0 0 soft-serve lamp
+0 0 0 0 Soulful K.K.
+0 0 0 0 southwest paper
+0 0 0 0 space captain's seat
+0 0 0 0 space heater
+0 0 0 0 space helmet
+0 0 0 0 Spaceman Sam
+0 0 0 0 space pants
+0 0 0 0 space shuttle
+0 0 0 0 space station
+0 0 0 0 spade tee
+0 0 0 0 sparkly paper
+0 0 0 0 speed bag
+0 0 0 0 spherical radar
+0 0 0 0 Sphinx
+0 0 0 0 spider umbrella
+0 0 0 0 spiderweb tee
+0 0 0 0 spino skull
+0 0 0 0 spino tail
+0 0 0 0 spino torso
+0 0 0 0 splendid tee
+0 0 0 0 spooky bed
+0 0 0 0 spooky bookcase
+0 0 0 0 spooky carpet
+0 0 0 0 spooky chair
+0 0 0 0 spooky clock
+0 0 0 0 spooky dresser
+0 0 0 0 spooky lamp
+0 0 0 0 spooky sofa
+0 0 0 0 spooky table
+0 0 0 0 spooky vanity
+0 0 0 0 spooky wall
+0 0 0 0 spooky wall lamp
+0 0 0 0 spooky wardrobe
+0 0 0 0 sporty shades
+0 0 0 0 spring blossoms
+0 0 0 0 spring kimono
+0 0 0 0 spring shirt
+0 0 0 0 sprinkler
+0 0 0 0 spunky knit shirt
+0 0 0 0 S.S. Dolphin
+0 0 0 0 stache & glasses
+0 0 0 0 stained glass
+0 0 0 0 stained-glass lamp
+0 0 0 0 stair dresser
+0 0 0 0 stale cupcakes
+0 0 0 0 standing spotlight
+0 0 0 0 star cap
+0 0 0 0 star globe
+0 0 0 0 star hairpin
+0 0 0 0 star paper
+0 0 0 0 star shades
+0 0 0 0 star tights
+0 0 0 0 stately wall
+0 0 0 0 steampunk glasses
+0 0 0 0 steamroller
+0 0 0 0 steel-toed boots
+0 0 0 0 stego skull
+0 0 0 0 stego tail
+0 0 0 0 stego torso
+0 0 0 0 stepladder
+0 0 0 0 stone tile
+0 0 0 0 stool
+0 0 0 0 storage case
+0 0 0 0 storefront
+0 0 0 0 strawberry hat
+0 0 0 0 strawberry tank
+0 0 0 0 strawberry tee
+0 0 0 0 straw boater
+0 0 0 0 straw umbrella hat
+0 0 0 0 stripe bathroom sink
+0 0 0 0 stripe carpet
+0 0 0 0 stripe chair
+0 0 0 0 stripe clock
+0 0 0 0 stripe closet
+0 0 0 0 stripe dresser
+0 0 0 0 stripe knit cap
+0 0 0 0 stripe lamp
+0 0 0 0 stripe shoes
+0 0 0 0 stripe sofa
+0 0 0 0 stripe table
+0 0 0 0 stripe TV
+0 0 0 0 stripe wall
+0 0 0 0 student cap
+0 0 0 0 styraco skull
+0 0 0 0 styraco tail
+0 0 0 0 styraco torso
+0 0 0 0 subdued-print tee
+0 0 0 0 sundae tank
+0 0 0 0 sunflower
+0 0 0 0 sunflower tee
+0 0 0 0 sunny parasol
+0 0 0 0 sunrise lamp
+0 0 0 0 sunset tank
+0 0 0 0 superhero mask
+0 0 0 0 Super Mushroom
+0 0 0 0 Super Star
+0 0 0 0 super toilet
+0 0 0 0 Surfin' K.K.
+0 0 0 0 surveillance camera
+0 0 0 0 sweets bed
+0 0 0 0 swell shirt
+0 0 0 0 swell tee
+0 0 0 0 swimming cap
+0 0 0 0 sword
+0 0 0 0 table lamp
+0 0 0 0 tabletop game
+0 0 0 0 taiko drum
+0 0 0 0 tall cactus
+0 0 0 0 tall display case
+0 0 0 0 tan dogtooth pants
+0 0 0 0 tan dogtooth shirt
+0 0 0 0 tan dogtooth tee
+0 0 0 0 tangerine chair
+0 0 0 0 tan puffy vest
+0 0 0 0 tape deck
+0 0 0 0 tapestry
+0 0 0 0 tartan paper
+0 0 0 0 tartan rug
+0 0 0 0 tasseled loafers
+0 0 0 0 tatami bed
+0 0 0 0 tea case
+0 0 0 0 teacher's chair
+0 0 0 0 team NTDO tee
+0 0 0 0 tearoom wall
+0 0 0 0 tea set
+0 0 0 0 tea table
+0 0 0 0 tea tansu
+0 0 0 0 tea vase
+0 0 0 0 telescope
+0 0 0 0 Ten Billion Barrel
+0 0 0 0 tennis table
+0 0 0 0 terry-cloth do-rag
+0 0 0 0 the k funk
+0 0 0 0 theremin
+0 0 0 0 thermohygrometer
+0 0 0 0 thick glasses
+0 0 0 0 three lamp
+0 0 0 0 throne
+0 0 0 0 tiki torch
+0 0 0 0 tile paper
+0 0 0 0 time clock
+0 0 0 0 tin shirt
+0 0 0 0 tiny shades
+0 0 0 0 Toad hat
+0 0 0 0 Toad parasol
+0 0 0 0 toad shirt
+0 0 0 0 toga
+0 0 0 0 top hat
+0 0 0 0 To the Edge
+0 0 0 0 Tower of Pisa
+0 0 0 0 traffic cone
+0 0 0 0 trash bin
+0 0 0 0 tree standee
+0 0 0 0 T.rex skull
+0 0 0 0 T.rex tail
+0 0 0 0 T.rex torso
+0 0 0 0 triangle shades
+0 0 0 0 tribal mask
+0 0 0 0 tricera skull
+0 0 0 0 tricera tail
+0 0 0 0 tricera torso
+0 0 0 0 tricycle
+0 0 0 0 Triforce
+0 0 0 0 trilobite
+0 0 0 0 Triple Bananas
+0 0 0 0 Triple Red Shells
+0 0 0 0 tropical sandals
+0 0 0 0 tropical tank
+0 0 0 0 tropical tee
+0 0 0 0 tsunokakushi
+0 0 0 0 tube socks
+0 0 0 0 tuk-tuk
+0 0 0 0 tulip hat
+0 0 0 0 tumbleweed
+0 0 0 0 turban
+0 0 0 0 TV camera
+0 0 0 0 TV with VCR
+0 0 0 0 twinkle tank
+0 0 0 0 twinkle tee
+0 0 0 0 two-ball tee
+0 0 0 0 typewriter
+0 0 0 0 Ultra Hand
+0 0 0 0 Ultra Machine
+0 0 0 0 underwater floor
+0 0 0 0 unknown machine
+0 0 0 0 upright piano
+0 0 0 0 upright vacuum
+0 0 0 0 Varia Suit
+0 0 0 0 Varia Suit pants
+0 0 0 0 vegetarian shirt
+0 0 0 0 vegetarian tee
+0 0 0 0 ventilation fan
+0 0 0 0 vertigo shirt
+0 0 0 0 vertigo tee
+0 0 0 0 vibraphone
+0 0 0 0 viking helmet
+0 0 0 0 vine paper
+0 0 0 0 vintage camera
+0 0 0 0 vintage radio
+0 0 0 0 vintage telephone
+0 0 0 0 Virtual Boy
+0 0 0 0 volleyball net
+0 0 0 0 waffle shirt
+0 0 0 0 waitress dress
+0 0 0 0 wall fan
+0 0 0 0 wall flowerpot
+0 0 0 0 wall-mounted monitor
+0 0 0 0 wall-mounted speaker
+0 0 0 0 wandering
+0 0 0 0 warbonnet
+0 0 0 0 Wario hat
+0 0 0 0 washbasin
+0 0 0 0 washer/dryer
+0 0 0 0 water bird
+0 0 0 0 water cooler
+0 0 0 0 watering trough
+0 0 0 0 watermelon chair
+0 0 0 0 watermelon hat
+0 0 0 0 watermelon shirt
+0 0 0 0 watermelon table
+0 0 0 0 watermelon tee
+0 0 0 0 weathered paper
+0 0 0 0 weeping fig
+0 0 0 0 well
+0 0 0 0 werewolf hood
+0 0 0 0 western fence
+0 0 0 0 wheat bundle
+0 0 0 0 white ankle socks
+0 0 0 0 whiteboard
+0 0 0 0 white cap
+0 0 0 0 white katana
+0 0 0 0 white-lace socks
+0 0 0 0 white patent shoes
+0 0 0 0 white pot
+0 0 0 0 white socks
+0 0 0 0 white stockings
+0 0 0 0 white-team cap
+0 0 0 0 wide-screen TV
+0 0 0 0 Wii Balance Board
+0 0 0 0 wildflower floor
+0 0 0 0 witch's hat
+0 0 0 0 witch's robe
+0 0 0 0 wizard's cap
+0 0 0 0 wobbelina
+0 0 0 0 wooden clogs
+0 0 0 0 wood paneling
+0 0 0 0 work shirt
+0 0 0 0 wrap shirt
+0 0 0 0 wrestler pants
+0 0 0 0 writing chair
+0 0 0 0 yellow-bar shirt
+0 0 0 0 yellow buckled shoes
+0 0 0 0 yellow cap
+0 0 0 0 yellow certificate
+0 0 0 0 yellow glasses
+0 0 0 0 yellow Pikmin
+0 0 0 0 yellow-pumpkin head
+0 0 0 0 yellow rain boots
+0 0 0 0 yellow ribbon
+0 0 0 0 yellow sneakers
+0 0 0 0 yellow umbrella
+0 0 0 0 yodel dress
+0 0 0 0 Yoshi's Egg
+0 0 0 0 zap boots
+0 0 0 0 zebra tank
+0 0 0 0 zebra umbrella
+0 0 0 0 zipper shirt
