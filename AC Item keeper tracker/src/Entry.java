@@ -15,6 +15,7 @@ public class Entry implements Comparable<Entry>{
 	private byte series = 0;
 	private byte set = 0;
 	private byte theme = 0;
+	private boolean isOwned = false;
 	public Entry next;
 	public Entry prev;
 	private boolean isHead = false;
@@ -35,7 +36,7 @@ public class Entry implements Comparable<Entry>{
 		searchName = searchName.replace("`", "");
 		searchName = searchName.replace("&", "");
 		searchName = searchName.replace("-", "");
-
+		isOwned = true;
 		this.prev = prev;
 	}
 	
@@ -122,5 +123,11 @@ public class Entry implements Comparable<Entry>{
 	
 	public void setTheme(byte a){
 		theme = a;
+	}
+	public void setOwned(boolean a){
+		isOwned = a;
+	}
+	public boolean getOwned(){
+		return isOwned;
 	}
 }
