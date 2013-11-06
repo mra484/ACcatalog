@@ -1,14 +1,24 @@
+/**@author Mark Andrews
+ * 11/4/2013
+ * This class mostly handles the item information panels.  Two different layouts can be created
+ * depending on which constructor is used. 
+ * 
+ */
+
 import java.awt.BorderLayout;
 import java.awt.Choice;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
 import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.border.EtchedBorder;
 public class itemPane extends JPanel{
 	private static final long serialVersionUID = 1532607835222537991L;
 	
@@ -24,14 +34,33 @@ public class itemPane extends JPanel{
 	private JLabel typeLabel = new JLabel("Item Type");
 	private JComboBox<String> type = new JComboBox<String>();
 	
+	private JLabel furnitureLabel = new JLabel("Furniture");
+	
 	private JLabel seriesLabel = new JLabel("Furniture Series");
 	private JComboBox<String> series = new JComboBox<String>();
+	
 	private JLabel setLabel = new JLabel("Furniture Set");
 	private JComboBox<String> set = new JComboBox<String>();
+
 	private JLabel themeLabel = new JLabel("Furniture Theme");
 	private JComboBox<String> theme = new JComboBox<String>();
+
+	private JLabel clothesLabel = new JLabel("Clothes");
+
+	private JLabel clothesTypeLabel = new JLabel("Clothes Type");
+	private JComboBox<String> clothes = new JComboBox<String>();
+
+	private JLabel clothesStyleLabel = new JLabel("Clothes Style");
+	private JComboBox<String> clothesStyle = new JComboBox<String>();
+
+	private JButton searchButton = new JButton("Search");
+	private JTextField searchField = new JTextField();
+	private JLabel owned = new JLabel("Owned Items");
+	private JCheckBox ownedCheck = new JCheckBox();
+	
 	
 	private ItemUpdater updater = new ItemUpdater();
+	private ActionHandler actions = new ActionHandler();
 	private filer files = null;
 	
 	public static enum itemType {ADD, BROWSE};
@@ -77,21 +106,56 @@ public class itemPane extends JPanel{
 	
 	public itemPane(int a){
 		populateLists();
+//		searchField.setColumns(6);
+		searchButton.addActionListener(actions);
 		
-		setLayout(new FlowLayout(FlowLayout.LEADING));
-		add(typeLabel);
-		add(type);
-		add(seriesLabel);
-		add(series);
-		add(setLabel);
-		add(set);
-		add(themeLabel);
-		add(theme);
-//		setMaximumSize(new Dimension(500, 200));
+		clothes.setMaximumSize(new Dimension(120, 25));
+		clothesStyle.setMaximumSize(new Dimension(120, 25));
+		
+		layout.setAutoCreateGaps(true);
+		layout.setAutoCreateContainerGaps(true);
+		layout.setHorizontalGroup(
+			layout.createSequentialGroup()
+				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+					.addComponent(typeLabel).addComponent(type))
+//					.addComponent(searchField))
+				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+					.addComponent(furnitureLabel).addComponent(seriesLabel).addComponent(series)
+					.addComponent(setLabel).addComponent(set).addComponent(themeLabel).addComponent(theme))
+				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+					.addComponent(clothesLabel).addComponent(clothesTypeLabel)
+					.addComponent(clothes).addComponent(clothesStyleLabel).addComponent(clothesStyle))
+				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+					.addComponent(searchButton).addComponent(owned))
+				.addComponent(ownedCheck));
+		
+		layout.setVerticalGroup(
+			layout.createSequentialGroup()
+				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+					.addComponent(furnitureLabel)
+					.addComponent(clothesLabel)
+					.addComponent(searchButton))				
+				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+						.addComponent(typeLabel).addComponent(seriesLabel).addComponent(clothesTypeLabel))
+				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+						.addComponent(type).addComponent(series).addComponent(clothes))
+				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+//						.addComponent(searchField)
+					.addComponent(setLabel).addComponent(clothesStyleLabel))
+				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+					.addComponent(set).addComponent(clothesStyle))
+				.addComponent(themeLabel)
+				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+					.addComponent(theme).addComponent(owned).addComponent(ownedCheck)));
+					
+		centerPlate.setLayout(layout);
+		centerPlate.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.RAISED));
+		add(centerPlate);
+
 	}
 	
 	public void populateLists(){
-		//add types to choice
+				//add types to choice
 				type.addItem("Unknown");
 				type.addItem("Furniture");
 				type.addItem("Wallpaper");
@@ -242,6 +306,12 @@ public class itemPane extends JPanel{
 				set.setEnabled(false);
 				theme.setEnabled(false);
 			}
+		}
+	}
+	
+	public class ActionHandler implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			
 		}
 	}
 }

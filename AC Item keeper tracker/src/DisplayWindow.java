@@ -1,4 +1,4 @@
-/*@ Mark Andrews
+/**@author Mark Andrews
  * 10/27/2014
  * 
  * This class handles the gui placement and the action handlers for each of the components
@@ -28,7 +28,7 @@ public class DisplayWindow extends JFrame{
 		
 		add(tabs);
 		setVisible(true);
-		setSize(500,500);
+		setSize(480,600);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	

@@ -1,12 +1,14 @@
-/*@ Mark Andrews
+/**@author Mark Andrews
  * 10/27/2014
  * 
  * This class manages the search result frame, currently made up of an array of JLabels
  */
+
 import javax.swing.*;
 
 import java.awt.*;
 import java.util.ArrayList;
+
 public class DisplayField extends JPanel{
 	private ArrayList<JLabel> labelList = new ArrayList<JLabel>();
 	private Entry empty = new Entry("--------------------------", null);

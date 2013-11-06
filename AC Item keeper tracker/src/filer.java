@@ -1,24 +1,24 @@
-/*@ Mark Andrews
+/**@author Mark Andrews
  * 10/27/2014
  * 
  * This class manages the file system.  Search, add, remove, open, and save functions are carried out here.  
- * - itemList treeMap uses the searchName for a key
- * - userSearchList hashSet uses the searchName of the item
  */
 
 import java.io.*;
 import java.util.*;
 
 public class filer {
+	private int totalItems = 0;
 	private File input;
 	private File input2;
 	private Entry head;
 	private Entry last;
+	private int userSize = 0;
 	private Scanner fileReader;
 	private PrintStream fileWriter;
 	private TreeMap<String, Entry> itemList = new TreeMap<String, Entry>();
-	private TreeSet<Entry> userList = new TreeSet<Entry>();
-	private HashSet<String> userSearchList = new HashSet<String>();
+//	private TreeSet<Entry> userList = new TreeSet<Entry>();
+//	private HashSet<String> userSearchList = new HashSet<String>();
 
 	public filer(){
 
@@ -88,6 +88,7 @@ public class filer {
 			if( normalizeText(name).compareTo("") == 0)
 				continue;
 			itemList.put(normalizeText(name), new Entry(name, type, series, set, theme, null));
+			totalItems++;
 //			itemList.put(normalizeText(name), new Entry(name, null));
 		}
 	}
@@ -106,7 +107,6 @@ public class filer {
 			//take entry from main list if it exists
 			if(itemList.containsKey(normalizeText(name))){
 				current = itemList.get(normalizeText(name));
-				current.addPrev(prev);
 			}
 
 			//add to main list if it didn't exist
@@ -114,10 +114,13 @@ public class filer {
 				current = new Entry(name, prev);
 				itemList.put(current.searchName, current);
 			}
+			current.addPrev(prev);
+			current.setOwned(true);
+			userSize++;
 
 			//add to the userlist and update references
-			userList.add(current);
-			userSearchList.add(current.searchName);
+//			userList.add(current);
+//			userSearchList.add(current.searchName);
 			if( prev != null )
 				prev.addNext(current);
 			else{
@@ -144,8 +147,9 @@ public class filer {
 		input.renameTo(new File("masterIndex.txt"));
 
 		openFileWrite("userIndex.txt.temp");
-		for(Entry a: userList){
-			fileWriter.println(a.displayName);
+		for(Entry a: itemList.values()){
+			if(a.getOwned())
+				fileWriter.println(a.displayName);
 		}
 		fileWriter.close();
 		input2 = new File("userIndex.txt");
@@ -157,13 +161,18 @@ public class filer {
 		Entry result = null, currentEntry = null;
 		int state;
 		
+		//the resulting item from the searchList method can be the item itself, or the item before or after it
 		result = searchList(item);
-		if( result == item ){
-			field.updateList(item, 2);
-			return result;
-		}
+		
+		//if the result was the item, that means there were items before and after it so the list can be updated normally
+//		if( result == item ){
+//			field.updateList(item, 2);
+//			return result;
+//		}
 		state = item.compareTo(result);
 		
+		//the Entry returned will be used in the item information panel, determine if the item was in the list or not
+		//and return the result Entry(which has complete information, item was found), or the item Entry(which is mostly empty, item not found)
 		if( state == 0 ){
 			currentEntry = result;
 		} else {
@@ -171,6 +180,7 @@ public class filer {
 			state = ( state < 0 ? -1 : 1 );
 		}
 		
+		//If the search did return the item itself, and it still has
 		if( state == 0 && !result.getHead())
 			result = result.prev;
 		
@@ -184,15 +194,23 @@ public class filer {
 	public Entry searchList(Entry item){
 		Entry prev = null;
 		boolean breakNext = false;
+		boolean containsKey = itemList.containsKey(item.searchName);
+		Entry listItem = null;
+		if( containsKey )
+			listItem = itemList.get(item.searchName);
 
 		//return the node for the item if it exists
-		if( userSearchList.contains(item.searchName) )
-			return itemList.get(item.searchName);
+		if( containsKey )
+			if( listItem.getOwned())
+				return listItem;
 
 		
 		//if it does not exist, temporarily enter it into the list and find the node that precedes it
-		userList.add(item);
-		for(Entry a: userList){
+		if( !containsKey )
+			itemList.put(item.searchName, item);
+		for(Entry a: itemList.values()){
+			if(!a.getOwned())
+				continue;
 			if( breakNext ){
 				prev = a;
 				break;
@@ -205,7 +223,8 @@ public class filer {
 			}
 			prev = a;
 		}
-		userList.remove(item);
+		if( !containsKey )
+			itemList.remove(item.searchName);
 		return prev;
 
 	}
@@ -222,15 +241,19 @@ public class filer {
 	}
 
 	public boolean addWord(Entry word){
-
+		boolean containsKey = itemList.containsKey(word.searchName);
+		Entry listEntry = null;
+		if( containsKey )
+			listEntry = itemList.get(word.searchName);
+		
 		//do nothing if the word is already in the user list
-		if( userSearchList.contains(word.searchName) )
-			return false;
-
-		else if( itemList.containsKey(word.searchName) == true ){
-			linkWord(itemList.get(word.searchName));
+		if( containsKey ){
+			if( listEntry.getOwned() ){
+				return false;
+			}
+			linkWord(listEntry);
 			return true;
-		} else{
+		} else {
 
 			//add to user and master list if not in both
 			itemList.put(word.searchName, word);
@@ -243,9 +266,11 @@ public class filer {
 		boolean valueFound = false;
 		Entry next = null;
 
-		userSearchList.add(word.searchName);
-		userList.add(word);
-		if( userSearchList.size() == 1 ){
+//		userSearchList.add(word.searchName);
+		word.setOwned(true);
+		userSize++;
+//		userList.add(word);
+		if( userSize == 1 ){
 			last = word;
 			head = word;
 			word.setHead(true);
@@ -253,13 +278,14 @@ public class filer {
 			return;
 		}
 
-		for(Entry a: userList){
+		for(Entry a: itemList.values()){
 			if( valueFound ){
 				next = a;
 				break;
 			}
-			if( a.searchName.compareTo(word.searchName) == 0 ){
-				valueFound = true;
+			if( a.getOwned() )
+				if( a.searchName.compareTo(word.searchName) == 0 ){
+					valueFound = true;
 			}
 		}
 		if( valueFound && next == null ){
@@ -284,32 +310,36 @@ public class filer {
 	}
 
 	public boolean removeWord(Entry word){
+		Entry toRemove = null;
 		//if the item is not in the list ignore the action
-		if( !userSearchList.contains(word.searchName) || userSearchList.size() == 0)
+		if( !itemList.containsKey(new String(word.searchName)) || userSize == 0)
 			return false;
-		else{
+		else if ( itemList.get(word.searchName).getOwned() ){
 			//find entry containing the item and remove it
-			for(Entry a : userList){
-				if( a.searchName.compareTo(word.searchName) == 0){
-					if( userSearchList.size() == 1 ){
+			toRemove = itemList.get(word.searchName);
+					if( userSize == 1 ){
 
-					}else if( a == head ){
-						a.next.prev = null;
-						head = a.next;
-					} else if( a == last ){
-						a.prev.next = null;
-						last = a.prev;
+					}else if( toRemove == head ){
+						toRemove.next.prev = null;
+						head = toRemove.next;
+					} else if( toRemove == last ){
+						toRemove.prev.next = null;
+						last = toRemove.prev;
 					} else {
-						a.prev.next = a.next;
-						a.next.prev = a.prev;
+						toRemove.prev.next = toRemove.next;
+						toRemove.next.prev = toRemove.prev;
 					}
-					userList.remove(a);
-					userSearchList.remove(word.searchName);
-					return true;
-				}
-			}
+					itemList.remove(toRemove.searchName);
+					return true;			
 		}
 		return false;
+	}
+	
+	public TreeMap<String, Entry> getList(){
+		return itemList;
+	}
+	public int getTotalItems(){
+		return totalItems;
 	}
 
 }

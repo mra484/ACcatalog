@@ -1,3 +1,9 @@
+/** @author Mark Andrews
+ * 11/4/2013
+ * This class assembles the gui and handles the action listeners for the main
+ * search and add tab.
+ */
+
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -44,7 +50,7 @@ public class searchPanel extends JPanel{
 		
 		buttonPanel.add(add);
 		buttonPanel.add(remove);
-		buttonPanel.add(option);
+//		buttonPanel.add(option);
 		bottomPanel.add(buttonPanel);
 
 		listField.setBorder(BorderFactory.createEtchedBorder(1));
