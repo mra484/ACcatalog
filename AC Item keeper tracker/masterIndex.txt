@@ -1,12 +1,12 @@
-0 0 0 0 1-Up cap
-0 0 0 0 3D glasses
-0 0 0 0 academy paper
-0 0 0 0 acid-washed jacket
-0 0 0 0 acid-washed pants
-0 0 0 0 afro wig
-0 0 0 0 air condition
-0 0 0 0 airmail paper
-0 0 0 0 alarm clock
-0 0 0 0 Aloe
-0 0 0 0 Big Ben
-0 0 0 0 K.K. Aria
+0 0 0 0 0 0 "1-Up cap"
+0 0 0 0 0 0 "3D glasses"
+0 0 0 0 0 0 "academy paper"
+0 0 0 0 0 0 "acid-washed jacket"
+0 0 0 0 0 0 "acid-washed pants"
+0 0 0 0 0 0 "afro wig"
+0 0 0 0 0 0 "air condition"
+0 0 0 0 0 0 "airmail paper"
+0 0 0 0 0 0 "alarm clock"
+0 0 0 0 0 0 "Aloe"
+0 0 0 0 0 0 "Big Ben"
+0 0 0 0 0 0 "K.K. Aria"

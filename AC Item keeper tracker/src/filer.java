@@ -76,7 +76,7 @@ public class filer {
 	private void readReferenceList(){
 
 		String name;
-		byte type, series, set, theme;
+		byte type, series, set, theme, clothes, style;
 
 		//for now only the reference file will only contain proper names for display
 		while(fileReader.hasNext()){
@@ -84,13 +84,25 @@ public class filer {
 			series = fileReader.nextByte();
 			set = fileReader.nextByte();
 			theme = fileReader.nextByte();
-			name = fileReader.nextLine();
+			clothes = fileReader.nextByte();
+			style = fileReader.nextByte();
+			name = readName();
+//			name = fileReader.next();
 			if( normalizeText(name).compareTo("") == 0)
 				continue;
 			itemList.put(normalizeText(name), new Entry(name, type, series, set, theme, null));
 			totalItems++;
 //			itemList.put(normalizeText(name), new Entry(name, null));
 		}
+	}
+	
+	private String readName(){
+		String name;
+		name = fileReader.next();
+		while(name.charAt(name.length()-1) != '"'){
+			name = name +' ' + fileReader.next();
+		}
+		return name.substring(1, name.length()-1);
 	}
 	
 	private void readUserList(){

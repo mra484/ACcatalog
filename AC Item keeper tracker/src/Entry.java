@@ -15,6 +15,8 @@ public class Entry implements Comparable<Entry>{
 	private byte series = 0;
 	private byte set = 0;
 	private byte theme = 0;
+	private byte clothes = 0;
+	private byte style = 0;
 	private boolean isOwned = false;
 	public Entry next;
 	public Entry prev;
@@ -76,7 +78,7 @@ public class Entry implements Comparable<Entry>{
 	}
 	
 	public String toString(){
-		return String.format("%d %d %d %d %s", type, series, set, theme, displayName);
+		return String.format("%d %d %d %d %d %d \"%s\"", type, series, set, theme, clothes, style, displayName);
 	}
 	
 	public void setHead(boolean a){
