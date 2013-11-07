@@ -296,6 +296,8 @@ public class filer {
 		}
 
 		for(Entry a: itemList.values()){
+			if( !a.getOwned())
+				continue;
 			if( valueFound ){
 				next = a;
 				break;
@@ -337,10 +339,12 @@ public class filer {
 					if( userSize == 1 ){
 
 					}else if( toRemove == head ){
+						toRemove.next.setHead(true);
 						toRemove.next.prev = null;
 						head = toRemove.next;
 					} else if( toRemove == last ){
 						toRemove.prev.next = null;
+						toRemove.prev.setLast(true);
 						last = toRemove.prev;
 					} else {
 						toRemove.prev.next = toRemove.next;

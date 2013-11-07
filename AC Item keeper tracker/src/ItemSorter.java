@@ -42,7 +42,6 @@ public class ItemSorter extends JScrollPane{
 	}
 	
 	public void update(){
-
 		lister.setListData(getList(searchInfo.getType(), searchInfo.getSeries(), searchInfo.getSet(),
 				searchInfo.getTheme(), searchInfo.getClothes(), searchInfo.getStyle(), searchInfo.getOwned()));
 	}
@@ -50,6 +49,10 @@ public class ItemSorter extends JScrollPane{
 		
 		//updates the item information panel whenever an item is clicked on
 		public void valueChanged(ListSelectionEvent e) {
+			if(lister.isSelectionEmpty()){
+				itemInfo.update(new Entry("", null));
+				return;
+			}
 			itemInfo.update(listReader.getList().get(listReader.normalizeText(lister.getSelectedValue())));
 		}
 	}
