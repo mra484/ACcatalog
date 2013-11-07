@@ -208,6 +208,9 @@ public class filer {
 		//if it does not exist, temporarily enter it into the list and find the node that precedes it
 		if( !containsKey )
 			itemList.put(item.searchName, item);
+		else
+			listItem.setOwned(true);
+		
 		for(Entry a: itemList.values()){
 			if(!a.getOwned())
 				continue;
@@ -225,6 +228,8 @@ public class filer {
 		}
 		if( !containsKey )
 			itemList.remove(item.searchName);
+		else
+			listItem.setOwned(false);
 		return prev;
 
 	}
