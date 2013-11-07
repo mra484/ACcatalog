@@ -11,30 +11,40 @@ import javax.swing.event.ListSelectionListener;
 public class ItemSorter extends JScrollPane{
 	private filer listReader;
 	private itemPane itemInfo;
+	private itemPane searchInfo;
 	private static JList<String> lister = new JList<String>();
 	private ListSelectionHandler actions = new ListSelectionHandler();
 	
 	//JList is contained within the JScrollPane of ItemSorter.  Filer and itemPane references are needed for the browser functions
-	public ItemSorter(filer a, itemPane b){
+	public ItemSorter(filer a, itemPane b, itemPane c){
 		super(lister);
 		listReader = a;
-		itemInfo = b;
-		lister.setListData(getList(0,0,0,0,true));
+		searchInfo = b;
+		itemInfo = c;
+		lister.setListData(getList(searchInfo.getType(), searchInfo.getSeries(), searchInfo.getSet(),
+				searchInfo.getTheme(), searchInfo.getClothes(), searchInfo.getStyle(), searchInfo.getOwned()));
 		lister.addListSelectionListener(actions);
 	}
 	
 	//will use the arguments from the browser section to reduce the list down to items that satisfy those conditions
-	public String[] getList(int type, int series, int set, int theme, boolean owned){
+	public String[] getList(int type, int series, int set, int theme, int clothes, int clothesStyle, boolean owned){
 		String[] list = new String[listReader.getTotalItems()];
 		int i = 0;
 		for(Entry a: listReader.getList().values()){
-			
-			list[i] = a.displayName;
-			i++;
+			if( a.match(type, series, set, theme, clothes, clothesStyle, owned) ){
+				list[i] = a.displayName;
+				i++;
+			}
 		}
 			
 		return list;
 	
+	}
+	
+	public void update(){
+
+		lister.setListData(getList(searchInfo.getType(), searchInfo.getSeries(), searchInfo.getSet(),
+				searchInfo.getTheme(), searchInfo.getClothes(), searchInfo.getStyle(), searchInfo.getOwned()));
 	}
 	public class ListSelectionHandler implements ListSelectionListener{
 		

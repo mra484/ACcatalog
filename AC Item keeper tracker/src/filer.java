@@ -90,7 +90,7 @@ public class filer {
 //			name = fileReader.next();
 			if( normalizeText(name).compareTo("") == 0)
 				continue;
-			itemList.put(normalizeText(name), new Entry(name, type, series, set, theme, null));
+			itemList.put(normalizeText(name), new Entry(name, type, series, set, theme, clothes, style, null));
 			totalItems++;
 //			itemList.put(normalizeText(name), new Entry(name, null));
 		}

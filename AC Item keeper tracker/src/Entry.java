@@ -42,12 +42,14 @@ public class Entry implements Comparable<Entry>{
 		this.prev = prev;
 	}
 	
-	public Entry(String a, byte type, byte series, byte set, byte theme, Entry prev){
+	public Entry(String a, byte type, byte series, byte set, byte theme, byte clothes, byte style, Entry prev){
 		
 		this.type = type;
 		this.series = series;
 		this.set = set;
 		this.theme = theme;
+		this.clothes = clothes;
+		this.style = style;
 		//item name displayed by the program will be different than what is searched
 		displayName = a.trim();
 				
@@ -131,5 +133,23 @@ public class Entry implements Comparable<Entry>{
 	}
 	public boolean getOwned(){
 		return isOwned;
+	}
+	
+	public boolean match(int type, int series, int set, int theme, int clothes, int clothesStyle, boolean owned){
+		if( !((byte) type == this.type) && type > 0 )
+			return false;
+		if( !((byte) series == this.series) && series > 0 )
+			return false;
+		if( !((byte) set == this.set) && set > 0)
+			return false;
+		if( !((byte) theme == this.theme) && theme > 0)
+			return false;
+		if( !((byte) clothes == this.clothes) && clothes > 0)
+			return false;
+		if( !((byte) clothesStyle == this.style) && clothesStyle > 0)
+			return false;
+		if( owned && !isOwned )
+			return false;
+		return true;
 	}
 }

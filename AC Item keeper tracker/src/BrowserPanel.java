@@ -17,7 +17,8 @@ public class BrowserPanel extends JPanel{
 	private ItemSorter itemList;
 	
 	public BrowserPanel(filer listReader){
-		itemList = new ItemSorter(listReader, itemInfo);
+		itemList = new ItemSorter(listReader, searchInfo, itemInfo);
+		searchInfo.setSorter(itemList);
 		itemList.setBackground(Color.WHITE);
 		setLayout(new BorderLayout());
 		add(itemList, BorderLayout.CENTER);

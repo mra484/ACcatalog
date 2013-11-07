@@ -62,6 +62,7 @@ public class itemPane extends JPanel{
 	private ItemUpdater updater = new ItemUpdater();
 	private ActionHandler actions = new ActionHandler();
 	private filer files = null;
+	private ItemSorter sorter = null;
 	
 	public static enum itemType {ADD, BROWSE};
 	
@@ -110,7 +111,10 @@ public class itemPane extends JPanel{
 		searchButton.addActionListener(actions);
 		
 		clothes.setMaximumSize(new Dimension(120, 25));
+		clothes.addItemListener(updater);
+		
 		clothesStyle.setMaximumSize(new Dimension(120, 25));
+		clothesStyle.addItemListener(updater);
 		
 		layout.setAutoCreateGaps(true);
 		layout.setAutoCreateContainerGaps(true);
@@ -283,12 +287,41 @@ public class itemPane extends JPanel{
 		name.setText(search.displayName);
 	}
 	
+	public int getType(){
+		return  type.getSelectedIndex();
+	}
+	public int getSeries(){
+		return  series.getSelectedIndex();
+	}
+	public int getSet(){
+		return  set.getSelectedIndex();
+	}
+	public int getTheme(){
+		return  theme.getSelectedIndex();
+	}
+	public int getClothes(){
+		return 0;
+//		return clothes.getSelectedIndex();
+	}
+	public int getStyle(){
+		return 0;
+//		return  clothesStyle.getSelectedIndex();
+	}
+	
+	public boolean getOwned(){
+		return ownedCheck.isSelected();
+	}
 	public void setFiler(filer file){		
 		files = file;
 	}
 	
+	public void setSorter(ItemSorter a){
+		sorter = a;
+	}
+	
 	public class ItemUpdater implements ItemListener{
 		public void itemStateChanged(ItemEvent e){
+			
 			currentEntry.setType((byte)type.getSelectedIndex());
 			currentEntry.setSeries((byte)series.getSelectedIndex());
 			currentEntry.setSet((byte)set.getSelectedIndex());
@@ -297,21 +330,37 @@ public class itemPane extends JPanel{
 				files.saveFiles();
 			
 			//only allow furniture attributes to be changed if item is a piece of furniture
-			if(type.getSelectedIndex() < 4 && type.getSelectedIndex() > 0){
+			if( type.getSelectedIndex() == 0){
 				series.setEnabled(true);
 				set.setEnabled(true);
 				theme.setEnabled(true);
+				clothes.setEnabled(true);
+				clothesStyle.setEnabled(true);
+			}else if(type.getSelectedIndex() < 4 && type.getSelectedIndex() > 0){
+				series.setEnabled(true);
+				set.setEnabled(true);
+				theme.setEnabled(true);
+				clothes.setEnabled(false);
+				clothesStyle.setEnabled(false);
+			} else if( type.getSelectedIndex() < 10) {
+				series.setEnabled(false);
+				set.setEnabled(false);
+				theme.setEnabled(false);
+				clothes.setEnabled(true);
+				clothesStyle.setEnabled(true);
 			} else {
 				series.setEnabled(false);
 				set.setEnabled(false);
 				theme.setEnabled(false);
+				clothes.setEnabled(false);
+				clothesStyle.setEnabled(false);
 			}
 		}
 	}
 	
 	public class ActionHandler implements ActionListener{
 		public void actionPerformed(ActionEvent e){
-			
+			sorter.update();
 		}
 	}
 }

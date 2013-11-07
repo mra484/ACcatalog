@@ -8,5 +8,5 @@
 0 0 0 0 0 0 "airmail paper"
 0 0 0 0 0 0 "alarm clock"
 0 0 0 0 0 0 "Aloe"
-0 0 0 0 0 0 "Big Ben"
-0 0 0 0 0 0 "K.K. Aria"
+1 0 0 0 0 0 "Big Ben"
+12 0 0 0 0 0 "K.K. Aria"
