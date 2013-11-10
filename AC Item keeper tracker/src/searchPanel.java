@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -29,12 +30,12 @@ public class searchPanel extends JPanel{
 	private JButton remove = new JButton ("Remove");
 	private ActionClass action = new ActionClass();
 	private KeyClass key = new KeyClass();
-	private filer listReader = new filer();
+	private filer listReader = listReader = new filer();
 	private JPanel centerPanel = new JPanel();
 	private JPanel bottomPanel = new JPanel();
 	private JPanel buttonPanel = new JPanel();
 
-	public searchPanel(){
+	public searchPanel() {
 		this.setLayout(new BorderLayout());
 		itemInfo.setFiler(listReader);
 

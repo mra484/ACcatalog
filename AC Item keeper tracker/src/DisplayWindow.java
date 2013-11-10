@@ -15,6 +15,7 @@ public class DisplayWindow extends JFrame{
 
 	//must be odd and >= 3
 	public static final int listHeight = 13;
+	public static int language = 1;
 	
 	private searchPanel search = new searchPanel();
 	private BrowserPanel browse = new BrowserPanel(search.getFiler());

@@ -164,13 +164,7 @@ public class itemPane extends JPanel{
 				type.addItem("Furniture");
 				type.addItem("Wallpaper");
 				type.addItem("Carpet");
-				type.addItem("Shirts");
-				type.addItem("Pants / Skirts");
-				type.addItem("Dresses");
-				type.addItem("Hats");
-				type.addItem("Accessories");
-				type.addItem("Shoes and Socks");
-				type.addItem("Umbrellas");
+				type.addItem("Clothes");
 				type.addItem("Paper");
 				type.addItem("Songs");
 				type.addItem("Fossils");
@@ -273,6 +267,15 @@ public class itemPane extends JPanel{
 				theme.addItem("Western");
 				theme.addItemListener(updater);
 				theme.setMaximumSize(new Dimension(120, 25));
+				
+				clothes.addItem("All");
+				clothes.addItem("Shirts");
+				clothes.addItem("Pants / Skirts");
+				clothes.addItem("Dresses");
+				clothes.addItem("Hats");
+				clothes.addItem("Accessories");
+				clothes.addItem("Shoes and Socks");
+				clothes.addItem("Umbrellas");
 	}
 	
 	public void update(Entry search){

@@ -11,12 +11,23 @@ public class Entry implements Comparable<Entry>{
 	public String displayName;
 	public String sortName;
 	public String searchName;
+
+	public String displayNameEU;
+	public String displayNameUS;
+	public String displayNameFR;
+	public String displayNameIT;
+	public String displayNameDS;
+	public String displayNameES;
+	public String displayNameJP;
+	public String imageLocation;
+	
 	private byte type = 0;
 	private byte series = 0;
 	private byte set = 0;
 	private byte theme = 0;
 	private byte clothes = 0;
 	private byte style = 0;
+	private byte furniture = 0;
 	private boolean isOwned = false;
 	public Entry next;
 	public Entry prev;
@@ -27,8 +38,6 @@ public class Entry implements Comparable<Entry>{
 		
 		//item name displayed by the program will be different than what is searched
 		displayName = a.trim();
-		
-
 		
 		//item names will be forced lower case with spaces, periods and hyphens removed to cut down on the chance of duplicate items
 		sortName = displayName.toLowerCase();
@@ -42,7 +51,9 @@ public class Entry implements Comparable<Entry>{
 		this.prev = prev;
 	}
 	
-	public Entry(String a, byte type, byte series, byte set, byte theme, byte clothes, byte style, Entry prev){
+	public Entry(String EU, String US, String FR, String IT, String DS, String ES, String JP,
+			String File, byte type, byte series, byte set, byte theme, byte clothes, 
+			byte style,  Entry prev){
 		
 		this.type = type;
 		this.series = series;
@@ -50,17 +61,18 @@ public class Entry implements Comparable<Entry>{
 		this.theme = theme;
 		this.clothes = clothes;
 		this.style = style;
-		//item name displayed by the program will be different than what is searched
-		displayName = a.trim();
-				
-		//item names will be forced lower case with spaces, periods and hyphens removed to cut down on the chance of duplicate items
-		sortName = displayName.toLowerCase();
-		searchName = sortName.replace(".", "");
-		searchName = searchName.replace(" ", "");
-		searchName = searchName.replace("'", "");
-		searchName = searchName.replace("`", "");
-		searchName = searchName.replace("&", "");
-		searchName = searchName.replace("-", "");
+		this.furniture = furniture;
+		
+		displayNameEU = EU.trim();
+		displayNameUS = US.trim();
+		displayNameFR = FR.trim();
+		displayNameIT = IT.trim();
+		displayNameDS = DS.trim();
+		displayNameES = ES.trim();
+		displayNameJP = JP.trim();
+		imageLocation = File.trim();
+		
+		setLanguage();
 
 		this.prev = prev;
 	}
@@ -80,7 +92,9 @@ public class Entry implements Comparable<Entry>{
 	}
 	
 	public String toString(){
-		return String.format("%d %d %d %d %d %d \"%s\"", type, series, set, theme, clothes, style, displayName);
+		return String.format("%d %d %d %d %d %d %d \"%s\" \"%s\" \"%s\" \"%s\" \"%s\" \"%s\" \"%s\" \"%s\"",
+				type, series, set, theme, clothes, style, furniture, displayNameEU, displayNameUS, displayNameFR,
+				displayNameIT, displayNameDS, displayNameES, displayNameJP, imageLocation);
 	}
 	
 	public void setHead(boolean a){
@@ -152,4 +166,44 @@ public class Entry implements Comparable<Entry>{
 			return false;
 		return true;
 	}
+	
+	public void setLanguage(){
+
+		switch(DisplayWindow.language){
+		case 0:
+			displayName = displayNameEU;
+			break;
+		case 1:
+			displayName = displayNameUS;
+			break;
+		case 2:
+			displayName = displayNameFR;
+			break;
+		case 3:
+			displayName = displayNameIT;
+			break;
+		case 4:
+			displayName = displayNameDS;
+			break;
+		case 5:
+			displayName = displayNameES;
+			break;
+		case 6:
+			displayName = displayNameJP;
+			break;
+			default:
+				break;
+		}
+		//item names will be forced lower case with spaces, periods and hyphens removed 
+		//to cut down on the chance of duplicate items, name displayed will be different
+		//than what is searched and sorted
+		sortName = displayName.toLowerCase();
+		searchName = sortName.replace(".", "");
+		searchName = searchName.replace(" ", "");
+		searchName = searchName.replace("'", "");
+		searchName = searchName.replace("`", "");
+		searchName = searchName.replace("&", "");
+		searchName = searchName.replace("-", "");
+	}
+		
 }
