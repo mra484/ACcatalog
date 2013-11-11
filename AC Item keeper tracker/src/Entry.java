@@ -1,7 +1,7 @@
 /*@ Mark Andrews
  * 10/27/2014
  * 
- * Container class for item entries to be stored in treehash/sets
+ * Container class for item entries to be stored in a treeMap
  * 
  *  -displayName uses proper capitalization, spaces, and punctuation, used for outputting to the screen
  *  -sortName uses proper punctuation and spacing but is forced lowercase to be closer to alphabetization
@@ -53,7 +53,7 @@ public class Entry implements Comparable<Entry>{
 	
 	public Entry(String EU, String US, String FR, String IT, String DS, String ES, String JP,
 			String File, byte type, byte series, byte set, byte theme, byte clothes, 
-			byte style,  Entry prev){
+			byte style, byte furniture, Entry prev){
 		
 		this.type = type;
 		this.series = series;
@@ -142,6 +142,15 @@ public class Entry implements Comparable<Entry>{
 	public void setTheme(byte a){
 		theme = a;
 	}
+	public void setClothes(byte a){
+		clothes = a;
+	}
+	public void setStyle(byte a){
+		style = a;
+	}
+	public void setFurniture(byte a){
+		furniture = a;
+	}
 	public void setOwned(boolean a){
 		isOwned = a;
 	}
@@ -149,7 +158,7 @@ public class Entry implements Comparable<Entry>{
 		return isOwned;
 	}
 	
-	public boolean match(int type, int series, int set, int theme, int clothes, int clothesStyle, boolean owned){
+	public boolean match(int type, int series, int set, int theme, int clothes, int clothesStyle, int furniture, boolean owned){
 		if( !((byte) type == this.type) && type > 0 )
 			return false;
 		if( !((byte) series == this.series) && series > 0 )
@@ -161,6 +170,8 @@ public class Entry implements Comparable<Entry>{
 		if( !((byte) clothes == this.clothes) && clothes > 0)
 			return false;
 		if( !((byte) clothesStyle == this.style) && clothesStyle > 0)
+			return false;
+		if( !((byte) furniture == this.furniture) && furniture > 0)
 			return false;
 		if( owned && !isOwned )
 			return false;
@@ -194,16 +205,37 @@ public class Entry implements Comparable<Entry>{
 			default:
 				break;
 		}
+		
+			
 		//item names will be forced lower case with spaces, periods and hyphens removed 
 		//to cut down on the chance of duplicate items, name displayed will be different
 		//than what is searched and sorted
-		sortName = displayName.toLowerCase();
-		searchName = sortName.replace(".", "");
-		searchName = searchName.replace(" ", "");
-		searchName = searchName.replace("'", "");
-		searchName = searchName.replace("`", "");
-		searchName = searchName.replace("&", "");
-		searchName = searchName.replace("-", "");
+		sortName = displayName.toLowerCase().replace("\u00ba", "").replace("\u0093", "").replace("\u0084", "");
+		searchName = normalizeText(sortName);
+	}
+	public String normalizeText(String a){
+
+		a = a.toLowerCase();
+		
+		//Unicode characters
+		a = a.replace("\u00c2", "a").replace("\u00e0", "a").replace("\u00e2", "a").replace("\u00e3", "a").replace("\u00e3", "a").replace("\u00c1", "a").replace("\u00e1", "a");
+		a = a.replace("\u00c9", "e").replace("\u00e9", "e").replace("\u00e8", "e").replace("\u00ea", "e").replace("\u00eb", "e");
+		a = a.replace("\u00ed", "i").replace("\u00ee", "i").replace("\u00ef", "i").replace("\u00ec", "i");
+		a = a.replace("\u00f4", "o").replace("\u00f2", "o").replace("\u00f6", "o").replace("\u00d6", "o").replace("\u00d3", "o").replace("\u00f3", "o");
+		a = a.replace("\u00fb", "u").replace("\u00f9", "u").replace("\u00fc", "u").replace("\u00dc", "u").replace("\u00fa", "u");
+		a = a.replace("\u00f1", "n");
+		
+		a = a.replace("\u00df", "ss");
+		a = a.replace("\u00e7", "c");
+		a = a.replace("\u0153", "oe");
+		a = a.replace("\u00ba", "").replace("\u0093", "").replace("\u0084", "");
+		a = a.replace(".", "");
+		a = a.replace(" ", "");
+		a = a.replace("'", "");
+		a = a.replace("`", "");
+		a = a.replace("&", "");
+		return a.replace("-", "");
+		
 	}
 		
 }

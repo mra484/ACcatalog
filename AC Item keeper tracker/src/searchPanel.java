@@ -10,14 +10,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.io.IOException;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
-
 
 public class searchPanel extends JPanel{
 
@@ -30,14 +27,15 @@ public class searchPanel extends JPanel{
 	private JButton remove = new JButton ("Remove");
 	private ActionClass action = new ActionClass();
 	private KeyClass key = new KeyClass();
-	private filer listReader = listReader = new filer();
+	private filer listManager;
 	private JPanel centerPanel = new JPanel();
 	private JPanel bottomPanel = new JPanel();
 	private JPanel buttonPanel = new JPanel();
 
-	public searchPanel() {
+	public searchPanel(filer a) {
 		this.setLayout(new BorderLayout());
-		itemInfo.setFiler(listReader);
+		listManager = a;
+		itemInfo.setFiler(a);
 
 		bottomPanel.setLayout(new FlowLayout(FlowLayout.LEADING, 20, 10));
 		buttonPanel.setLayout(new FlowLayout());
@@ -48,10 +46,10 @@ public class searchPanel extends JPanel{
 
 		textEntry.addKeyListener(key);
 		bottomPanel.add(textEntry);
-		
+
 		buttonPanel.add(add);
 		buttonPanel.add(remove);
-//		buttonPanel.add(option);
+		//		buttonPanel.add(option);
 		bottomPanel.add(buttonPanel);
 
 		listField.setBorder(BorderFactory.createEtchedBorder(1));
@@ -63,9 +61,9 @@ public class searchPanel extends JPanel{
 		this.add(centerPanel, BorderLayout.CENTER);
 
 	}
-	
+
 	public filer getFiler(){
-		return listReader;
+		return listManager;
 	}
 
 
@@ -73,13 +71,14 @@ public class searchPanel extends JPanel{
 		public void keyPressed(KeyEvent e){
 			//perform "add word" function on enter, refresh search result and highlight text
 			if(e.getKeyCode() == KeyEvent.VK_ENTER){
-				listReader.addWord(new Entry(textEntry.getText(), null));
-				listReader.saveFiles();
-				listReader.searchList(new Entry(textEntry.getText(), null), listField);
-				
+				if (listManager.addWord(new Entry(textEntry.getText(), null)) ) {
+					listManager.saveFiles();
+					listManager.searchList(new Entry(textEntry.getText(), null), listField);
+				}
+
 				textEntry.setSelectionStart(0);
 				textEntry.setSelectionEnd(textEntry.getText().length());
-				
+
 			}
 		}
 
@@ -91,40 +90,46 @@ public class searchPanel extends JPanel{
 		@Override
 		public void keyReleased(KeyEvent e) {
 			//perform search as user types
+			if(listManager.getUserSize() == 0 )
+				return;
 			if(e.getKeyCode() != KeyEvent.VK_ENTER && textEntry.getText() != null){
-				currentEntry = listReader.searchList(new Entry(textEntry.getText(), null), listField);
+				currentEntry = listManager.searchList(new Entry(textEntry.getText(), null), listField);
 				itemInfo.update(currentEntry);
 			}
-			
+
 		}
 	}
 
 	private class ActionClass implements ActionListener{
 		public void actionPerformed(ActionEvent e){
 			Entry searchWord = null;
-			
+
 			if( textEntry.getText() == null)
 				return;
-			
+
 			searchWord = new Entry(textEntry.getText(), null);
-			
+
 
 			if( e.getSource() == option){
-				listReader.searchList(searchWord, listField);
+				listManager.searchList(searchWord, listField);
 			}
 
 			if( e.getSource() == add ){
-					listReader.addWord(searchWord);
-					listReader.saveFiles();
-					currentEntry = listReader.searchList(searchWord, listField);
-					itemInfo.update(currentEntry);
+				if( listManager.addWord(searchWord) ){
+					listManager.saveFiles();
+					currentEntry = listManager.searchList(searchWord, listField);
+			}
+				itemInfo.update(currentEntry);
 			}
 
 			if( e.getSource() == remove){
-					listReader.removeWord(searchWord);
-					listReader.saveFiles();
-					currentEntry = listReader.searchList(searchWord, listField);
-					itemInfo.update(currentEntry);
+
+				listManager.removeWord(searchWord);
+				listManager.saveFiles();
+				if(listManager.getUserSize() == 0 )
+					return;
+				currentEntry = listManager.searchList(searchWord, listField);
+				itemInfo.update(currentEntry);
 			}
 		}
 	}
