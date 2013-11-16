@@ -21,6 +21,7 @@ public class filer {
 	
 	public filer(DisplayWindow a){
 		fileManager = new FileHandler(this, a);
+		System.out.println(userSize);
 //		printUnicode();
 	}
 

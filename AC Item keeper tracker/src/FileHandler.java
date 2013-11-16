@@ -179,8 +179,11 @@ public class FileHandler {
 				current = new Entry(name, null);
 				if(listManager.getList().containsKey(current.searchName)){
 					current = listManager.getList().get(current.searchName);
-				} else
+				} else{
+					System.out.println(current.displayName);
 					continue;
+				}
+//				current.setStyle((byte)9);
 				current.addPrev(prev);
 				current.setOwned(true);
 				listManager.incUserSize();

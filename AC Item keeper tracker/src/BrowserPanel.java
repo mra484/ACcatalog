@@ -18,6 +18,7 @@ public class BrowserPanel extends JPanel{
 	
 	public BrowserPanel(filer listManager){
 		itemList = new ItemSorter(listManager, searchInfo, itemInfo);
+		itemInfo.setFiler(listManager);
 		searchInfo.setSorter(itemList);
 		itemList.setBackground(Color.WHITE);
 		setLayout(new BorderLayout());

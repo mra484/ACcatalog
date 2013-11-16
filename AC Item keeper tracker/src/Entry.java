@@ -40,13 +40,8 @@ public class Entry implements Comparable<Entry>{
 		displayName = a.trim();
 		
 		//item names will be forced lower case with spaces, periods and hyphens removed to cut down on the chance of duplicate items
-		sortName = displayName.toLowerCase();
-		searchName = sortName.replace(".", "");
-		searchName = searchName.replace(" ", "");
-		searchName = searchName.replace("'", "");
-		searchName = searchName.replace("`", "");
-		searchName = searchName.replace("&", "");
-		searchName = searchName.replace("-", "");
+		sortName = normalizeText(displayName);
+		searchName = sortName;
 		isOwned = true;
 		this.prev = prev;
 	}
@@ -125,6 +120,18 @@ public class Entry implements Comparable<Entry>{
 	
 	public byte getTheme(){
 		return theme;
+	}
+	
+	public byte getClothes(){
+		return clothes;
+	}
+	
+	public byte getStyle(){
+		return style;
+	}
+	
+	public byte getFurniture(){
+		return furniture;
 	}
 	
 	public void setType(byte a){

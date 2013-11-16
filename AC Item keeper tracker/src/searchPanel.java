@@ -92,7 +92,7 @@ public class searchPanel extends JPanel{
 			//perform search as user types
 			if(listManager.getUserSize() == 0 )
 				return;
-			if(e.getKeyCode() != KeyEvent.VK_ENTER && textEntry.getText() != null){
+			if(/*e.getKeyCode() != KeyEvent.VK_ENTER &&*/ textEntry.getText() != null){
 				currentEntry = listManager.searchList(new Entry(textEntry.getText(), null), listField);
 				itemInfo.update(currentEntry);
 			}

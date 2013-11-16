@@ -248,6 +248,7 @@ public class itemPane extends JPanel{
 				clothes.addItem("Accessories");
 				clothes.addItem("Shoes and Socks");
 				clothes.addItem("Umbrellas");
+				clothes.addActionListener(actions);
 				clothes.setMaximumSize(new Dimension(120, 25));
 
 				clothesStyle.addItem("Unknown");
@@ -261,6 +262,7 @@ public class itemPane extends JPanel{
 				clothesStyle.addItem("Basic");
 				clothesStyle.addItem("Sporty");
 				clothesStyle.addItem("Iconic");
+				clothesStyle.addActionListener(actions);
 				clothesStyle.setMaximumSize(new Dimension(120, 25));
 				
 				
@@ -355,6 +357,9 @@ public class itemPane extends JPanel{
 		set.setSelectedIndex(currentEntry.getSet());
 		theme.setSelectedIndex(currentEntry.getTheme());
 		name.setText(search.displayName);
+		clothes.setSelectedIndex(currentEntry.getClothes());
+		clothesStyle.setSelectedIndex(currentEntry.getStyle());
+		furniture.setSelectedIndex(currentEntry.getFurniture());
 		skipListener = false;
 	}
 	
