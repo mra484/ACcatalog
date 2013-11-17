@@ -19,7 +19,7 @@ import javax.swing.JTextField;
 public class searchPanel extends JPanel{
 
 	private DisplayField listField = new DisplayField();
-	private itemPane itemInfo = new itemPane();
+	private itemPane itemInfo = null;
 	private JTextField textEntry = new JTextField(15);
 	private Entry currentEntry = new Entry("", null);
 	private JButton option = new JButton("Options");
@@ -34,6 +34,7 @@ public class searchPanel extends JPanel{
 
 	public searchPanel(filer a) {
 		this.setLayout(new BorderLayout());
+		itemInfo = new itemPane();
 		listManager = a;
 		itemInfo.setFiler(a);
 
@@ -72,7 +73,10 @@ public class searchPanel extends JPanel{
 			//perform "add word" function on enter, refresh search result and highlight text
 			if(e.getKeyCode() == KeyEvent.VK_ENTER){
 				if (listManager.addWord(new Entry(textEntry.getText(), null)) ) {
-					listManager.saveFiles();
+					if(DisplayWindow.readOnly)
+						listManager.saveFiles(1);
+					else
+						listManager.saveFiles(3);
 					listManager.searchList(new Entry(textEntry.getText(), null), listField);
 				}
 
@@ -116,7 +120,10 @@ public class searchPanel extends JPanel{
 
 			if( e.getSource() == add ){
 				if( listManager.addWord(searchWord) ){
-					listManager.saveFiles();
+					if(DisplayWindow.readOnly)
+						listManager.saveFiles(1);
+					else
+						listManager.saveFiles(3);
 					currentEntry = listManager.searchList(searchWord, listField);
 			}
 				itemInfo.update(currentEntry);
@@ -125,7 +132,10 @@ public class searchPanel extends JPanel{
 			if( e.getSource() == remove){
 
 				listManager.removeWord(searchWord);
-				listManager.saveFiles();
+				if(DisplayWindow.readOnly)
+					listManager.saveFiles(1);
+				else
+					listManager.saveFiles(3);
 				if(listManager.getUserSize() == 0 )
 					return;
 				currentEntry = listManager.searchList(searchWord, listField);

@@ -12,14 +12,16 @@ import javax.swing.JPanel;
 
 
 public class BrowserPanel extends JPanel{
-	private itemPane itemInfo = new itemPane();
+	private itemPane itemInfo = null;
 	private itemPane searchInfo = new itemPane(1);
 	private ItemSorter itemList;
 	
-	public BrowserPanel(filer listManager){
+	public BrowserPanel(filer listManager, itemPane a){
+		itemInfo = a;
 		itemList = new ItemSorter(listManager, searchInfo, itemInfo);
 		itemInfo.setFiler(listManager);
 		searchInfo.setSorter(itemList);
+		searchInfo.setFiler(listManager);
 		itemList.setBackground(Color.WHITE);
 		setLayout(new BorderLayout());
 		add(itemList, BorderLayout.CENTER);

@@ -35,35 +35,71 @@ public class FileHandler {
 	
 	public FileHandler(filer a, DisplayWindow b) {
 
-		try {
 			listManager = a;
 			mainWindow = b;
+			
 			readSettings();
+			
 			openFileRead("masterIndex.txt");
 			readReferenceList();
-			unicodeReader.close();
+			
 			openFileRead("userIndex.txt");
 			readUserList();
-			unicodeReader.close();
 			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		saveFiles();
+//			saveFiles();
 	}
 	
 	private void readSettings(){
+		String read;
+		String[] readValues;
+		double x, y;
 		openPlainFileRead("settings.ini");
 		if(!fileReader.hasNext()){
 			fileReader.close();
 			return;
 		}
-		DisplayWindow.language = fileReader.nextInt();
-		DisplayWindow.readOnly = fileReader.nextBoolean();
+		try{
+		//read from settings file, if anything doesn't fit, ignore the rest of the file and continue
+		read = fileReader.nextLine();
+		readValues = read.split("=");
+		DisplayWindow.language = Integer.parseInt(readValues[1]);
+
+		read = fileReader.nextLine();
+		readValues = read.split("=");
+		DisplayWindow.readOnly = Boolean.parseBoolean(readValues[1]);
+
+		read = fileReader.nextLine();
+		readValues = read.split("=");
+		DisplayWindow.defaultOwned = Boolean.parseBoolean(readValues[1]);
+		
+		read = fileReader.nextLine();
+		readValues = read.split("=");
+		x = Double.parseDouble(readValues[1]);
+	
+		read = fileReader.nextLine();
+		readValues = read.split("=");
+		y = Double.parseDouble(readValues[1]);
+		
 		DisplayWindow.windowPos = new Point();
-		DisplayWindow.windowPos.setLocation(fileReader.nextDouble(), fileReader.nextDouble());
+		DisplayWindow.windowPos.setLocation(x,y);
+		} catch (Exception e){
+			System.out.println("Error reading from settings.ini");
+		}
+		
+		openFileRead("userIndex.txt");
+		try {
+			
+			//check the start of the userIndex for a language value
+			read = unicodeReader.readLine();
+			if( read.contains("@") ){
+				readValues = read.split(" ");
+				DisplayWindow.language = Integer.parseInt(readValues[1]);
+			}
+			unicodeReader.close();
+		} catch (IOException e) {
+			System.out.println("Problem reading from userIndex.txt in readSettings().");
+		}
+				
 		fileReader.close();
 		
 	}
@@ -75,8 +111,7 @@ public class FileHandler {
 			fis = new FileInputStream(fileName);
 			unicodeReader = new BufferedReader(new InputStreamReader(fis, "UTF-8"));
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Unable to open " + fileName + " for reading");
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -104,6 +139,7 @@ public class FileHandler {
 		}
 		catch (FileNotFoundException ex)
 		{
+			System.out.println("Unable to open " + " for writing");
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -115,8 +151,7 @@ public class FileHandler {
 		try {
 			fileWriter = new PrintStream(input);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Unable to open " + fileName + " for writing");
 		}
 		
 	}
@@ -127,12 +162,13 @@ public class FileHandler {
 		String a, b, c, d, e, f, g, h;
 		String[] splitArray, intArray;
 		byte type, series, set, theme, clothes, style, furniture;
-		
-		while(true){
-			try {
+
+		try {
+			while(true){
 				a = unicodeReader.readLine();
 				if(a == null)
 					break;
+
 				//split array into clusters containing attribute values, and names
 				//split the values array into individual values
 				splitArray = a.split("\"");
@@ -155,10 +191,10 @@ public class FileHandler {
 				newEntry = new Entry(a, b, c, d, e, f, g, h, type, series, set, theme, clothes, style, furniture, null);
 				listManager.getList().put(newEntry.searchName, newEntry);
 				listManager.incTotalItems();
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
 			}
+			unicodeReader.close();
+		} catch (IOException e1) {
+			System.out.println("Unable to read from masterIndex.txt in readReferenceList()");
 		}
 	}
 //	private byte readValue(String a){
@@ -169,13 +205,15 @@ public class FileHandler {
 		String name;
 		Entry prev = null;
 		Entry current = null;
-
 		
-			try {
-				while(true){
+		try {
+			while(true){
 				name = unicodeReader.readLine();
+
 				if( name == null )
 					break;
+
+				//check for the current item in the index, if it isn't listed, print it to the console and move to the next item
 				current = new Entry(name, null);
 				if(listManager.getList().containsKey(current.searchName)){
 					current = listManager.getList().get(current.searchName);
@@ -183,10 +221,16 @@ public class FileHandler {
 					System.out.println(current.displayName);
 					continue;
 				}
-//				current.setStyle((byte)9);
+				
+				//use with specific lists to edit item properties
+				//current.setStyle((byte)9);
+				
+				//set link for searches, owned for browsing, and inc user size for itemSorter
 				current.addPrev(prev);
 				current.setOwned(true);
 				listManager.incUserSize();
+				
+				//take separate action if this is the first item to be read
 				if( prev != null )
 					prev.addNext(current);
 				else{
@@ -194,20 +238,23 @@ public class FileHandler {
 					current.setHead(true);
 				}
 				prev = current;
-				
-				}
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+
 			}
+			unicodeReader.close();
+			
+		} catch (IOException e) {
+			System.out.println("Unable to read from userIndex.txt in readUserList()");
+		}
+	
 		listManager.setLast(current);
 		if( current != null)
 			current.setLast(true);
-		
 	}
 
 	//saves files after every operation
-	public void saveFiles(){
+	public void saveReference(){
+		
+		//masterIndex will save all information except whether it is owned or not
 		openFileWrite("masterIndex.txt.temp");
 		try {
 			for(Entry a: listManager.getList().values()){
@@ -218,16 +265,22 @@ public class FileHandler {
 			unicodeWriter.close();
 			fos.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				System.out.println("Unable to save to masterIndex.txt");
 			}
 		input2 = new File("masterIndex.txt");
 		input2.delete();
 		input = new File("masterIndex.txt.temp");
 		input.renameTo(new File("masterIndex.txt"));
+		
+	}
+	
+	public void saveUser(){
 
+		//userIndex will save the name of owned items only in the current language of the program
 		openFileWrite("userIndex.txt.temp");
 		try {
+			unicodeWriter.write(String.format("%s %d", "@", DisplayWindow.language));
+			unicodeWriter.newLine();
 			for(Entry a: listManager.getList().values()){
 				if(a.getOwned()){
 					unicodeWriter.write(a.displayName);
@@ -238,16 +291,21 @@ public class FileHandler {
 			unicodeWriter.close();
 			fos.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				System.out.println("Unable to save to userIndex.txt");
 			}
 		input2 = new File("userIndex.txt");
 		input2.delete();
 		input = new File("userIndex.txt.temp");
 		input.renameTo(new File("userIndex.txt"));
 		
+		
+	}
+	public void saveSettings(){
+		
+		//System settings saved are the language, read only, display owned items checkbox status, and the x y coordinates of the main window
 		openPlainFileWrite("settings.ini.temp");
-		fileWriter.printf("%d %s %d %d", DisplayWindow.language, DisplayWindow.readOnly, mainWindow.getX(), mainWindow.getY());
+		fileWriter.printf("language=%d\nreadOnly=%s\ndefaultOwned=%s\nmainWindow.X=%d\nmainWindow.Y=%d", DisplayWindow.language, DisplayWindow.readOnly,
+				DisplayWindow.defaultOwned, mainWindow.getX(), mainWindow.getY());
 		fileWriter.flush();
 		fileWriter.close();
 		input2 = new File("settings.ini");

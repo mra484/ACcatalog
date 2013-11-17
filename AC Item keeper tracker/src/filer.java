@@ -217,8 +217,26 @@ public class filer {
 		last = a;
 	}
 	
-	public void saveFiles(){
-		fileManager.saveFiles();
+	public void saveFiles(int a){
+		switch (a){
+		case 0:
+			fileManager.saveSettings();
+			break;
+		case 1:
+			fileManager.saveUser();
+			break;
+		case 2:
+			fileManager.saveReference();
+			break;
+		case 3:
+			fileManager.saveSettings();
+			fileManager.saveUser();
+			fileManager.saveReference();
+			break;
+		default:
+			break;
+				
+		}
 	}
 	public void incUserSize(){
 		userSize++;

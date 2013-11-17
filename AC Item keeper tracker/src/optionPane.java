@@ -26,11 +26,13 @@ public class optionPane extends JPanel{
 	private JLabel winSizeLabel = new JLabel("Compact window");
 	
 	private filer listManager = null;
+	private itemPane itemInfo = null;
 	private ItemHandler actions = new ItemHandler();
 	private ActionHandler action = new ActionHandler();
 	
-	public optionPane(filer a){
+	public optionPane(filer a, itemPane b){
 		listManager = a;
+		itemInfo = b;
 		setLayout(new FlowLayout(FlowLayout.LEADING));
 		contentPanel.setLayout(new GridLayout(3,2,10,10));
 		
@@ -72,7 +74,8 @@ public class optionPane extends JPanel{
 				DisplayWindow.readOnly = setRO.isSelected();
 			if(e.getSource() == winSize)
 				DisplayWindow.smallWindow = winSize.isSelected();
-			listManager.saveFiles();
+			itemInfo.updateComboBoxes();
+			listManager.saveFiles(0);
 				
 			
 		}
@@ -84,7 +87,7 @@ public class optionPane extends JPanel{
 
 			DisplayWindow.language = language.getSelectedIndex();
 			listManager.updateLanguage();
-			listManager.saveFiles();
+			listManager.saveFiles(3);
 		}
 	}
 }

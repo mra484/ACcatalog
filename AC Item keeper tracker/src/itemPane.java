@@ -58,13 +58,11 @@ public class itemPane extends JPanel{
 	private JComboBox<String> furniture = new JComboBox<String>();
 
 	private JButton searchButton = new JButton("Search");
-	private JTextField searchField = new JTextField();
 	
 	private JPanel ownedPanel = new JPanel();
 	private JLabel owned = new JLabel("Owned Items");
 	private JCheckBox ownedCheck = new JCheckBox();	
 	
-	private ItemUpdater updater = new ItemUpdater();
 	private ActionHandler actions = new ActionHandler();
 	private filer files = null;
 	private ItemSorter sorter = null;
@@ -90,17 +88,16 @@ public class itemPane extends JPanel{
 	public itemPane(int a){
 		isSearchPanel = true;
 		populateLists();
-//		searchField.setColumns(6);
 		searchButton.addActionListener(actions);
 		
 		clothes.setMaximumSize(new Dimension(120, 25));
-//		clothes.addItemListener(updater);
 		clothes.addActionListener(actions);
 		
 		clothesStyle.setMaximumSize(new Dimension(120, 25));
-//		clothesStyle.addItemListener(updater);
 		clothesStyle.addActionListener(actions);
 		
+		ownedCheck.addActionListener(actions);
+		ownedCheck.setSelected(DisplayWindow.defaultOwned);
 		ownedPanel.add(owned);
 		ownedPanel.add(ownedCheck);
 		
@@ -109,12 +106,15 @@ public class itemPane extends JPanel{
 		centerPlate.setLayout(layout);
 		centerPlate.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.RAISED));
 		add(centerPlate);
+		
+		searchButton.setVisible(false);
 
 	}
 	
 	public void populateLists(){
+		
 				//add types to choice
-				type.addItem("Unknown");
+				type.addItem("All");
 				type.addItem("Furniture");
 				type.addItem("Wallpaper");
 				type.addItem("Carpet");
@@ -123,11 +123,10 @@ public class itemPane extends JPanel{
 				type.addItem("Songs");
 				type.addItem("Wet Suits");
 				type.addItem("Streetpass");
-//				type.addItemListener(updater);
 				type.addActionListener(actions);
 				type.setMaximumSize(new Dimension(120, 25));
 				
-				furniture.addItem("Unknown");
+				furniture.addItem("None");
 				furniture.addItem("Gyroids");
 				furniture.addItem("Fossils");
 				furniture.addItem("Insects");
@@ -138,7 +137,6 @@ public class itemPane extends JPanel{
 				furniture.addItem("Villager Pictures");
 				furniture.addItem("Fossil Models");
 				furniture.addItem("Other");
-//				furniture.addItemListener(updater);
 				furniture.addActionListener(actions);
 				furniture.setMaximumSize(new Dimension(120, 25));
 						
@@ -181,7 +179,6 @@ public class itemPane extends JPanel{
 				series.addItem("Stripe");
 				series.addItem("Sweets");
 				series.addItem("trump");
-//				series.addItemListener(updater);
 				series.addActionListener(actions);
 				series.setMaximumSize(new Dimension(120, 25));
 				
@@ -219,7 +216,6 @@ public class itemPane extends JPanel{
 				set.addItem("Tulip");
 				set.addItem("Vase");
 				set.addItem("Watermelon");
-//				set.addItemListener(updater);
 				set.addActionListener(actions);
 				set.setMaximumSize(new Dimension(120, 25));
 				
@@ -236,7 +232,6 @@ public class itemPane extends JPanel{
 				theme.addItem("Spa");
 				theme.addItem("Space");
 				theme.addItem("Western");
-//				theme.addItemListener(updater);
 				theme.addActionListener(actions);
 				theme.setMaximumSize(new Dimension(120, 25));
 				
@@ -251,7 +246,7 @@ public class itemPane extends JPanel{
 				clothes.addActionListener(actions);
 				clothes.setMaximumSize(new Dimension(120, 25));
 
-				clothesStyle.addItem("Unknown");
+				clothesStyle.addItem("None");
 				clothesStyle.addItem("Flashy");
 				clothesStyle.addItem("Cute");
 				clothesStyle.addItem("Official");
@@ -263,9 +258,7 @@ public class itemPane extends JPanel{
 				clothesStyle.addItem("Sporty");
 				clothesStyle.addItem("Iconic");
 				clothesStyle.addActionListener(actions);
-				clothesStyle.setMaximumSize(new Dimension(120, 25));
-				
-				
+				clothesStyle.setMaximumSize(new Dimension(120, 25));				
 	}
 	
 	public GroupLayout createLayout(int a){
@@ -346,10 +339,12 @@ public class itemPane extends JPanel{
 		return layout;
 		
 	}
+	
+	//update main entry when itemFields are changed
 	public void update(Entry search){
 		if(search.searchName.length() == 0)
 			search = blankEntry;
-		
+
 		currentEntry = search;
 		skipListener = true;
 		type.setSelectedIndex(currentEntry.getType());
@@ -361,8 +356,9 @@ public class itemPane extends JPanel{
 		clothesStyle.setSelectedIndex(currentEntry.getStyle());
 		furniture.setSelectedIndex(currentEntry.getFurniture());
 		skipListener = false;
+		updateComboBoxes();
 	}
-	
+
 	public int getType(){
 		return  type.getSelectedIndex();
 	}
@@ -384,146 +380,240 @@ public class itemPane extends JPanel{
 	public int getFurniture(){
 		return furniture.getSelectedIndex();
 	}
-	
+
 	public boolean getOwned(){
 		return ownedCheck.isSelected();
 	}
 	public void setFiler(filer file){		
 		files = file;
 	}
-	
+
 	public void setSorter(ItemSorter a){
 		sorter = a;
 	}
+
+	public void updateComboBoxes(){
+		//disable listener while changes are being made to the JComboBoxes
+		skipListener = true;
+		
+		if( DisplayWindow.readOnly && !isSearchPanel){
+			type.setEnabled(false);
+			series.setEnabled(false);
+			set.setEnabled(false);
+			theme.setEnabled(false);
+			furniture.setEnabled(false);
+			clothes.setEnabled(false);
+			clothesStyle.setEnabled(false);
+
+			//case for when "all" is selected in type
+		}else if( type.getSelectedIndex() == 0){
+			series.setEnabled(true);
+			set.setEnabled(true);
+			theme.setEnabled(true);
+			furniture.setEnabled(true);
+			clothes.setEnabled(true);
+			clothesStyle.setEnabled(true);
+
+			//case for when furniture is selected in type
+		}else if(type.getSelectedIndex() == 1){
+			series.setEnabled(true);
+			set.setEnabled(true);
+			theme.setEnabled(true);
+			furniture.setEnabled(true);
+			clothes.setEnabled(false);
+			clothesStyle.setEnabled(false);
+			
+			//case for when wallpaper, carpet are selected as type
+		}else if(type.getSelectedIndex() == 2 || type.getSelectedIndex() == 3){
+			series.setEnabled(true);
+			set.setEnabled(true);
+			theme.setEnabled(true);
+			furniture.setEnabled(false);
+			clothes.setEnabled(false);
+			clothesStyle.setEnabled(false);			
+
+			//case for when clothes are selected as type
+		} else if( type.getSelectedIndex() == 4) {
+			series.setEnabled(false);
+			set.setEnabled(false);
+			theme.setEnabled(false);
+			furniture.setEnabled(false);
+			clothes.setEnabled(true);
+			clothesStyle.setEnabled(true);
+		} else {
+			series.setEnabled(false);
+			set.setEnabled(false);
+			theme.setEnabled(false);
+			furniture.setEnabled(false);
+			clothes.setEnabled(false);
+			clothesStyle.setEnabled(false);
+		}
+		
+		skipListener = false;
+
+	}
 	
-	public class ItemUpdater implements ItemListener{
-		public void itemStateChanged(ItemEvent e){
+	//method for handling search field behavior in browser pane
+	public void updateSearch(Object source){
+		JComboBox<?> changed;
+		
+		if( source instanceof JComboBox<?>)
+			changed = (JComboBox<?>) source;
+		else
+			return;
+		
+		//if the value was changed to 0, then nothing needs to be changed
+		if( changed.getSelectedIndex() == 0)
+			return;
+		
+		if( type == changed ){
+			int value = type.getSelectedIndex();
+			switch(value){
+			//furniture type
+			case 1:
+				clothes.setSelectedIndex(0);
+				clothesStyle.setSelectedIndex(0);
+				break;
+			//wallpaper/carpet
+			case 2:
+			case 3:
+				furniture.setSelectedIndex(0);
+				clothes.setSelectedIndex(0);
+				clothesStyle.setSelectedIndex(0);
+				break;
+			//clothes
+			case 4:
+				furniture.setSelectedIndex(0);
+				series.setSelectedIndex(0);
+				set.setSelectedIndex(0);
+				theme.setSelectedIndex(0);
+				break;
+			default:
+				furniture.setSelectedIndex(0);
+				series.setSelectedIndex(0);
+				set.setSelectedIndex(0);
+				theme.setSelectedIndex(0);
+				clothes.setSelectedIndex(0);
+				clothesStyle.setSelectedIndex(0);
+				break;
+			}			
+		}
+
+		else if( series == changed ){
 			
-			//updates item's attributes on change
-			currentEntry.setType((byte)type.getSelectedIndex());
-			currentEntry.setSeries((byte)series.getSelectedIndex());
-			currentEntry.setSet((byte)set.getSelectedIndex());
-			currentEntry.setTheme((byte)theme.getSelectedIndex());
-			currentEntry.setClothes((byte)clothes.getSelectedIndex());
-			currentEntry.setStyle((byte)clothesStyle.getSelectedIndex());
-			currentEntry.setFurniture((byte)furniture.getSelectedIndex());
+			//allow changing between all, furniture, carpet, wallpaper types when viewing sets, series, themes
+			if( type.getSelectedIndex() > 3 )
+				type.setSelectedIndex(0);
 			
-			if( files != null)
-				files.saveFiles();
-			
-			//only allow item attributes to be changed if that item should have that type of attribute
-			if( DisplayWindow.readOnly && !isSearchPanel){
-				type.setEnabled(false);
-				series.setEnabled(false);
-				set.setEnabled(false);
-				theme.setEnabled(false);
-				furniture.setEnabled(false);
-				clothes.setEnabled(false);
-				clothesStyle.setEnabled(false);
-				
-				//case for when "all" is selected in type
-			}else if( type.getSelectedIndex() == 0){
-				series.setEnabled(true);
-				set.setEnabled(true);
-				theme.setEnabled(true);
-				furniture.setEnabled(true);
-				clothes.setEnabled(true);
-				clothesStyle.setEnabled(true);
-				
-				//case for when furniture, wallpaper, carpet are selected in type
-			}else if(type.getSelectedIndex() < 4 && type.getSelectedIndex() > 0){
-				series.setEnabled(true);
-				set.setEnabled(true);
-				theme.setEnabled(true);
-				furniture.setEnabled(true);
-				clothes.setEnabled(false);
-				clothesStyle.setEnabled(false);
-				
-				//case for when clothes are selected as type
-			} else if( type.getSelectedIndex() == 4) {
-				series.setEnabled(false);
-				set.setEnabled(false);
-				theme.setEnabled(false);
-				furniture.setEnabled(false);
-				clothes.setEnabled(true);
-				clothesStyle.setEnabled(true);
-			} else {
-				series.setEnabled(false);
-				set.setEnabled(false);
-				theme.setEnabled(false);
-				furniture.setEnabled(false);
-				clothes.setEnabled(false);
-				clothesStyle.setEnabled(false);
+			//allow changing between all and other when viewing sets, series, themes
+			if( furniture.getSelectedIndex() != 0 || furniture.getSelectedIndex() != 10)
+				furniture.setSelectedIndex(0);
+			set.setSelectedIndex(0);
+			theme.setSelectedIndex(0);
+			clothes.setSelectedIndex(0);
+			clothesStyle.setSelectedIndex(0);
+		}
+		else if( set == changed ){
+			if( type.getSelectedIndex() > 3 )
+				type.setSelectedIndex(0);
+			if( furniture.getSelectedIndex() != 0 || furniture.getSelectedIndex() != 10)
+				furniture.setSelectedIndex(0);
+			series.setSelectedIndex(0);
+			theme.setSelectedIndex(0);
+			clothes.setSelectedIndex(0);
+			clothesStyle.setSelectedIndex(0);
+		}
+		else if( theme == changed ){
+			if( type.getSelectedIndex() > 3 )
+				type.setSelectedIndex(0);
+			if( furniture.getSelectedIndex() != 0 || furniture.getSelectedIndex() != 10)
+				furniture.setSelectedIndex(0);
+			set.setSelectedIndex(0);
+			series.setSelectedIndex(0);
+			clothes.setSelectedIndex(0);
+			clothesStyle.setSelectedIndex(0);
+		}
+		else if( clothes == changed ){
+			type.setSelectedIndex(4);
+			furniture.setSelectedIndex(0);
+			series.setSelectedIndex(0);
+			set.setSelectedIndex(0);
+			theme.setSelectedIndex(0);
+		}
+		else if( clothesStyle == changed ){
+			type.setSelectedIndex(4);
+			furniture.setSelectedIndex(0);
+			series.setSelectedIndex(0);
+			set.setSelectedIndex(0);
+			theme.setSelectedIndex(0);
+		}
+		else if( furniture == changed ){
+			switch(furniture.getSelectedIndex() ){
+			case 0:
+			case 10:
+				//allow changing between all and other if sets, themes or series are being viewed
+				if( type.getSelectedIndex() > 1)
+					type.setSelectedIndex(0);
+				clothes.setSelectedIndex(0);
+				clothesStyle.setSelectedIndex(0);
+				break;
+
+			default:
+
+				if( type.getSelectedIndex() > 1)
+					type.setSelectedIndex(0);
+				series.setSelectedIndex(0);
+				set.setSelectedIndex(0);
+				theme.setSelectedIndex(0);
+				clothes.setSelectedIndex(0);
+				clothesStyle.setSelectedIndex(0);
+				break;
 			}
+		}else {
+			System.out.println("browse error " + changed);
 		}
 	}
 	
 	public class ActionHandler implements ActionListener{
 		public void actionPerformed(ActionEvent e){
+			
+			//certain conditions such as program startup, field updates, the listener needs to be skipped
 			if(skipListener)
 				return;
-			if(e.getSource() == searchButton)	
-				sorter.update();
-			else {	
-				//updates item's attributes on change
-				currentEntry.setType((byte)type.getSelectedIndex());
-				currentEntry.setSeries((byte)series.getSelectedIndex());
-				currentEntry.setSet((byte)set.getSelectedIndex());
-				currentEntry.setTheme((byte)theme.getSelectedIndex());
-				currentEntry.setClothes((byte)clothes.getSelectedIndex());
-				currentEntry.setStyle((byte)clothesStyle.getSelectedIndex());
-				currentEntry.setFurniture((byte)furniture.getSelectedIndex());
-				
-				if( files != null)
-					files.saveFiles();
-				
-				//only allow item attributes to be changed if that item should have that type of attribute
-				if( DisplayWindow.readOnly && !isSearchPanel){
-					type.setEnabled(false);
-					series.setEnabled(false);
-					set.setEnabled(false);
-					theme.setEnabled(false);
-					furniture.setEnabled(false);
-					clothes.setEnabled(false);
-					clothesStyle.setEnabled(false);
-					
-					//case for when "all" is selected in type
-				}else if( type.getSelectedIndex() == 0){
-					series.setEnabled(true);
-					set.setEnabled(true);
-					theme.setEnabled(true);
-					furniture.setEnabled(true);
-					clothes.setEnabled(true);
-					clothesStyle.setEnabled(true);
-					
-					//case for when furniture, wallpaper, carpet are selected in type
-				}else if(type.getSelectedIndex() < 4 && type.getSelectedIndex() > 0){
-					series.setEnabled(true);
-					set.setEnabled(true);
-					theme.setEnabled(true);
-					furniture.setEnabled(true);
-					clothes.setEnabled(false);
-					clothesStyle.setEnabled(false);
-					
-					//case for when clothes are selected as type
-				} else if( type.getSelectedIndex() == 4) {
-					series.setEnabled(false);
-					set.setEnabled(false);
-					theme.setEnabled(false);
-					furniture.setEnabled(false);
-					clothes.setEnabled(true);
-					clothesStyle.setEnabled(true);
-				} else {
-					series.setEnabled(false);
-					set.setEnabled(false);
-					theme.setEnabled(false);
-					furniture.setEnabled(false);
-					clothes.setEnabled(false);
-					clothesStyle.setEnabled(false);
-				}
-			}
-				
 			
+			else {					
+				if( !isSearchPanel){
+					//updates item's attributes on change
+					currentEntry.setType((byte)type.getSelectedIndex());
+					currentEntry.setSeries((byte)series.getSelectedIndex());
+					currentEntry.setSet((byte)set.getSelectedIndex());
+					currentEntry.setTheme((byte)theme.getSelectedIndex());
+					currentEntry.setClothes((byte)clothes.getSelectedIndex());
+					currentEntry.setStyle((byte)clothesStyle.getSelectedIndex());
+					currentEntry.setFurniture((byte)furniture.getSelectedIndex());
+					updateComboBoxes();
+
+					if( files != null)
+						files.saveFiles(2);
+				}
+
+				if( isSearchPanel ){
+					//change main setting according to owned items checkbox
+					if( e.getSource() == ownedCheck){
+						DisplayWindow.defaultOwned = ownedCheck.isSelected();
+
+						if( files != null)
+							files.saveFiles(0);
+					}
+					else {
+						//disable listener until changes to combo boxes are complete
+						skipListener = true;
+						updateSearch(e.getSource());
+						skipListener = false;
+					}
+					sorter.update();
+				}
+			}			
 		}
 	}
 }

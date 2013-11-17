@@ -23,12 +23,14 @@ public class DisplayWindow extends JFrame{
 	public static boolean smallWindow = true;
 	public static Point windowPos = null;
 	public static boolean programStarted = false;
-	private filer listManager = new filer(this);
+	
 	private searchPanel search;
 	private BrowserPanel browse;
 	private optionPane option;
 	private JTabbedPane tabs = new JTabbedPane();
-	
+
+	private filer listManager = new filer(this);
+	private itemPane itemInfo = new itemPane();
 	
 	
 	public DisplayWindow(){
@@ -37,8 +39,8 @@ public class DisplayWindow extends JFrame{
 			setLocation(windowPos);
 		
 		search = new searchPanel(listManager);
-		browse = new BrowserPanel(listManager);
-		option = new optionPane(listManager);
+		browse = new BrowserPanel(listManager, itemInfo);
+		option = new optionPane(listManager, itemInfo);
 		
 		tabs.add("Add", search);
 		tabs.add("Browse", browse);
@@ -55,16 +57,5 @@ public class DisplayWindow extends JFrame{
 	public static void main(String [] args){
 		new DisplayWindow();
 	}
-	
-//	public void getWinLocation(){
-//		windowPos = getLocation();
-//	}
-//	public double getXPos(){
-//		return windowPos.getX();
-//	}
-//	
-//	public double getYPos(){
-//		return windowPos.getY();
-//	}
-	
+
 }
