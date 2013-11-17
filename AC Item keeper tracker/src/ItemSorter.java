@@ -5,12 +5,16 @@
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.List;
 import java.util.ArrayList;
+import java.util.TreeSet;
 
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.JList;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ListCellRenderer;
 import javax.swing.event.ListSelectionEvent;
@@ -20,40 +24,61 @@ public class ItemSorter extends JScrollPane {
 	private filer listReader;
 	private itemPane itemInfo;
 	private itemPane searchInfo;
+	private BrowserPanel browser;
 	private Entry blank = new Entry("", null);
-	private static JList<String> lister = new JList<String>();
+	private JList<String> lister;
 	private ListSelectionHandler actions = new ListSelectionHandler();
 	
 	//JList is contained within the JScrollPane of ItemSorter.  Filer and itemPane references are needed for the browser functions
-	public ItemSorter(filer a, itemPane b, itemPane c){
-		super(lister);
+	public ItemSorter(filer a, itemPane b, itemPane c, JList<String> d, BrowserPanel e){
+		super(d);
+		lister = d;
 		listReader = a;
 		searchInfo = b;
 		itemInfo = c;
+		browser = e;
 		listReader.setLister(this);
 		lister.setCellRenderer(new CellRenderer());
 		lister.setListData(getList(searchInfo.getType(), searchInfo.getSeries(), searchInfo.getSet(),
 				searchInfo.getTheme(), searchInfo.getClothes(), searchInfo.getStyle(), searchInfo.getFurniture(), searchInfo.getOwned()));
 		lister.addListSelectionListener(actions);
 	}
+	public ItemSorter(filer a, JList<String> d){
+		super(d);
+		lister = d;
+		listReader = a;
+		listReader.setLister(this);
+		lister.setListData(getList(0, 0, 0, 0, 0, 0, 0, false));
+	}
 	
 	//will use the arguments from the browser section to reduce the list down to items that satisfy those conditions
 	public String[] getList(int type, int series, int set, int theme, int clothes, int clothesStyle, int furniture, boolean owned){
 		ArrayList<String> list = new ArrayList<String>();
+		TreeSet<Entry> sortList = new TreeSet<Entry>();
 		int i = 0;
+		BrowserPanel.total = 0;
+		BrowserPanel.owned = 0;
 		for(Entry a: listReader.getList().values()){
 			if( a.match(type, series, set, theme, clothes, clothesStyle, furniture, owned) ){
-				list.add(a.displayName);
+				sortList.add(a);
 				i++;
 			}
+		}
+		for(Entry a: sortList){
+			list.add(a.displayName);
 		}
 		return list.toArray(new String[i]);
 	
 	}
 	
+	public String getEntry(){
+		return lister.getSelectedValue();
+	}
+	
 	public void update(){
 		lister.setListData(getList(searchInfo.getType(), searchInfo.getSeries(), searchInfo.getSet(),
 				searchInfo.getTheme(), searchInfo.getClothes(), searchInfo.getStyle(), searchInfo.getFurniture(), searchInfo.getOwned()));
+		browser.update();
 	}
 
 	public class ListSelectionHandler implements ListSelectionListener{
@@ -65,6 +90,7 @@ public class ItemSorter extends JScrollPane {
 				return;
 			}
 			itemInfo.update(listReader.getList().get(blank.normalizeText(lister.getSelectedValue())));
+			browser.update();
 		}
 	}
 	
@@ -83,6 +109,5 @@ public class ItemSorter extends JScrollPane {
 			}
 			return this;
 		}
-	}
-	
+	}	
 }

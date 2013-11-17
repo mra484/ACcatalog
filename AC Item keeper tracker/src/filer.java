@@ -15,6 +15,7 @@ public class filer {
 	private Entry last;
 	private int userSize = 0;
 	private TreeMap<String, Entry> itemList = new TreeMap<String, Entry>();
+	private Queue<String> notFoundList = new ArrayDeque<String>();
 	
 	private FileHandler fileManager = null;
 	private ItemSorter lister = null;
@@ -205,6 +206,9 @@ public class filer {
 	public TreeMap<String, Entry> getList(){
 		return itemList;
 	}
+	public Queue<String> getMissingList(){
+		return notFoundList;
+	}
 	public int getTotalItems(){
 		return totalItems;
 	}
@@ -224,9 +228,11 @@ public class filer {
 			break;
 		case 1:
 			fileManager.saveUser();
+			fileManager.saveSettings();
 			break;
 		case 2:
 			fileManager.saveReference();
+			fileManager.saveSettings();
 			break;
 		case 3:
 			fileManager.saveSettings();

@@ -66,6 +66,7 @@ public class optionPane extends JPanel{
 	
 	private class ItemHandler implements ItemListener{
 		public void itemStateChanged(ItemEvent e){
+			
 			//changes should only be made if the program has moved past initialization stages
 			if(!DisplayWindow.programStarted)
 				return;
@@ -82,6 +83,8 @@ public class optionPane extends JPanel{
 	}
 	private class ActionHandler implements ActionListener{
 		public void actionPerformed(ActionEvent e){
+			
+			//language can be changed when program is starting up, ignore actions from it
 			if(!DisplayWindow.programStarted)
 				return;
 

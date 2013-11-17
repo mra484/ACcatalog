@@ -20,9 +20,9 @@ public class searchPanel extends JPanel{
 
 	private DisplayField listField = new DisplayField();
 	private itemPane itemInfo = null;
+	private DisplayWindow mainWindow;
 	private JTextField textEntry = new JTextField(15);
 	private Entry currentEntry = new Entry("", null);
-	private JButton option = new JButton("Options");
 	private JButton add = new JButton ("Add");
 	private JButton remove = new JButton ("Remove");
 	private ActionClass action = new ActionClass();
@@ -32,8 +32,9 @@ public class searchPanel extends JPanel{
 	private JPanel bottomPanel = new JPanel();
 	private JPanel buttonPanel = new JPanel();
 
-	public searchPanel(filer a) {
+	public searchPanel(filer a, DisplayWindow mainWindow) {
 		this.setLayout(new BorderLayout());
+		this.mainWindow = mainWindow;
 		itemInfo = new itemPane();
 		listManager = a;
 		itemInfo.setFiler(a);
@@ -43,14 +44,12 @@ public class searchPanel extends JPanel{
 
 		add.addActionListener(action);
 		remove.addActionListener(action);
-		option.addActionListener(action);
 
 		textEntry.addKeyListener(key);
 		bottomPanel.add(textEntry);
 
 		buttonPanel.add(add);
 		buttonPanel.add(remove);
-		//		buttonPanel.add(option);
 		bottomPanel.add(buttonPanel);
 
 		listField.setBorder(BorderFactory.createEtchedBorder(1));
@@ -66,22 +65,39 @@ public class searchPanel extends JPanel{
 	public filer getFiler(){
 		return listManager;
 	}
+	
+	public void saveFiles(){
+		if(DisplayWindow.readOnly)
+			listManager.saveFiles(1);
+		else
+			listManager.saveFiles(3);
+
+	textEntry.setSelectionStart(0);
+	textEntry.setSelectionEnd(textEntry.getText().length());
+		
+	}
 
 
 	private class KeyClass implements KeyListener{
 		public void keyPressed(KeyEvent e){
+			String item = "";
 			//perform "add word" function on enter, refresh search result and highlight text
 			if(e.getKeyCode() == KeyEvent.VK_ENTER){
-				if (listManager.addWord(new Entry(textEntry.getText(), null)) ) {
-					if(DisplayWindow.readOnly)
-						listManager.saveFiles(1);
-					else
-						listManager.saveFiles(3);
-					listManager.searchList(new Entry(textEntry.getText(), null), listField);
-				}
+				if(textEntry.getText() != null)
+					item = textEntry.getText();
+				
+				//check for "washbasin" handle accordingly
+				if(DisplayWindow.language < 2 && (item.startsWith("w") || item.startsWith("W"))){
+					if(	item.toLowerCase().compareTo("washbasin") == 0){
+						new ItemCheckDialog(listManager, mainWindow, listField, itemInfo);
+						return;
+					}
 
-				textEntry.setSelectionStart(0);
-				textEntry.setSelectionEnd(textEntry.getText().length());
+				}
+				if (listManager.addWord(new Entry(item, null)) ) {
+					listManager.searchList(new Entry(item, null), listField);
+					saveFiles();
+				}
 
 			}
 		}
@@ -113,29 +129,27 @@ public class searchPanel extends JPanel{
 
 			searchWord = new Entry(textEntry.getText(), null);
 
-
-			if( e.getSource() == option){
-				listManager.searchList(searchWord, listField);
-			}
-
+			//same function as pressing return
 			if( e.getSource() == add ){
+				if(DisplayWindow.language < 2 && (searchWord.searchName.startsWith("w"))){
+					if(	searchWord.searchName.compareTo("washbasin") == 0){
+						new ItemCheckDialog(listManager, mainWindow, listField, itemInfo);
+						return;
+					}
+				}
+			
 				if( listManager.addWord(searchWord) ){
-					if(DisplayWindow.readOnly)
-						listManager.saveFiles(1);
-					else
-						listManager.saveFiles(3);
+					saveFiles();
 					currentEntry = listManager.searchList(searchWord, listField);
 			}
 				itemInfo.update(currentEntry);
 			}
 
+			//removes word from masterIndex if not readOnly, switches to notOwned if it is readOnly
 			if( e.getSource() == remove){
 
 				listManager.removeWord(searchWord);
-				if(DisplayWindow.readOnly)
-					listManager.saveFiles(1);
-				else
-					listManager.saveFiles(3);
+				saveFiles();
 				if(listManager.getUserSize() == 0 )
 					return;
 				currentEntry = listManager.searchList(searchWord, listField);

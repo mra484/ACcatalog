@@ -69,6 +69,7 @@ public class itemPane extends JPanel{
 	
 	public static enum itemType {ADD, BROWSE};
 	
+	//constructor used for creating the item information panel in the search and browser tabs
 	public itemPane(){
 		this.setLayout(new BorderLayout());
 		this.setBorder(BorderFactory.createEtchedBorder(1));
@@ -85,6 +86,7 @@ public class itemPane extends JPanel{
 		this.add(centerPlate, BorderLayout.CENTER);
 	}
 	
+	//constructer used for creating the search combo boxes in the browser panel
 	public itemPane(int a){
 		isSearchPanel = true;
 		populateLists();
@@ -407,6 +409,7 @@ public class itemPane extends JPanel{
 
 			//case for when "all" is selected in type
 		}else if( type.getSelectedIndex() == 0){
+			type.setEnabled(true);
 			series.setEnabled(true);
 			set.setEnabled(true);
 			theme.setEnabled(true);
@@ -416,6 +419,7 @@ public class itemPane extends JPanel{
 
 			//case for when furniture is selected in type
 		}else if(type.getSelectedIndex() == 1){
+			type.setEnabled(true);
 			series.setEnabled(true);
 			set.setEnabled(true);
 			theme.setEnabled(true);
@@ -425,6 +429,7 @@ public class itemPane extends JPanel{
 			
 			//case for when wallpaper, carpet are selected as type
 		}else if(type.getSelectedIndex() == 2 || type.getSelectedIndex() == 3){
+			type.setEnabled(true);
 			series.setEnabled(true);
 			set.setEnabled(true);
 			theme.setEnabled(true);
@@ -434,6 +439,7 @@ public class itemPane extends JPanel{
 
 			//case for when clothes are selected as type
 		} else if( type.getSelectedIndex() == 4) {
+			type.setEnabled(true);
 			series.setEnabled(false);
 			set.setEnabled(false);
 			theme.setEnabled(false);

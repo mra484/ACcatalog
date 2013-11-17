@@ -33,6 +33,7 @@ public class Entry implements Comparable<Entry>{
 	public Entry prev;
 	private boolean isHead = false;
 	private boolean isLast = false;
+	public boolean changed = false;
 
 	public Entry(String a, Entry prev){
 		
@@ -165,6 +166,7 @@ public class Entry implements Comparable<Entry>{
 		return isOwned;
 	}
 	
+	//determines if an item is a match for the current search properies in the browser tab
 	public boolean match(int type, int series, int set, int theme, int clothes, int clothesStyle, int furniture, boolean owned){
 		if( !((byte) type == this.type) && type > 0 )
 			return false;
@@ -180,8 +182,16 @@ public class Entry implements Comparable<Entry>{
 			return false;
 		if( !((byte) furniture == this.furniture) && furniture > 0)
 			return false;
+		
+		//an item that reaches here will be in the effective list, increment total
+		BrowserPanel.total++;
 		if( owned && !isOwned )
 			return false;
+		
+		//if it is owned increment owned
+		if( isOwned )
+			BrowserPanel.owned++;
+		
 		return true;
 	}
 	
@@ -241,6 +251,8 @@ public class Entry implements Comparable<Entry>{
 		a = a.replace("'", "");
 		a = a.replace("`", "");
 		a = a.replace("&", "");
+		a = a.replace("(", "");
+		a = a.replace(")", "");
 		return a.replace("-", "");
 		
 	}

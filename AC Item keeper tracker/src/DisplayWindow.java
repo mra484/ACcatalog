@@ -38,7 +38,7 @@ public class DisplayWindow extends JFrame{
 		if( windowPos != null)
 			setLocation(windowPos);
 		
-		search = new searchPanel(listManager);
+		search = new searchPanel(listManager, this);
 		browse = new BrowserPanel(listManager, itemInfo);
 		option = new optionPane(listManager, itemInfo);
 		
@@ -52,6 +52,11 @@ public class DisplayWindow extends JFrame{
 		setSize(480,600);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		programStarted = true;
+		
+		//reconcile items not found in the list if there are any
+		if(listManager.getMissingList().size() > 0)
+			if( listManager.getMissingList().size() != 1 || !listManager.getMissingList().peek().contains("@"))
+				new ItemCheckDialog(listManager, listManager.getMissingList(), this);
 	}
 	
 	public static void main(String [] args){

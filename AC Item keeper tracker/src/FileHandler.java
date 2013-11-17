@@ -4,6 +4,8 @@
  * UTF-8 character set, settings.ini uses ANSI
  */
 
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -18,8 +20,13 @@ import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
-public class FileHandler {
+
+public class FileHandler{
 
 	private FileInputStream fis;
 	private BufferedReader unicodeReader;
@@ -32,6 +39,7 @@ public class FileHandler {
 	
 	private filer listManager = null;
 	private DisplayWindow mainWindow = null;
+	private Entry selected = null;
 	
 	public FileHandler(filer a, DisplayWindow b) {
 
@@ -218,10 +226,11 @@ public class FileHandler {
 				if(listManager.getList().containsKey(current.searchName)){
 					current = listManager.getList().get(current.searchName);
 				} else{
+					listManager.getMissingList().add(current.displayName);
 					System.out.println(current.displayName);
 					continue;
 				}
-				
+
 				//use with specific lists to edit item properties
 				//current.setStyle((byte)9);
 				
@@ -250,8 +259,7 @@ public class FileHandler {
 		if( current != null)
 			current.setLast(true);
 	}
-
-	//saves files after every operation
+	
 	public void saveReference(){
 		
 		//masterIndex will save all information except whether it is owned or not
