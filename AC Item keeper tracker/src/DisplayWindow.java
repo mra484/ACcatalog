@@ -34,7 +34,7 @@ public class DisplayWindow extends JFrame{
 	
 	
 	public DisplayWindow(){
-		super("Animal Crossing Item Catalogger");
+		super("Animal Crossing Item Cataloger");
 		if( windowPos != null)
 			setLocation(windowPos);
 		

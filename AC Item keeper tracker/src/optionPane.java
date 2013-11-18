@@ -59,8 +59,8 @@ public class optionPane extends JPanel{
 		contentPanel.add(language);
 		contentPanel.add(setROLabel);
 		contentPanel.add(setRO);
-		contentPanel.add(winSizeLabel);
-		contentPanel.add(winSize);
+//		contentPanel.add(winSizeLabel);
+//		contentPanel.add(winSize);
 		add(contentPanel);
 	}
 	

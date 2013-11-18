@@ -106,7 +106,7 @@ public class itemPane extends JPanel{
 		layout = createLayout(2);	
 
 		centerPlate.setLayout(layout);
-		centerPlate.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.RAISED));
+//		centerPlate.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.RAISED));
 		add(centerPlate);
 		
 		searchButton.setVisible(false);
@@ -287,14 +287,14 @@ public class itemPane extends JPanel{
 							.addComponent(typeLabel).addComponent(seriesLabel))
 							.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 									.addComponent(type).addComponent(series))
-									.addGap(25)
+//									.addGap(25)
 							.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 									.addComponent(furnitureLabel).addComponent(setLabel))
 							.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 									.addComponent(furniture).addComponent(set))
-									.addGap(25)
+//									.addGap(25)
 									.addComponent(themeLabel).addComponent(theme)
-									.addGap(25)
+//									.addGap(25)
 							.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 									.addComponent(clothesLabel).addComponent(clothesStyleLabel))
 							.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
