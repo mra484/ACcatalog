@@ -124,7 +124,6 @@ public class searchPanel extends JPanel{
 	}
 	
 	public void saveFiles(){
-		if(listManager.getList().size() != 3609)
 		if(DisplayWindow.readOnly)
 			listManager.saveFiles(1);
 		else
@@ -161,6 +160,7 @@ public class searchPanel extends JPanel{
 				} else{
 					text2.setForeground(Color.RED);
 					text2.setText(item + " is already in list or does not exist");
+//					text2.setText(item + " not found in the list");
 					saveFiles();
 				}
 					
@@ -179,6 +179,7 @@ public class searchPanel extends JPanel{
 			if( !listChange )
 				text2.setText(" ");
 			listChange = false;
+			text2.setText(" ");
 			if(listManager.getUserSize() == 0 )
 				return;
 			if(/*e.getKeyCode() != KeyEvent.VK_ENTER &&*/ textEntry.getText() != null){
@@ -216,6 +217,7 @@ public class searchPanel extends JPanel{
 			} else {
 				text2.setForeground(Color.RED);
 				text2.setText(searchWord.displayName + " is already in list or does not exist");
+//				text2.setText(searchWord.displayName + " not found in the list");
 				saveFiles();
 				
 			}
