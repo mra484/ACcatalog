@@ -133,6 +133,7 @@ public class FileHandler{
 		} catch (FileNotFoundException e) {
 			try {
 				input.createNewFile();
+				fileReader = new Scanner(input);
 			} catch (IOException e1) {
 				System.exit(-1);
 			}

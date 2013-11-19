@@ -10,6 +10,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class DisplayField extends JPanel{
+	private static final long serialVersionUID = 1L;
 	private ArrayList<JLabel> labelList = new ArrayList<JLabel>();
 	private Entry empty = new Entry("--------------------------", null);
 

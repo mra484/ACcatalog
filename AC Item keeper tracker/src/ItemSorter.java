@@ -21,6 +21,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 public class ItemSorter extends JScrollPane {
+	private static final long serialVersionUID = 1L;
 	private filer listReader;
 	private itemPane itemInfo;
 	private itemPane searchInfo;

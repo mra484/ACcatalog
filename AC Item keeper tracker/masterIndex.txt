@@ -470,6 +470,7 @@
 4 0 0 0 4 2 0 "Bulb bopper" "Bulb bopper" "Serre-tête lumières" "Paio antenne fluo" "Leuchtkugelfühler" "Diadema luciérnagas" "ひかるボールアクセサリー" "images/1790.jpg"
 1 0 0 0 0 0 10 "Bunk bed" "Bunk bed" "Lit superposé" "Letto a castello" "Etagenbett" "Litera" "にだんベッド" "images/2860.jpg"
 1 0 0 0 0 0 8 "Pic of Bunnie" "Bunnie's pic" "Photo de Clara" "Foto di Bonny" "Foto von Mimmi" "Foto de Coni" "リリアンのしゃしん" "images/3735.jpg"
+0 0 0 0 0 0 0 "null" "null" "null" "null" "null" "null" "null" "null"
 8 0 0 0 0 0 0 "Bunny b. balloon" "Bunny b. balloon" "Ballon lapin bleu" "Coniglio blu" "Hasenballon (blau)" "Globonejito azul" "あおいうさぎふうせん" "images/3841.jpg"
 8 0 0 0 0 0 0 "Bunny c. balloon" "Bunny c. balloon" "Ballon lapin b. ciel" "Coniglio celeste" "Hasenballon (türkis)" "Globonejito celeste" "みずいろうさぎふうせん" "images/3840.jpg"
 8 0 0 0 0 0 0 "Bunny g. balloon" "Bunny g. balloon" "Ballon lapin vert" "Coniglio verde" "Hasenballon (grün)" "Globonejito verde" "みどりのうさぎふうせん" "images/3839.jpg"

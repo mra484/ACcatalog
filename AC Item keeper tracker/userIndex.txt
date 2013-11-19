@@ -248,6 +248,7 @@ Bug mask
 Bug zapper
 Bulb bopper
 Bunk bed
+bunny
 Bunny c. balloon
 Bunny hood
 Bunny tee

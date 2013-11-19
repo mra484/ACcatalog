@@ -7,9 +7,11 @@
 import java.io.*;
 import java.util.*;
 
+import javax.swing.JOptionPane;
 import javax.swing.tree.TreePath;
 
 public class filer {
+	
 	private int totalItems = 0;
 	private Entry head;
 	private Entry last;
@@ -19,8 +21,10 @@ public class filer {
 	
 	private FileHandler fileManager = null;
 	private ItemSorter lister = null;
+	private DisplayWindow mainWindow;
 	
 	public filer(DisplayWindow a){
+		mainWindow = a;
 		fileManager = new FileHandler(this, a);
 		System.out.println(userSize);
 //		printUnicode();
@@ -222,6 +226,8 @@ public class filer {
 	}
 	
 	public void saveFiles(int a){
+		if( itemList.size() < 3609)
+			JOptionPane.showMessageDialog(mainWindow, "Item Removed from master list");
 		switch (a){
 		case 0:
 			fileManager.saveSettings();

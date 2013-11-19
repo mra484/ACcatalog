@@ -10,27 +10,36 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.*;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.JLabel;
 
 public class searchPanel extends JPanel{
 
 	private DisplayField listField = new DisplayField();
 	private itemPane itemInfo = null;
 	private DisplayWindow mainWindow;
-	private JTextField textEntry = new JTextField(15);
 	private Entry currentEntry = new Entry("", null);
+	private boolean listChange = false;
+	
+	private JTextField textEntry = new JTextField(15);
 	private JButton add = new JButton ("Add");
 	private JButton remove = new JButton ("Remove");
+	private JLabel text = new JLabel("Enter an item below, use the add button or return key to add it to your list.");
+	private JLabel text2 = new JLabel(" ");
+	
 	private ActionClass action = new ActionClass();
 	private KeyClass key = new KeyClass();
 	private filer listManager;
 	private JPanel centerPanel = new JPanel();
 	private JPanel bottomPanel = new JPanel();
 	private JPanel buttonPanel = new JPanel();
+	private GridBagConstraints c = new GridBagConstraints();
+	
 
 	public searchPanel(filer a, DisplayWindow mainWindow) {
 		this.setLayout(new BorderLayout());
@@ -38,28 +47,76 @@ public class searchPanel extends JPanel{
 		itemInfo = new itemPane();
 		listManager = a;
 		itemInfo.setFiler(a);
+		
+		GridBagLayout layout = new GridBagLayout();
+		layout = createLayout(layout);
 
-		bottomPanel.setLayout(new FlowLayout(FlowLayout.LEADING, 20, 10));
-		buttonPanel.setLayout(new FlowLayout());
+//		bottomPanel.setLayout(new FlowLayout(FlowLayout.LEADING, 20, 10));
+//		buttonPanel.setLayout(new FlowLayout());
 
 		add.addActionListener(action);
 		remove.addActionListener(action);
-
 		textEntry.addKeyListener(key);
-		bottomPanel.add(textEntry);
-
+		text2.setFont(new Font("Italics", Font.ITALIC, 12));
+//		bottomPanel.add(textEntry);
+//
+//		buttonPanel.add(add);
+//		buttonPanel.add(remove);
+//		bottomPanel.add(buttonPanel);
+		
+//		bottomPanel.setLayout(new BorderLayout());
+		buttonPanel.setLayout(layout);
+		buttonPanel.add(text);
+		buttonPanel.add(textEntry);
 		buttonPanel.add(add);
 		buttonPanel.add(remove);
-		bottomPanel.add(buttonPanel);
+		buttonPanel.add(text2);
+//		bottomPanel.add(buttonPanel, BorderLayout.CENTER);
+		
 
 		listField.setBorder(BorderFactory.createEtchedBorder(1));
 		centerPanel.setLayout(new BorderLayout());
 		centerPanel.add(listField, BorderLayout.CENTER);
 		centerPanel.add(itemInfo, BorderLayout.EAST);
 
-		this.add(bottomPanel, BorderLayout.SOUTH);
+		this.add(buttonPanel, BorderLayout.SOUTH);
 		this.add(centerPanel, BorderLayout.CENTER);
 
+	}
+	
+	public GridBagLayout createLayout(GridBagLayout layout){
+		
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 0;
+		c.gridy = 0;
+		c.gridwidth = GridBagConstraints.REMAINDER;
+		c.weightx = 1;
+		c.weighty = 1;
+		c.anchor = GridBagConstraints.NORTHWEST;
+		layout.setConstraints(text, c);
+		
+		c.fill = GridBagConstraints.BOTH;
+		c.gridwidth = 1;
+		c.gridy = 1;
+		c.weightx = 5;
+//		c.ipadx = 10;
+		layout.setConstraints(textEntry, c);
+
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 1;
+		c.weightx = 1;
+		c.ipadx = 0;
+		layout.setConstraints(add, c);
+		
+		c.gridx = 2;
+		layout.setConstraints(remove, c);
+		
+		c.gridx = 0;
+		c.gridy = 2;
+		c.gridwidth = GridBagConstraints.REMAINDER;
+		layout.setConstraints(text2, c);
+		
+		return layout;
 	}
 
 	public filer getFiler(){
@@ -67,11 +124,13 @@ public class searchPanel extends JPanel{
 	}
 	
 	public void saveFiles(){
+		if(listManager.getList().size() != 3609)
 		if(DisplayWindow.readOnly)
 			listManager.saveFiles(1);
 		else
 			listManager.saveFiles(3);
 
+	listChange = true;
 	textEntry.setSelectionStart(0);
 	textEntry.setSelectionEnd(textEntry.getText().length());
 		
@@ -95,9 +154,16 @@ public class searchPanel extends JPanel{
 
 				}
 				if (listManager.addWord(new Entry(item, null)) ) {
+					text2.setForeground(new Color(5, 128, 15));
+					text2.setText(item + " successfully added to the list");
 					listManager.searchList(new Entry(item, null), listField);
 					saveFiles();
+				} else{
+					text2.setForeground(Color.RED);
+					text2.setText(item + " is already in list or does not exist");
+					saveFiles();
 				}
+					
 
 			}
 		}
@@ -110,6 +176,9 @@ public class searchPanel extends JPanel{
 		@Override
 		public void keyReleased(KeyEvent e) {
 			//perform search as user types
+			if( !listChange )
+				text2.setText(" ");
+			listChange = false;
 			if(listManager.getUserSize() == 0 )
 				return;
 			if(/*e.getKeyCode() != KeyEvent.VK_ENTER &&*/ textEntry.getText() != null){
@@ -131,6 +200,7 @@ public class searchPanel extends JPanel{
 
 			//same function as pressing return
 			if( e.getSource() == add ){
+				listChange = true;
 				if(DisplayWindow.language < 2 && (searchWord.searchName.startsWith("w"))){
 					if(	searchWord.searchName.compareTo("washbasin") == 0){
 						new ItemCheckDialog(listManager, mainWindow, listField, itemInfo);
@@ -139,8 +209,15 @@ public class searchPanel extends JPanel{
 				}
 			
 				if( listManager.addWord(searchWord) ){
+					text2.setForeground(new Color(5, 128, 15));
+					text2.setText(searchWord.displayName + " successfully added to the list");
 					saveFiles();
 					currentEntry = listManager.searchList(searchWord, listField);
+			} else {
+				text2.setForeground(Color.RED);
+				text2.setText(searchWord.displayName + " is already in list or does not exist");
+				saveFiles();
+				
 			}
 				itemInfo.update(currentEntry);
 			}
@@ -148,8 +225,14 @@ public class searchPanel extends JPanel{
 			//removes word from masterIndex if not readOnly, switches to notOwned if it is readOnly
 			if( e.getSource() == remove){
 
-				listManager.removeWord(searchWord);
-				saveFiles();
+				if( listManager.removeWord(searchWord) ){
+					text2.setForeground(new Color(5, 128, 15));
+					text2.setText(searchWord.displayName + " successfully removed from the list");
+					saveFiles();
+				} else {
+					text2.setForeground(Color.RED);
+					text2.setText(searchWord.displayName + " not found in the list");
+				}
 				if(listManager.getUserSize() == 0 )
 					return;
 				currentEntry = listManager.searchList(searchWord, listField);
