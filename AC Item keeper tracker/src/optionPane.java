@@ -14,6 +14,8 @@ import java.awt.event.ItemListener;
 import javax.swing.*;
 
 public class optionPane extends JPanel{
+	private static final long serialVersionUID = 1L;
+
 	private JPanel contentPanel = new JPanel();
 	
 	private JComboBox<String> language = new JComboBox<String>();

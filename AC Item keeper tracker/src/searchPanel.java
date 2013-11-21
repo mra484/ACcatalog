@@ -20,6 +20,7 @@ import javax.swing.JLabel;
 
 public class searchPanel extends JPanel{
 
+	private static final long serialVersionUID = 1L;
 	private DisplayField listField = new DisplayField();
 	private itemPane itemInfo = null;
 	private DisplayWindow mainWindow;
@@ -141,6 +142,7 @@ public class searchPanel extends JPanel{
 			String item = "";
 			//perform "add word" function on enter, refresh search result and highlight text
 			if(e.getKeyCode() == KeyEvent.VK_ENTER){
+				listChange = true;
 				if(textEntry.getText() != null)
 					item = textEntry.getText();
 				
@@ -179,7 +181,6 @@ public class searchPanel extends JPanel{
 			if( !listChange )
 				text2.setText(" ");
 			listChange = false;
-			text2.setText(" ");
 			if(listManager.getUserSize() == 0 )
 				return;
 			if(/*e.getKeyCode() != KeyEvent.VK_ENTER &&*/ textEntry.getText() != null){
@@ -201,26 +202,25 @@ public class searchPanel extends JPanel{
 
 			//same function as pressing return
 			if( e.getSource() == add ){
-				listChange = true;
 				if(DisplayWindow.language < 2 && (searchWord.searchName.startsWith("w"))){
 					if(	searchWord.searchName.compareTo("washbasin") == 0){
 						new ItemCheckDialog(listManager, mainWindow, listField, itemInfo);
 						return;
 					}
 				}
-			
+
 				if( listManager.addWord(searchWord) ){
 					text2.setForeground(new Color(5, 128, 15));
 					text2.setText(searchWord.displayName + " successfully added to the list");
 					saveFiles();
 					currentEntry = listManager.searchList(searchWord, listField);
-			} else {
-				text2.setForeground(Color.RED);
-				text2.setText(searchWord.displayName + " is already in list or does not exist");
-//				text2.setText(searchWord.displayName + " not found in the list");
-				saveFiles();
-				
-			}
+				} else {
+					text2.setForeground(Color.RED);
+					text2.setText(searchWord.displayName + " is already in list or does not exist");
+					//				text2.setText(searchWord.displayName + " not found in the list");
+					saveFiles();
+
+				}
 				itemInfo.update(currentEntry);
 			}
 

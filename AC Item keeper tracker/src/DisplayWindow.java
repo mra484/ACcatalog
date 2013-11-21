@@ -15,6 +15,7 @@ import java.awt.event.KeyListener;
 
 public class DisplayWindow extends JFrame{
 
+	private static final long serialVersionUID = 1L;
 	//must be odd and >= 3
 	public static final int listHeight = 13;
 	public static int language = 1;
@@ -49,7 +50,7 @@ public class DisplayWindow extends JFrame{
 		
 		add(tabs);
 		setVisible(true);
-		setSize(480,600);
+		setSize(530,600);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		programStarted = true;
 		

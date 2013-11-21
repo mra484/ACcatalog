@@ -17,6 +17,7 @@ import javax.swing.border.EtchedBorder;
 
 
 public class BrowserPanel extends JPanel{
+	private static final long serialVersionUID = 1L;
 	private itemPane itemInfo = null;
 	private itemPane searchInfo = new itemPane(1);
 	private ItemSorter itemList;
