@@ -22,6 +22,7 @@ public class DisplayWindow extends JFrame{
 	public static boolean readOnly = true;
 	public static boolean defaultOwned = false;
 	public static boolean smallWindow = true;
+	public static boolean quickAdd = false;
 	public static Point windowPos = null;
 	public static boolean programStarted = false;
 	
@@ -41,7 +42,7 @@ public class DisplayWindow extends JFrame{
 		
 		search = new searchPanel(listManager, this);
 		browse = new BrowserPanel(listManager, itemInfo);
-		option = new optionPane(listManager, itemInfo);
+		option = new optionPane(listManager, itemInfo, browse);
 		
 		tabs.add("Add", search);
 		tabs.add("Browse", browse);

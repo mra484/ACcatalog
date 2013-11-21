@@ -72,6 +72,13 @@ public class BrowserPanel extends JPanel{
 	}
 	
 	public void update(){
+		if(DisplayWindow.quickAdd){
+			topText.setForeground(Color.RED);
+			topText.setText("Caution: quick add and remove is currently enabled in options");
+		} else {
+			topText.setForeground(Color.BLACK);
+			topText.setText("Select an item from the list to display more detailed information on the right");
+		}
 		text.setText(String.format("  Items Collected: %d / %d", owned, total));
 		text2.setText(String.format("  Collection Percentage: %%%.2f",100*(double)owned/(double)total));
 	}

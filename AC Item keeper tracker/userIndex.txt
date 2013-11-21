@@ -1,6 +1,7 @@
 @ 1
 1-Up cap
 1-Up Mushroom
+24-hour-shop ABD
 3D glasses
 ? Block
 Academy paper

@@ -22,6 +22,7 @@ import javax.swing.event.ListSelectionListener;
 
 public class ItemSorter extends JScrollPane {
 	private static final long serialVersionUID = 1L;
+	private boolean skipListener = false;
 	private filer listReader;
 	private itemPane itemInfo;
 	private itemPane searchInfo;
@@ -83,15 +84,26 @@ public class ItemSorter extends JScrollPane {
 	}
 
 	public class ListSelectionHandler implements ListSelectionListener{
+		Entry selected;
+		
 		
 		//updates the item information panel whenever an item is clicked on
 		public void valueChanged(ListSelectionEvent e) {
-			if(lister.isSelectionEmpty()){
-				itemInfo.update(new Entry("", null));
-				return;
-			}
-			itemInfo.update(listReader.getList().get(blank.normalizeText(lister.getSelectedValue())));
-			browser.update();
+			if( e.getValueIsAdjusting()){
+
+				if(lister.isSelectionEmpty()){
+					itemInfo.update(new Entry("", null));
+					return;
+				}
+				selected = listReader.getList().get(blank.normalizeText(lister.getSelectedValue()));
+				itemInfo.update(selected);
+				
+				if( DisplayWindow.quickAdd){
+					selected.setOwned(!selected.getOwned());
+				}
+				browser.update();
+			} else if (DisplayWindow.quickAdd)
+				listReader.saveFiles(3);
 		}
 	}
 	

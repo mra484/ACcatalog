@@ -16,6 +16,7 @@ import javax.swing.*;
 public class optionPane extends JPanel{
 	private static final long serialVersionUID = 1L;
 
+	private boolean skipListener = false;
 	private JPanel contentPanel = new JPanel();
 	
 	private JComboBox<String> language = new JComboBox<String>();
@@ -23,24 +24,30 @@ public class optionPane extends JPanel{
 	
 	private JCheckBox setRO = new JCheckBox();
 	private JLabel setROLabel = new JLabel("Make master list read only");
-	
+
 	private JCheckBox winSize = new JCheckBox();
 	private JLabel winSizeLabel = new JLabel("Compact window");
 	
+	private JCheckBox quickAdd = new JCheckBox();
+	private JLabel quickAddLabel = new JLabel("Quick Add and Remove in Browser");
+	
 	private filer listManager = null;
 	private itemPane itemInfo = null;
+	private BrowserPanel browser = null;
 	private ItemHandler actions = new ItemHandler();
 	private ActionHandler action = new ActionHandler();
 	
-	public optionPane(filer a, itemPane b){
+	public optionPane(filer a, itemPane b, BrowserPanel c){
 		listManager = a;
 		itemInfo = b;
+		browser = c;
 		setLayout(new FlowLayout(FlowLayout.LEADING));
 		contentPanel.setLayout(new GridLayout(3,2,10,10));
 		
 		language.addActionListener(action);
 		setRO.addItemListener(actions);
 		winSize.addItemListener(actions);
+		quickAdd.addItemListener(actions);
 		
 		//fields for language selector
 		language.addItem("English (EU)");
@@ -56,11 +63,14 @@ public class optionPane extends JPanel{
 		language.setSelectedIndex(DisplayWindow.language);		
 		setRO.setSelected(DisplayWindow.readOnly);
 		winSize.setSelected(DisplayWindow.smallWindow);
+		quickAdd.setSelected(DisplayWindow.quickAdd);
 		
 		contentPanel.add(languageLabel);
 		contentPanel.add(language);
 		contentPanel.add(setROLabel);
 		contentPanel.add(setRO);
+		contentPanel.add(quickAddLabel);
+		contentPanel.add(quickAdd);
 //		contentPanel.add(winSizeLabel);
 //		contentPanel.add(winSize);
 		add(contentPanel);
@@ -77,15 +87,18 @@ public class optionPane extends JPanel{
 				DisplayWindow.readOnly = setRO.isSelected();
 			if(e.getSource() == winSize)
 				DisplayWindow.smallWindow = winSize.isSelected();
+			if(e.getSource() == quickAdd){
+				DisplayWindow.quickAdd = quickAdd.isSelected();
+				browser.update();
 			itemInfo.updateComboBoxes();
 			listManager.saveFiles(0);
 				
-			
+
+			}
 		}
 	}
 	private class ActionHandler implements ActionListener{
 		public void actionPerformed(ActionEvent e){
-			
 			//language can be changed when program is starting up, ignore actions from it
 			if(!DisplayWindow.programStarted)
 				return;
