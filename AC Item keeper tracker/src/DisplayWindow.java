@@ -1,5 +1,20 @@
-/**@author Mark Andrews
- * 10/27/2014
+/**Animal Crossing Item Cataloger
+ * Copyright(C) 2013 Mark Andrews
+ * 
+ *   Animal Crossing Item Cataloger is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   Animal Crossing Item Cataloger is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *   
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * 10/27/2013
  * 
  * This class handles the gui placement and the action handlers for each of the components
  */
@@ -26,6 +41,7 @@ public class DisplayWindow extends JFrame{
 	private searchPanel search;
 	private BrowserPanel browse;
 	private optionPane option;
+	private ProgramInfo about;
 	private JTabbedPane tabs = new JTabbedPane();
 
 	private filer listManager = new filer(this);
@@ -52,10 +68,12 @@ public class DisplayWindow extends JFrame{
 		search = new searchPanel(listManager, this, itemInfo2);
 		browse = new BrowserPanel(listManager, itemInfo);
 		option = new optionPane(listManager, itemInfo, browse, this);
+		about = new ProgramInfo();
 		
 		tabs.add("Add", search);
 		tabs.add("Browse", browse);
 		tabs.add("Option", option);
+		tabs.add("About", about);
 		
 		
 		add(tabs);
