@@ -87,10 +87,6 @@ public class itemPane extends JPanel{
 	private filer files = null;
 	private ItemSorter sorter = null;
 
-	
-	//constructor used for creating the item information panel in the search and browser tabs
-	
-	//constructer used for creating the search combo boxes in the browser panel
 	public itemPane(int a){
 		populateLists();
 		this.setLayout(new BorderLayout());
@@ -99,8 +95,6 @@ public class itemPane extends JPanel{
 		StyleConstants.setAlignment(titleName, StyleConstants.ALIGN_CENTER);
 		StyleConstants.setFontSize(titleName, 16);
 		StyleConstants.setBold(fieldName, true);
-		int width = (int)DisplayWindow.windowDim.getWidth();
-//		setBounds(0, 0, 200, infoArea.getHeight());
 		infoArea.setPreferredSize(new Dimension(250, 200));
 		setBorder(BorderFactory.createEtchedBorder(1));
 		infoArea.setEditable(false);
@@ -673,7 +667,7 @@ public class itemPane extends JPanel{
 					updateComboBoxes();
 
 					if( files != null)
-						files.saveFiles(2);
+						files.saveFiles(1);
 				}
 
 				if( panelType == 1 ){

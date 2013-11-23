@@ -43,6 +43,11 @@ public class Entry implements Comparable<Entry>{
 		//item names will be forced lower case with spaces, periods and hyphens removed to cut down on the chance of duplicate items
 		sortName = normalizeText(displayName);
 		searchName = sortName;
+		
+
+//		sortName = convertUnicode(displayName.toLowerCase());
+//		searchName = normalizeText(sortName);
+////		
 		isOwned = true;
 		this.prev = prev;
 	}
@@ -227,13 +232,40 @@ public class Entry implements Comparable<Entry>{
 		//item names will be forced lower case with spaces, periods and hyphens removed 
 		//to cut down on the chance of duplicate items, name displayed will be different
 		//than what is searched and sorted
-		sortName = displayName.toLowerCase().replace("\u00ba", "").replace("\u0093", "").replace("\u0084", "");
+		sortName = convertUnicode(displayName.toLowerCase());
+//		searchName = normalizeText(sortName);
+//		sortName = displayName.toLowerCase().replace("\u00ba", "").replace("\u0093", "").replace("\u0084", "");
 		searchName = normalizeText(sortName);
 	}
 	public String normalizeText(String a){
 
 		a = a.toLowerCase();
 		
+//		a = convertUnicode(a);
+		a = a.replace("\u00c2", "a").replace("\u00e0", "a").replace("\u00e2", "a").replace("\u00e3", "a").replace("\u00e3", "a").replace("\u00c1", "a").replace("\u00e1", "a");
+		a = a.replace("\u00c9", "e").replace("\u00e9", "e").replace("\u00e8", "e").replace("\u00ea", "e").replace("\u00eb", "e");
+		a = a.replace("\u00ed", "i").replace("\u00ee", "i").replace("\u00ef", "i").replace("\u00ec", "i");
+		a = a.replace("\u00f4", "o").replace("\u00f2", "o").replace("\u00f6", "o").replace("\u00d6", "o").replace("\u00d3", "o").replace("\u00f3", "o");
+		a = a.replace("\u00fb", "u").replace("\u00f9", "u").replace("\u00fc", "u").replace("\u00dc", "u").replace("\u00fa", "u");
+		a = a.replace("\u00f1", "n");
+		
+		a = a.replace("\u00df", "ss");
+		a = a.replace("\u00e7", "c");
+		a = a.replace("\u0153", "oe");
+		a = a.replace("\u00ba", "").replace("\u0093", "").replace("\u0084", "");
+		
+		a = a.replace(".", "");
+		a = a.replace(" ", "");
+		a = a.replace("'", "");
+		a = a.replace("`", "");
+		a = a.replace("&", "");
+		a = a.replace("(", "");
+		a = a.replace(")", "");
+		return a.replace("-", "");
+		
+	}
+	public String convertUnicode(String a){
+
 		//Unicode characters
 		a = a.replace("\u00c2", "a").replace("\u00e0", "a").replace("\u00e2", "a").replace("\u00e3", "a").replace("\u00e3", "a").replace("\u00c1", "a").replace("\u00e1", "a");
 		a = a.replace("\u00c9", "e").replace("\u00e9", "e").replace("\u00e8", "e").replace("\u00ea", "e").replace("\u00eb", "e");
@@ -246,15 +278,8 @@ public class Entry implements Comparable<Entry>{
 		a = a.replace("\u00e7", "c");
 		a = a.replace("\u0153", "oe");
 		a = a.replace("\u00ba", "").replace("\u0093", "").replace("\u0084", "");
-		a = a.replace(".", "");
-		a = a.replace(" ", "");
-		a = a.replace("'", "");
-		a = a.replace("`", "");
-		a = a.replace("&", "");
-		a = a.replace("(", "");
-		a = a.replace(")", "");
-		return a.replace("-", "");
 		
+		return a;
 	}
 		
 }

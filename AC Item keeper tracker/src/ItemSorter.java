@@ -103,7 +103,7 @@ public class ItemSorter extends JScrollPane {
 				}
 				browser.update();
 			} else if (DisplayWindow.quickAdd)
-				listReader.saveFiles(3);
+				listReader.saveFiles(1);
 		}
 	}
 	
