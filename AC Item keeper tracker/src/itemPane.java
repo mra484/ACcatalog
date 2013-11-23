@@ -86,6 +86,8 @@ public class itemPane extends JPanel{
 	private JLabel owned = new JLabel("Owned Items");
 	private JCheckBox ownedCheck = new JCheckBox();	
 	
+	private JButton reset = new JButton("Reset");
+	
 	private ActionHandler actions = new ActionHandler();
 	private filer files = null;
 	private ItemSorter sorter = null;
@@ -112,17 +114,12 @@ public class itemPane extends JPanel{
 			this.add(centerPlate, BorderLayout.CENTER);
 			
 		} else if ( a == SEARCHPANEL){
-			
-		clothes.setMaximumSize(new Dimension(120, 25));
-		clothes.addActionListener(actions);
-		
-		clothesStyle.setMaximumSize(new Dimension(120, 25));
-		clothesStyle.addActionListener(actions);
 		
 		ownedCheck.addActionListener(actions);
 		ownedCheck.setSelected(DisplayWindow.defaultOwned);
 		ownedPanel.add(owned);
 		ownedPanel.add(ownedCheck);
+		reset.addActionListener(actions);
 		
 		layout = createLayout(SEARCHPANEL);	
 
@@ -155,7 +152,7 @@ public class itemPane extends JPanel{
 				type.addItem("Wet Suits");
 				type.addItem("Streetpass");
 				type.addActionListener(actions);
-				type.setMaximumSize(new Dimension(120, 25));
+				type.setMaximumSize(new Dimension(127, 25));
 				
 				furniture.addItem("None");
 				furniture.addItem("Gyroids");
@@ -169,7 +166,7 @@ public class itemPane extends JPanel{
 				furniture.addItem("Fossil Models");
 				furniture.addItem("Other");
 				furniture.addActionListener(actions);
-				furniture.setMaximumSize(new Dimension(120, 25));
+				furniture.setMaximumSize(new Dimension(127, 25));
 						
 				//add lists to furniture parameters
 				series.addItem("None");
@@ -211,7 +208,7 @@ public class itemPane extends JPanel{
 				series.addItem("Sweets");
 				series.addItem("trump");
 				series.addActionListener(actions);
-				series.setMaximumSize(new Dimension(120, 25));
+				series.setMaximumSize(new Dimension(127, 25));
 				
 				set.addItem("None");
 				set.addItem("Apple");
@@ -248,7 +245,7 @@ public class itemPane extends JPanel{
 				set.addItem("Vase");
 				set.addItem("Watermelon");
 				set.addActionListener(actions);
-				set.setMaximumSize(new Dimension(120, 25));
+				set.setMaximumSize(new Dimension(127, 25));
 				
 				theme.addItem("None");
 				theme.addItem("Backyard");
@@ -264,7 +261,7 @@ public class itemPane extends JPanel{
 				theme.addItem("Space");
 				theme.addItem("Western");
 				theme.addActionListener(actions);
-				theme.setMaximumSize(new Dimension(120, 25));
+				theme.setMaximumSize(new Dimension(127, 25));
 				
 				clothes.addItem("All");
 				clothes.addItem("Shirts");
@@ -275,7 +272,7 @@ public class itemPane extends JPanel{
 				clothes.addItem("Shoes and Socks");
 				clothes.addItem("Umbrellas");
 				clothes.addActionListener(actions);
-				clothes.setMaximumSize(new Dimension(120, 25));
+				clothes.setMaximumSize(new Dimension(127, 25));
 
 				clothesStyle.addItem("None");
 				clothesStyle.addItem("Flashy");
@@ -289,7 +286,7 @@ public class itemPane extends JPanel{
 				clothesStyle.addItem("Sporty");
 				clothesStyle.addItem("Iconic");
 				clothesStyle.addActionListener(actions);
-				clothesStyle.setMaximumSize(new Dimension(120, 25));				
+				clothesStyle.setMaximumSize(new Dimension(127, 25));				
 	}
 	
 	public GroupLayout createLayout(int a){
@@ -338,13 +335,15 @@ public class itemPane extends JPanel{
 					.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 							.addComponent(typeLabel).addComponent(type).addComponent(furnitureLabel)
 							.addComponent(furniture).addComponent(ownedPanel))
-							//						.addComponent(searchField))
+							.addGap(25)
 							.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 									.addComponent(seriesLabel).addComponent(series)
 									.addComponent(setLabel).addComponent(set).addComponent(themeLabel).addComponent(theme))
+									.addGap(25)
 									.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 											.addComponent(clothesTypeLabel)
-											.addComponent(clothes).addComponent(clothesStyleLabel).addComponent(clothesStyle)));
+											.addComponent(clothes).addComponent(clothesStyleLabel).addComponent(clothesStyle)
+											.addComponent(reset)));
 
 			layout.setVerticalGroup(
 					layout.createSequentialGroup()
@@ -360,7 +359,8 @@ public class itemPane extends JPanel{
 															.addComponent(set).addComponent(clothesStyle))
 							.addComponent(themeLabel)
 							.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-																	.addComponent(ownedPanel).addComponent(theme)));
+																	.addComponent(ownedPanel).addComponent(theme)
+																	.addComponent(reset)));
 						
 			break;
 			default:
@@ -563,6 +563,7 @@ public class itemPane extends JPanel{
 				theme.setSelectedIndex(0);
 				break;
 			default:
+				type.setSelectedIndex(0);
 				furniture.setSelectedIndex(0);
 				series.setSelectedIndex(0);
 				set.setSelectedIndex(0);
@@ -684,8 +685,12 @@ public class itemPane extends JPanel{
 
 						if( files != null)
 							files.saveFiles(0);
-					}
-					else {
+					} else if ( e.getSource() == reset){
+						type.setSelectedIndex(-1);
+						updateSearch(type);
+						return;
+						
+					} else {
 						//disable listener until changes to combo boxes are complete
 						skipListener = true;
 						updateSearch(e.getSource());

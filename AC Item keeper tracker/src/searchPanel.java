@@ -50,6 +50,7 @@ public class searchPanel extends JPanel{
 	private ActionClass action = new ActionClass();
 	private KeyClass key = new KeyClass();
 	private filer listManager;
+	private BrowserPanel browser;
 	private JPanel centerPanel = new JPanel();
 	private JPanel buttonPanel = new JPanel();
 	private GridBagConstraints c = new GridBagConstraints();
@@ -177,6 +178,10 @@ public class searchPanel extends JPanel{
 			return false;			
 		}
 	}
+	
+	public void setBrowser(BrowserPanel a){
+		browser = a;
+	}
 
 
 	private class KeyClass implements KeyListener{
@@ -190,13 +195,22 @@ public class searchPanel extends JPanel{
 				if(textEntry.getText() != null)
 					item = textEntry.getText();
 				
-				if( checkDuplicates(item))
+				if( checkDuplicates(item)){
+					browser.update();
 					return;
+				}
+				
 				current = itemInfo.getEntry();
+				
+				if( listManager.getUserSize() == 0 )
+					current = new Entry(item, null);
+				
 				result = listManager.addWord(current);
+				
 				if (result == 2 ) {
 					text2.setForeground(new Color(5, 128, 15));
 					text2.setText(item + " successfully added to the list");
+					BrowserPanel.owned++;
 					listManager.searchListControl(new Entry(item, null));
 					saveFiles();
 				} else{
@@ -209,6 +223,8 @@ public class searchPanel extends JPanel{
 						
 					saveFiles();
 				}
+				browser.update();
+				
 					
 
 			}
@@ -247,14 +263,19 @@ public class searchPanel extends JPanel{
 
 			//same function as pressing return
 			if( e.getSource() == add ){
-				searchWord = itemInfo.getEntry();
-				if( checkDuplicates(searchWord.displayName) )
+				if( listManager.getUserSize() != 0 )
+					searchWord = itemInfo.getEntry();
+				
+				if( checkDuplicates(searchWord.displayName) ){
+					browser.update();
 					return;
+				}
 				
 				result = listManager.addWord(searchWord);
 				if( result == 2 ){
 					text2.setForeground(new Color(5, 128, 15));
 					text2.setText(searchWord.displayName + " successfully added to the list");
+					BrowserPanel.owned++;
 					saveFiles();
 					currentEntry = listManager.searchListControl(searchWord);
 				} else {
@@ -276,6 +297,9 @@ public class searchPanel extends JPanel{
 				if( listManager.removeWord(searchWord) ){
 					text2.setForeground(new Color(5, 128, 15));
 					text2.setText(searchWord.displayName + " successfully removed from the list");
+					BrowserPanel.owned--;
+					if(!DisplayWindow.readOnly)
+						BrowserPanel.total--;
 					saveFiles();
 				} else {
 					text2.setForeground(Color.RED);
@@ -286,6 +310,7 @@ public class searchPanel extends JPanel{
 				currentEntry = listManager.searchListControl(searchWord);
 				itemInfo.update(currentEntry);
 			}
+			browser.update();
 		}
 	}
 

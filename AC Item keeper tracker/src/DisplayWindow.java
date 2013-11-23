@@ -73,7 +73,7 @@ public class DisplayWindow extends JFrame{
 			setLocation(windowPos);
 //		itemInfo.setReadOnly(readOnly);
 		search = new searchPanel(listManager, this, itemInfo2);
-		browse = new BrowserPanel(listManager, itemInfo);
+		browse = new BrowserPanel(listManager, itemInfo, search);
 		option = new optionPane(listManager, itemInfo, browse, this);
 		about = new ProgramInfo();
 		

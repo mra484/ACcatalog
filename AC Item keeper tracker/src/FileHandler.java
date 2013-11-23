@@ -111,7 +111,7 @@ public class FileHandler{
 				DisplayWindow.language = Integer.parseInt(readValues[1]);
 			}
 			unicodeReader.close();
-		} catch (IOException e) {
+		} catch (Exception e) {
 			System.out.println("Problem reading from userIndex.txt in readSettings().");
 		}
 				

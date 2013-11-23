@@ -134,6 +134,7 @@ public class filer {
 			//add to user and master list if not in both
 			if(!DisplayWindow.readOnly){
 				itemList.put(word.searchName, word);
+				BrowserPanel.total++;
 				linkWord(word);
 				return 2;
 			}

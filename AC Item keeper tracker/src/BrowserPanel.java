@@ -35,6 +35,7 @@ public class BrowserPanel extends JPanel{
 	private itemPane itemInfo = null;
 	private itemPane searchInfo = new itemPane(itemPane.SEARCHPANEL);
 	private ItemSorter itemList;
+	private searchPanel search;
 	public static int total = 1;
 	public static int owned = 1;
 	
@@ -47,13 +48,15 @@ public class BrowserPanel extends JPanel{
 	private JPanel southPanel = new JPanel();
 	private GridBagConstraints c = new GridBagConstraints();
 	
-	public BrowserPanel(filer listManager, itemPane a){
+	public BrowserPanel(filer listManager, itemPane a, searchPanel b){
 		setLayout(new BorderLayout());
 		itemInfo = a;
+		search = b;
 		itemList = new ItemSorter(listManager, searchInfo, itemInfo, new JList<String>(), this);
 		itemInfo.setFiler(listManager);
 		searchInfo.setSorter(itemList);
 		searchInfo.setFiler(listManager);
+		search.setBrowser(this);
 
 		//arrange the counter text for the left panel
 		itemList.setBackground(Color.WHITE);
