@@ -34,7 +34,7 @@ public class ProgramInfo extends JPanel{
 		text.setEditable(false);
 		text.setLineWrap(true);
 		text.setMargin(new Insets(10, 10, 10, 10));
-		text.append("Animal Crossing Item Cataloger (C) 2013 Mark Andrews\n\n" +
+		text.append("Animal Crossing Item Cataloger (C) 2013 Mark Andrews\n" + "github.com/mra484\n\n" +
 				"AC Item Cataloger was created using information from the following websites:\n\n\n" +
 				"thonky.com\n\n" + "Contains tons of helpful information about every aspect of Animal Crossing\n" +
 				"Used information for furniture series, sets, themes\n\n\n" +
