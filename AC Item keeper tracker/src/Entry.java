@@ -39,6 +39,14 @@ public class Entry implements Comparable<Entry>{
 		
 		//item name displayed by the program will be different than what is searched
 		displayName = a.trim();
+		displayNameEU = displayName;
+		displayNameUS = displayName;
+		displayNameFR = displayName;
+		displayNameIT = displayName;
+		displayNameDS = displayName;
+		displayNameES = displayName;
+		displayNameJP = displayName;
+		imageLocation = "none";
 		
 		//item names will be forced lower case with spaces, periods and hyphens removed to cut down on the chance of duplicate items
 		sortName = normalizeText(displayName);

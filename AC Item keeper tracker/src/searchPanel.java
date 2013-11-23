@@ -140,34 +140,73 @@ public class searchPanel extends JPanel{
 	textEntry.setSelectionEnd(textEntry.getText().length());
 		
 	}
+	
+	public boolean checkDuplicates(String item){
+		switch(DisplayWindow.language){
+		
+		//washbasin handler in english
+		case 0:
+		case 1:
+			if( (item.startsWith("w") || item.startsWith("W"))){
+				if(	currentEntry.normalizeText(item).compareTo("washbasin") == 0){
+					new ItemCheckDialog(listManager, mainWindow, listField, itemInfo, 0);
+					return true;
+				}
+			}
+			return false;
+			
+		//lanterna cinese handler in italian
+		case 3:
+			if( (item.startsWith("l") || item.startsWith("L"))){
+				if(	currentEntry.normalizeText(item).compareTo("lanternacinese") == 0){
+					new ItemCheckDialog(listManager, mainWindow, listField, itemInfo, 1);
+					return true;
+				}
+			}
+			return false;
+		
+		//plate armor/ samurai shirt handler in japanese
+		case 6:
+			if( item.startsWith("\u304b") ){
+				if(	item.compareTo("\u304b\u3063\u3061\u3085\u3046") == 0){
+					new ItemCheckDialog(listManager, mainWindow, listField, itemInfo, 2);
+					return true;
+				}
+			}
+			return false;
+		default:
+			return false;			
+		}
+	}
 
 
 	private class KeyClass implements KeyListener{
 		public void keyPressed(KeyEvent e){
 			String item = "";
+			int result;
 			//perform "add word" function on enter, refresh search result and highlight text
 			if(e.getKeyCode() == KeyEvent.VK_ENTER){
 				listChange = true;
 				if(textEntry.getText() != null)
 					item = textEntry.getText();
 				
-				//check for "washbasin" handle accordingly
-				if(DisplayWindow.language < 2 && (item.startsWith("w") || item.startsWith("W"))){
-					if(	item.toLowerCase().compareTo("washbasin") == 0){
-						new ItemCheckDialog(listManager, mainWindow, listField, itemInfo);
-						return;
-					}
-
-				}
-				if (listManager.addWord(new Entry(item, null)) ) {
+				if( checkDuplicates(item))
+					return;
+				
+				result = listManager.addWord(new Entry(item, null));
+				if (result == 2 ) {
 					text2.setForeground(new Color(5, 128, 15));
 					text2.setText(item + " successfully added to the list");
 					listManager.searchList(new Entry(item, null), listField);
 					saveFiles();
 				} else{
 					text2.setForeground(Color.RED);
-					text2.setText(item + " is already in list or does not exist");
-//					text2.setText(item + " not found in the list");
+
+					if(result == 1)
+						text2.setText(item + " was not found in the main list");
+					else
+						text2.setText(item + " is already in the user list");
+						
 					saveFiles();
 				}
 					
@@ -199,6 +238,7 @@ public class searchPanel extends JPanel{
 	private class ActionClass implements ActionListener{
 		public void actionPerformed(ActionEvent e){
 			Entry searchWord = null;
+			int result;
 
 			if( textEntry.getText() == null)
 				return;
@@ -207,22 +247,23 @@ public class searchPanel extends JPanel{
 
 			//same function as pressing return
 			if( e.getSource() == add ){
-				if(DisplayWindow.language < 2 && (searchWord.searchName.startsWith("w"))){
-					if(	searchWord.searchName.compareTo("washbasin") == 0){
-						new ItemCheckDialog(listManager, mainWindow, listField, itemInfo);
-						return;
-					}
-				}
-
-				if( listManager.addWord(searchWord) ){
+				
+				if( checkDuplicates(searchWord.displayName) )
+					return;
+				
+				result = listManager.addWord(searchWord);
+				if( result == 2 ){
 					text2.setForeground(new Color(5, 128, 15));
 					text2.setText(searchWord.displayName + " successfully added to the list");
 					saveFiles();
 					currentEntry = listManager.searchList(searchWord, listField);
 				} else {
 					text2.setForeground(Color.RED);
-					text2.setText(searchWord.displayName + " is already in list or does not exist");
-					//				text2.setText(searchWord.displayName + " not found in the list");
+					if(result == 1)
+						text2.setText(searchWord.displayName + " was not found in the main list");
+					else
+						text2.setText(searchWord.displayName + " is already in the user list");
+						
 					saveFiles();
 
 				}

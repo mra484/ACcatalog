@@ -102,7 +102,7 @@ public class filer {
 
 	}
 
-	public boolean addWord(Entry word){
+	public int addWord(Entry word){
 		boolean containsKey = itemList.containsKey(word.searchName);
 		Entry listEntry = null;
 		if( containsKey )
@@ -111,19 +111,19 @@ public class filer {
 		//do nothing if the word is already in the user list
 		if( containsKey ){
 			if( listEntry.getOwned() ){
-				return false;
+				return 0;
 			}
 			linkWord(listEntry);
-			return true;
+			return 2;
 		} else {
 
 			//add to user and master list if not in both
 			if(!DisplayWindow.readOnly){
 				itemList.put(word.searchName, word);
 				linkWord(word);
-				return true;
+				return 2;
 			}
-			return false;
+			return 1;
 		}
 	}
 

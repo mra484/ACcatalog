@@ -32,11 +32,13 @@ public class ItemCheckDialog extends JDialog{
 	private JLabel text = new JLabel();
 	private JLabel text2 = new JLabel();
 	private JLabel text3 = new JLabel();
+	private String item1;
+	private String item2;
 	private JButton add = new JButton("Add");
 	private JButton cancel = new JButton("Cancel");
 	private JButton exit = new JButton ("Exit");
-	private JButton b1 = new JButton ("Washbasin (1)");
-	private JButton b2 = new JButton ("Washbasin (2)");
+	private JButton b1 = new JButton ();
+	private JButton b2 = new JButton ();
 	
 	private filer itemManager = null;
 	private itemPane itemInfo = null;
@@ -45,7 +47,7 @@ public class ItemCheckDialog extends JDialog{
 	private Queue<String> missingItems;
 	private itemHandler items = new itemHandler();
 	private Entry blank = new Entry("", null);
-	private boolean checkWashbasin = false;
+	private boolean checkDuplicate = false;
 
 	//constructer for handling items not found in the master list
 	public ItemCheckDialog(filer listManager, Queue<String> missingList, DisplayWindow mainWindow){
@@ -93,22 +95,57 @@ public class ItemCheckDialog extends JDialog{
 	}
 
 	//constructor for handling "washbucket" duplicate item in english
-	public ItemCheckDialog(filer listManager, DisplayWindow mainWindow, DisplayField sResults, itemPane info ){
+	public ItemCheckDialog(filer listManager, DisplayWindow mainWindow, DisplayField sResults, itemPane info, int item ){
 		super(mainWindow, "Item clarification");
-		setSize(275, 245);
+		setSize(350, 245);
 		setVisible(true);
 		setLocation(new Point(mainWindow.getX()+100, mainWindow.getY()+100));
 		setModal(true);
 		setModalityType(ModalityType.APPLICATION_MODAL);
 		
 		itemManager = listManager;
-		checkWashbasin = true;
+		checkDuplicate = true;
 		listField = sResults;
 		itemInfo = info;
 		
-		text.setText("Which washbasin matches your item?");
-		text2.setText("(A bucket)");
-		text3.setText("(A faucet)");
+		switch(item){
+		
+		//Washbasin duplicate, english
+		case 0:
+			item1 = "washbasin1";
+			item2 = "washbasin2";
+			b1.setText("Washbasin (1)");
+			b2.setText("Washbasin (2)");
+			text.setText("Which Washbasin matches your item?" );
+			text2.setText("(A bucket)");
+			text3.setText("(A faucet)");
+			break;
+		
+		//festival lantern/ red-tassled lantern duplicate italian
+		case 1:
+			item1 = "lanternacinese1";
+			item2 = "lanternacinese2";
+			b1.setText("Lanterna cinese (1)");
+			b2.setText("Lanterna cinese (2)");
+			text.setText("Which Lanterna cinese matches your item?" );
+			text2.setText("(white lantern)");
+			text3.setText("(red lantern)");
+			break;
+			
+		//plate armor / samurai shirt duplicate japanese
+		case 2:
+			item1 = "\u304b\u3063\u3061\u3085\u30461";
+			item2 = "\u304b\u3063\u3061\u3085\u30462";
+			b1.setText("\u304b\u3063\u3061\u3085\u3046 (1)");
+			b2.setText("\u304b\u3063\u3061\u3085\u3046 (2)");
+			text.setText("Which \u304b\u3063\u3061\u3085\u3046 matches your item?" );
+			text2.setText("(plate)");
+			text3.setText("(samurai)");
+			break;
+		default:
+			break;
+		}
+		
 		b1.addActionListener(items);
 		b2.addActionListener(items);
 		
@@ -166,7 +203,7 @@ public class ItemCheckDialog extends JDialog{
 			
 			//actions for the missing item dialog, if nothing is selected when add is pressed, it will 
 			//skip the current entry like cancel
-			if(!checkWashbasin){
+			if(!checkDuplicate){
 			if(e.getSource() == add)
 				if( itemList.getEntry() != null )
 					itemManager.getList().get(blank.normalizeText(itemList.getEntry())).setOwned(true);
@@ -183,10 +220,10 @@ public class ItemCheckDialog extends JDialog{
 			
 			//actions for the duplicate item dialog, word selected will be added and updated in the main window
 			if(e.getSource() == b1)
-				item = itemManager.getList().get("washbasin1");
+				item = itemManager.getList().get(item1);
 			
 			if (e.getSource() == b2)
-				item = itemManager.getList().get("washbasin2");
+				item = itemManager.getList().get(item2);
 			
 			itemManager.addWord(item);
 			itemManager.searchList(item, listField);
