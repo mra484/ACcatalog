@@ -4,11 +4,9 @@
  * This class manages the file system.  Search, add, and remove functions are carried out here.  
  */
 
-import java.io.*;
 import java.util.*;
 
 import javax.swing.JOptionPane;
-import javax.swing.tree.TreePath;
 
 public class filer {
 	
@@ -131,10 +129,8 @@ public class filer {
 		boolean valueFound = false;
 		Entry next = null;
 
-//		userSearchList.add(word.searchName);
 		word.setOwned(true);
 		userSize++;
-//		userList.add(word);
 		if( userSize == 1 ){
 			last = word;
 			head = word;
@@ -155,25 +151,30 @@ public class filer {
 					valueFound = true;
 			}
 		}
+		
 		if( valueFound && next == null ){
+			//item added to the end of the list
 			last.next = word;
 			word.prev = last;
 			last.setLast(false);
 			last = word;			
 			word.setLast(true);
+			
 		} else if ( next.getHead() ){
+			//item added to the start of the list
 			next.prev = word;
 			word.next = next;
 			head.setHead(false);
 			head = word;
 			word.setHead(true);
+			
 		} else {
+			//item added within the list
 			word.next = next;
 			word.prev = next.prev;
 			next.prev.next = word;
 			next.prev = word;
 		}
-
 	}
 
 	public boolean removeWord(Entry word){
@@ -186,6 +187,7 @@ public class filer {
 			toRemove = itemList.get(word.searchName);
 					if( userSize == 1 ){
 
+					//behavior for removing from start, end, and inside the list
 					}else if( toRemove == head ){
 						toRemove.next.setHead(true);
 						toRemove.next.prev = null;
@@ -198,8 +200,10 @@ public class filer {
 						toRemove.prev.next = toRemove.next;
 						toRemove.next.prev = toRemove.prev;
 					}
+					
 					toRemove.setOwned(false);
 					userSize--;
+					
 					if( !DisplayWindow.readOnly)
 						itemList.remove(toRemove.searchName);
 					return true;			
@@ -318,5 +322,3 @@ public class filer {
 //		
 //	}
 }
-
-

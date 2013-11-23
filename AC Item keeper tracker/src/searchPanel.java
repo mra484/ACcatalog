@@ -5,7 +5,6 @@
  */
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -37,7 +36,6 @@ public class searchPanel extends JPanel{
 	private KeyClass key = new KeyClass();
 	private filer listManager;
 	private JPanel centerPanel = new JPanel();
-	private JPanel bottomPanel = new JPanel();
 	private JPanel buttonPanel = new JPanel();
 	private GridBagConstraints c = new GridBagConstraints();
 	
@@ -46,40 +44,25 @@ public class searchPanel extends JPanel{
 		this.setLayout(new BorderLayout());
 		this.mainWindow = mainWindow;
 		itemInfo = c;
-//		if( DisplayWindow.readOnly )
-//			itemInfo = new itemPane(itemPane.DISPLAYPANELRO);
-//		else
-//			itemInfo = new itemPane(itemPane.DISPLAYPANEL);
 			
 		listManager = a;
 		itemInfo.setFiler(a);
 		
 		GridBagLayout layout = new GridBagLayout();
 		layout = createLayout(layout);
-
-//		bottomPanel.setLayout(new FlowLayout(FlowLayout.LEADING, 20, 10));
-//		buttonPanel.setLayout(new FlowLayout());
-
+		
+		//set up text and buttons for the bottom of the tab
 		add.addActionListener(action);
 		remove.addActionListener(action);
 		textEntry.addKeyListener(key);
 		text2.setFont(new Font("Italics", Font.ITALIC, 12));
-//		bottomPanel.add(textEntry);
-//
-//		buttonPanel.add(add);
-//		buttonPanel.add(remove);
-//		bottomPanel.add(buttonPanel);
-		
-//		bottomPanel.setLayout(new BorderLayout());
 		buttonPanel.setLayout(layout);
 		buttonPanel.add(text);
 		buttonPanel.add(textEntry);
 		buttonPanel.add(add);
 		buttonPanel.add(remove);
 		buttonPanel.add(text2);
-//		bottomPanel.add(buttonPanel, BorderLayout.CENTER);
 		
-
 		listField.setBorder(BorderFactory.createEtchedBorder(1));
 		centerPanel.setLayout(new BorderLayout());
 		centerPanel.add(listField, BorderLayout.CENTER);
@@ -105,7 +88,6 @@ public class searchPanel extends JPanel{
 		c.gridwidth = 1;
 		c.gridy = 1;
 		c.weightx = 5;
-//		c.ipadx = 10;
 		layout.setConstraints(textEntry, c);
 
 		c.fill = GridBagConstraints.HORIZONTAL;

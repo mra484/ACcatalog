@@ -16,7 +16,6 @@ import javax.swing.*;
 public class optionPane extends JPanel{
 	private static final long serialVersionUID = 1L;
 
-	private boolean skipListener = false;
 	private JPanel contentPanel = new JPanel();
 	
 	private JComboBox<String> language = new JComboBox<String>();
@@ -26,7 +25,7 @@ public class optionPane extends JPanel{
 	private JLabel setROLabel = new JLabel("Make master list read only");
 
 	private JCheckBox winSize = new JCheckBox();
-	private JLabel winSizeLabel = new JLabel("Compact window");
+//	private JLabel winSizeLabel = new JLabel("Compact window");
 	
 	private JCheckBox quickAdd = new JCheckBox();
 	private JLabel quickAddLabel = new JLabel("Quick Add and Remove in Browser");

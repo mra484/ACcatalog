@@ -5,17 +5,13 @@
  */
 
 import javax.swing.*;
-import javax.swing.text.Position;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 public class DisplayWindow extends JFrame{
 
 	private static final long serialVersionUID = 1L;
+	
 	//must be odd and >= 3
 	public static final int listHeight = 13;
 	public static int language = 1;

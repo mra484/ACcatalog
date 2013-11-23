@@ -13,7 +13,6 @@ import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
-import javax.swing.border.EtchedBorder;
 
 
 public class BrowserPanel extends JPanel{
@@ -41,6 +40,7 @@ public class BrowserPanel extends JPanel{
 		searchInfo.setSorter(itemList);
 		searchInfo.setFiler(listManager);
 
+		//arrange the counter text for the left panel
 		itemList.setBackground(Color.WHITE);
 		text.setText(String.format("  Items Collected: %d / %d", listManager.getUserSize(), listManager.getTotalItems()));
 		text2.setText(String.format("  Collection Percentage: %.2f%%",100*(double)listManager.getUserSize()/listManager.getTotalItems()));
@@ -48,10 +48,12 @@ public class BrowserPanel extends JPanel{
 		textPanel.add(text, BorderLayout.NORTH);
 		textPanel.add(text2, BorderLayout.SOUTH);
 		
+		//add items to the left panel
 		leftPanel.setLayout(new BorderLayout());
 		leftPanel.add(itemList, BorderLayout.CENTER);
 		leftPanel.add(textPanel, BorderLayout.SOUTH);
 		
+		//arrange text and search information to bottom panel
 		southPanel.setBorder(BorderFactory.createEtchedBorder(1));
 		southPanel.setLayout(new GridBagLayout());
 		c.fill = GridBagConstraints.BOTH;
@@ -62,9 +64,7 @@ public class BrowserPanel extends JPanel{
 		
 		c.gridy = 1;
 		southPanel.add(searchInfo, c);
-//		southPanel.add(searchText, BorderLayout.NORTH);
-//		southPanel.add(searchInfo, BorderLayout.CENTER);
-//		
+		
 		add(topText, BorderLayout.NORTH);
 		add(leftPanel, BorderLayout.CENTER);
 		add(itemInfo, BorderLayout.EAST);

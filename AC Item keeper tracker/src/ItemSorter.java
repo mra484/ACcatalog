@@ -5,24 +5,18 @@
 
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.List;
 import java.util.ArrayList;
 import java.util.TreeSet;
 
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.JList;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.ListCellRenderer;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 public class ItemSorter extends JScrollPane {
 	private static final long serialVersionUID = 1L;
-	private boolean skipListener = false;
 	private filer listReader;
 	private itemPane itemInfo;
 	private itemPane searchInfo;
@@ -100,6 +94,7 @@ public class ItemSorter extends JScrollPane {
 				
 				if( DisplayWindow.quickAdd){
 					selected.setOwned(!selected.getOwned());
+					BrowserPanel.owned +=(selected.getOwned() ? 1 : -1);
 				}
 				browser.update();
 			} else if (DisplayWindow.quickAdd)
@@ -109,6 +104,8 @@ public class ItemSorter extends JScrollPane {
 	
 	private class CellRenderer extends DefaultListCellRenderer{
 		
+		private static final long serialVersionUID = 1L;
+
 		public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus){
 			Component comp = super.getListCellRendererComponent(list, value, index, false, false);
 			Font unOwned = new Font("unOwned", Font.ITALIC, 12);

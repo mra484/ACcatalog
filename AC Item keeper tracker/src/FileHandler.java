@@ -4,8 +4,6 @@
  * UTF-8 character set, settings.ini uses ANSI
  */
 
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -19,11 +17,6 @@ import java.io.OutputStreamWriter;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
-
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 
 public class FileHandler{
@@ -39,7 +32,6 @@ public class FileHandler{
 	
 	private filer listManager = null;
 	private DisplayWindow mainWindow = null;
-	private Entry selected = null;
 	
 	public FileHandler(filer a, DisplayWindow b) {
 

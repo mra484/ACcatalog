@@ -6,21 +6,13 @@
  */
 
 import java.awt.BorderLayout;
-import java.awt.Choice;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 
 import javax.swing.*;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.EtchedBorder;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
@@ -32,13 +24,9 @@ public class itemPane extends JPanel{
 	
 	private static final long serialVersionUID = 1532607835222537991L;
 	
-	private boolean isSearchPanel = false;
 	private boolean skipListener = false;
 	private int panelType = 0;
 	
-	private Font itemName = new Font("itemName", Font.BOLD, 16);
-	private Font labelName = itemName.deriveFont(12f);
-	private Font infoName = itemName.deriveFont(Font.PLAIN);
 	private JTextPane infoArea = new JTextPane();
 	
 	private StyledDocument doc = infoArea.getStyledDocument();
@@ -110,8 +98,6 @@ public class itemPane extends JPanel{
 			
 		} else if ( a == SEARCHPANEL){
 			
-		isSearchPanel = true;
-		
 		clothes.setMaximumSize(new Dimension(120, 25));
 		clothes.addActionListener(actions);
 		
