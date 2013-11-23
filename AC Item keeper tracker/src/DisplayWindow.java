@@ -35,7 +35,7 @@ public class DisplayWindow extends JFrame{
 	public static boolean smallWindow = true;
 	public static boolean quickAdd = false;
 	public static Point windowPos = null;
-	public static Dimension windowDim = new Dimension(530, 600);
+	public static Dimension windowDim;
 	public static boolean programStarted = false;
 	
 	private searchPanel search;
@@ -51,6 +51,13 @@ public class DisplayWindow extends JFrame{
 	
 	public DisplayWindow(){
 		super("Animal Crossing Item Cataloger");
+		
+		String os = System.getProperty("os.name");
+		if ( os.contains("Windows") )
+			windowDim = new Dimension(530,600);
+		else
+			windowDim = new Dimension(600,650);
+
 		if( readOnly ){
 			itemInfo = new itemPane(itemPane.DISPLAYPANELRO);
 			itemInfo2 = new itemPane(itemPane.DISPLAYPANELRO);

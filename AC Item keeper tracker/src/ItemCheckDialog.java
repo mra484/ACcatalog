@@ -56,7 +56,6 @@ public class ItemCheckDialog extends JDialog{
 	private filer itemManager = null;
 	private itemPane itemInfo = null;
 	private ItemSorter itemList = null;
-	private DisplayField listField;
 	private Queue<String> missingItems;
 	private itemHandler items = new itemHandler();
 	private Entry blank = new Entry("", null);
@@ -108,7 +107,7 @@ public class ItemCheckDialog extends JDialog{
 	}
 
 	//constructor for handling "washbucket" duplicate item in english
-	public ItemCheckDialog(filer listManager, DisplayWindow mainWindow, DisplayField sResults, itemPane info, int item ){
+	public ItemCheckDialog(filer listManager, DisplayWindow mainWindow, itemPane info, int item ){
 		super(mainWindow, "Item clarification");
 		setSize(350, 245);
 		setVisible(true);
@@ -118,7 +117,6 @@ public class ItemCheckDialog extends JDialog{
 		
 		itemManager = listManager;
 		checkDuplicate = true;
-		listField = sResults;
 		itemInfo = info;
 		
 		switch(item){
@@ -239,7 +237,7 @@ public class ItemCheckDialog extends JDialog{
 				item = itemManager.getList().get(item2);
 			
 			itemManager.addWord(item);
-			itemManager.searchList(item, listField);
+			itemManager.searchListControl(item);
 			itemInfo.update(item);
 			itemManager.saveFiles(1);
 

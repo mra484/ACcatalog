@@ -62,6 +62,8 @@ public class searchPanel extends JPanel{
 			
 		listManager = a;
 		itemInfo.setFiler(a);
+		listManager.setDisplayField(listField);
+//		listManager.setItemPane(c);
 		
 		GridBagLayout layout = new GridBagLayout();
 		layout = createLayout(layout);
@@ -146,7 +148,7 @@ public class searchPanel extends JPanel{
 		case 1:
 			if( (item.startsWith("w") || item.startsWith("W"))){
 				if(	currentEntry.normalizeText(item).compareTo("washbasin") == 0){
-					new ItemCheckDialog(listManager, mainWindow, listField, itemInfo, 0);
+					new ItemCheckDialog(listManager, mainWindow, itemInfo, 0);
 					return true;
 				}
 			}
@@ -156,7 +158,7 @@ public class searchPanel extends JPanel{
 		case 3:
 			if( (item.startsWith("l") || item.startsWith("L"))){
 				if(	currentEntry.normalizeText(item).compareTo("lanternacinese") == 0){
-					new ItemCheckDialog(listManager, mainWindow, listField, itemInfo, 1);
+					new ItemCheckDialog(listManager, mainWindow, itemInfo, 1);
 					return true;
 				}
 			}
@@ -166,7 +168,7 @@ public class searchPanel extends JPanel{
 		case 6:
 			if( item.startsWith("\u304b") ){
 				if(	item.compareTo("\u304b\u3063\u3061\u3085\u3046") == 0){
-					new ItemCheckDialog(listManager, mainWindow, listField, itemInfo, 2);
+					new ItemCheckDialog(listManager, mainWindow, itemInfo, 2);
 					return true;
 				}
 			}
@@ -180,6 +182,7 @@ public class searchPanel extends JPanel{
 	private class KeyClass implements KeyListener{
 		public void keyPressed(KeyEvent e){
 			String item = "";
+			Entry current;
 			int result;
 			//perform "add word" function on enter, refresh search result and highlight text
 			if(e.getKeyCode() == KeyEvent.VK_ENTER){
@@ -189,12 +192,12 @@ public class searchPanel extends JPanel{
 				
 				if( checkDuplicates(item))
 					return;
-				
-				result = listManager.addWord(new Entry(item, null));
+				current = itemInfo.getEntry();
+				result = listManager.addWord(current);
 				if (result == 2 ) {
 					text2.setForeground(new Color(5, 128, 15));
 					text2.setText(item + " successfully added to the list");
-					listManager.searchList(new Entry(item, null), listField);
+					listManager.searchListControl(new Entry(item, null));
 					saveFiles();
 				} else{
 					text2.setForeground(Color.RED);
@@ -225,7 +228,7 @@ public class searchPanel extends JPanel{
 			if(listManager.getUserSize() == 0 )
 				return;
 			if(/*e.getKeyCode() != KeyEvent.VK_ENTER &&*/ textEntry.getText() != null){
-				currentEntry = listManager.searchList(new Entry(textEntry.getText(), null), listField);
+				currentEntry = listManager.searchListControl(new Entry(textEntry.getText(), null));
 				itemInfo.update(currentEntry);
 			}
 
@@ -244,7 +247,7 @@ public class searchPanel extends JPanel{
 
 			//same function as pressing return
 			if( e.getSource() == add ){
-				
+				searchWord = itemInfo.getEntry();
 				if( checkDuplicates(searchWord.displayName) )
 					return;
 				
@@ -253,7 +256,7 @@ public class searchPanel extends JPanel{
 					text2.setForeground(new Color(5, 128, 15));
 					text2.setText(searchWord.displayName + " successfully added to the list");
 					saveFiles();
-					currentEntry = listManager.searchList(searchWord, listField);
+					currentEntry = listManager.searchListControl(searchWord);
 				} else {
 					text2.setForeground(Color.RED);
 					if(result == 1)
@@ -280,7 +283,7 @@ public class searchPanel extends JPanel{
 				}
 				if(listManager.getUserSize() == 0 )
 					return;
-				currentEntry = listManager.searchList(searchWord, listField);
+				currentEntry = listManager.searchListControl(searchWord);
 				itemInfo.update(currentEntry);
 			}
 		}

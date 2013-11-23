@@ -35,10 +35,10 @@ public class ProgramInfo extends JPanel{
 		text.setLineWrap(true);
 		text.setMargin(new Insets(10, 10, 10, 10));
 		text.append("Animal Crossing Item Cataloger (C) 2013 Mark Andrews\n\n" +
-				"AC Item Catalogger was created using information from the following websites:\n\n\n" +
+				"AC Item Cataloger was created using information from the following websites:\n\n\n" +
 				"thonky.com\n\n" + "Contains tons of helpful information about every aspect of Animal Crossing\n" +
 				"Used information for furniture series, sets, themes\n\n\n" +
-				"animalcrossingnl.mooo.com\n\n" + "An online catalog page complete with images\n" +
+				"animalcrossingnl.mooo.com\n\n" + "An online catalog complete with images\n" +
 				"Used their list of item names to make the main list complete in various languages\n\n\n" +
 				"gamefaqs.com : Animal Crossing Item List by Liquefy\n\n" +
 				"Contains all information you could want to know about items in Animal Crossing\n" +

@@ -648,6 +648,18 @@ public class itemPane extends JPanel{
 		}
 	}
 	
+	public Entry getEntry(){
+		currentEntry.setType((byte)type.getSelectedIndex());
+		currentEntry.setSeries((byte)series.getSelectedIndex());
+		currentEntry.setSet((byte)set.getSelectedIndex());
+		currentEntry.setTheme((byte)theme.getSelectedIndex());
+		currentEntry.setClothes((byte)clothes.getSelectedIndex());
+		currentEntry.setStyle((byte)clothesStyle.getSelectedIndex());
+		currentEntry.setFurniture((byte)furniture.getSelectedIndex());
+		return currentEntry;
+		
+	}
+	
 	public class ActionHandler implements ActionListener{
 		public void actionPerformed(ActionEvent e){
 			
@@ -658,13 +670,7 @@ public class itemPane extends JPanel{
 			else {					
 				if( panelType == 0){
 					//updates item's attributes on change
-					currentEntry.setType((byte)type.getSelectedIndex());
-					currentEntry.setSeries((byte)series.getSelectedIndex());
-					currentEntry.setSet((byte)set.getSelectedIndex());
-					currentEntry.setTheme((byte)theme.getSelectedIndex());
-					currentEntry.setClothes((byte)clothes.getSelectedIndex());
-					currentEntry.setStyle((byte)clothesStyle.getSelectedIndex());
-					currentEntry.setFurniture((byte)furniture.getSelectedIndex());
+					getEntry();
 					updateComboBoxes();
 
 					if( files != null)

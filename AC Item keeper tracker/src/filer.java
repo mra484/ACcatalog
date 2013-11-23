@@ -28,11 +28,13 @@ public class filer {
 	private int totalItems = 0;
 	private Entry head;
 	private Entry last;
+	private Entry empty = new Entry("--------------------------", null);
 	private int userSize = 0;
 	private TreeMap<String, Entry> itemList = new TreeMap<String, Entry>();
 	private Queue<String> notFoundList = new ArrayDeque<String>();
 	
 	private FileHandler fileManager = null;
+	private DisplayField sResults = null;
 	private ItemSorter lister = null;
 	private DisplayWindow mainWindow;
 	
@@ -43,10 +45,9 @@ public class filer {
 //		printUnicode();
 	}
 
-	public Entry searchList(Entry item, DisplayField field){
+	public Entry searchListControl(Entry item){
 		Entry result = null, currentEntry = null;
 		int state;
-		
 		//the resulting item from the searchList method can be the item itself, or the item before or after it
 		result = searchList(item);
 		
@@ -68,7 +69,7 @@ public class filer {
 		else if( state == 0 && result.getHead())
 			state = -2;		
 
-		field.updateList(result, state);
+		sResults.updateList(result, state);
 		return currentEntry;
 	}
 	
@@ -292,6 +293,46 @@ public class filer {
 		itemList.clear();
 		itemList = newList;
 		lister.update();
+		relinkUserList();
+		searchListControl(empty);
+	}
+	
+	public void setDisplayField(DisplayField a){
+		sResults = a;
+	}
+	
+//	public void setItemPane(itemPane a ){
+//		itemInfo = a;
+//	}
+	
+	//goes through the list and relinks the user's items in order
+	public void relinkUserList(){
+		int i = 0;
+		Entry temp1 = null;
+		for(Entry a: itemList.values()){
+			if(!a.getOwned())
+				continue;
+			if( temp1 != null){
+				temp1.next = a;
+			}
+			if( i == 0){
+				head = a;
+				a.setHead(true);
+				a.prev = null;
+			} else if ( i == userSize){
+				last = a;
+				a.setHead(false);
+				a.setLast(true);
+				a.next = null;
+				a.prev = temp1;
+			} else {
+				a.setHead(false);
+				a.setLast(false);
+				a.prev = temp1;
+			}
+			temp1 = a;
+			i++;
+		}
 	}
 	
 	//method for finding and saving all the unique unicode special characters in the item list
