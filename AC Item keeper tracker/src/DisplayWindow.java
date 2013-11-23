@@ -24,6 +24,7 @@ public class DisplayWindow extends JFrame{
 	public static boolean smallWindow = true;
 	public static boolean quickAdd = false;
 	public static Point windowPos = null;
+	public static Dimension windowDim = new Dimension(530, 600);
 	public static boolean programStarted = false;
 	
 	private searchPanel search;
@@ -32,17 +33,29 @@ public class DisplayWindow extends JFrame{
 	private JTabbedPane tabs = new JTabbedPane();
 
 	private filer listManager = new filer(this);
-	private itemPane itemInfo = new itemPane();
+	private itemPane itemInfo;
+	private itemPane itemInfo2;
 	
 	
 	public DisplayWindow(){
 		super("Animal Crossing Item Cataloger");
+		if( readOnly ){
+			itemInfo = new itemPane(itemPane.DISPLAYPANELRO);
+			itemInfo2 = new itemPane(itemPane.DISPLAYPANELRO);
+			
+		}
+		else{
+			itemInfo = new itemPane(itemPane.DISPLAYPANEL);
+			itemInfo2 = new itemPane(itemPane.DISPLAYPANEL);
+			
+		}
+		
 		if( windowPos != null)
 			setLocation(windowPos);
-		
-		search = new searchPanel(listManager, this);
+//		itemInfo.setReadOnly(readOnly);
+		search = new searchPanel(listManager, this, itemInfo2);
 		browse = new BrowserPanel(listManager, itemInfo);
-		option = new optionPane(listManager, itemInfo, browse);
+		option = new optionPane(listManager, itemInfo, browse, this);
 		
 		tabs.add("Add", search);
 		tabs.add("Browse", browse);
@@ -51,7 +64,7 @@ public class DisplayWindow extends JFrame{
 		
 		add(tabs);
 		setVisible(true);
-		setSize(530,600);
+		setSize(windowDim);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		programStarted = true;
 		
@@ -59,6 +72,10 @@ public class DisplayWindow extends JFrame{
 		if(listManager.getMissingList().size() > 0)
 			if( listManager.getMissingList().size() != 1 || !listManager.getMissingList().peek().contains("@"))
 				new ItemCheckDialog(listManager, listManager.getMissingList(), this);
+	}
+	public void updateInfo(){
+		itemInfo.setReadOnly(readOnly);
+		itemInfo2.setReadOnly(readOnly);
 	}
 	
 	public static void main(String [] args){

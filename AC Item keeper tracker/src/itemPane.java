@@ -7,6 +7,7 @@
 
 import java.awt.BorderLayout;
 import java.awt.Choice;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -18,12 +19,32 @@ import java.awt.event.ItemListener;
 
 import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyledDocument;
 public class itemPane extends JPanel{
+	public static final int DISPLAYPANEL = 1;
+	public static final int SEARCHPANEL = 2;
+	public static final int DISPLAYPANELRO = 3;
+	
 	private static final long serialVersionUID = 1532607835222537991L;
 	
 	private boolean isSearchPanel = false;
 	private boolean skipListener = false;
+	private int panelType = 0;
+	
+	private Font itemName = new Font("itemName", Font.BOLD, 16);
+	private Font labelName = itemName.deriveFont(12f);
+	private Font infoName = itemName.deriveFont(Font.PLAIN);
+	private JTextPane infoArea = new JTextPane();
+	
+	private StyledDocument doc = infoArea.getStyledDocument();
+	private SimpleAttributeSet titleName = new SimpleAttributeSet();
+	private SimpleAttributeSet fieldName = new SimpleAttributeSet();
+	private SimpleAttributeSet paramName = new SimpleAttributeSet();
 	
 	private Entry currentEntry = new Entry(" ", null);
 	private Entry blankEntry = new Entry("--------------------------", null);
@@ -33,6 +54,7 @@ public class itemPane extends JPanel{
 	private JPanel namePanel = new JPanel();
 	private Font nameFont = new Font("Large", Font.BOLD, 18);
 	private JLabel name = new JLabel("--------------------------");
+
 	
 	private JLabel typeLabel = new JLabel("Item Type");
 	private JComboBox<String> type = new JComboBox<String>();
@@ -56,8 +78,6 @@ public class itemPane extends JPanel{
 	
 	private JLabel furnitureLabel = new JLabel("Furniture Type");
 	private JComboBox<String> furniture = new JComboBox<String>();
-
-	private JButton searchButton = new JButton("Search");
 	
 	private JPanel ownedPanel = new JPanel();
 	private JLabel owned = new JLabel("Owned Items");
@@ -66,31 +86,37 @@ public class itemPane extends JPanel{
 	private ActionHandler actions = new ActionHandler();
 	private filer files = null;
 	private ItemSorter sorter = null;
-	
-	public static enum itemType {ADD, BROWSE};
+
 	
 	//constructor used for creating the item information panel in the search and browser tabs
-	public itemPane(){
-		this.setLayout(new BorderLayout());
-		this.setBorder(BorderFactory.createEtchedBorder(1));
-		namePanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-		name.setFont(nameFont);
-		namePanel.add(name);
-		this.add(namePanel, BorderLayout.NORTH);		
-		populateLists();
-		layout = createLayout(1);
-
-		centerPlate.setLayout(layout);
-		
-		
-		this.add(centerPlate, BorderLayout.CENTER);
-	}
 	
 	//constructer used for creating the search combo boxes in the browser panel
 	public itemPane(int a){
-		isSearchPanel = true;
 		populateLists();
-		searchButton.addActionListener(actions);
+		this.setLayout(new BorderLayout());
+		
+		StyleConstants.setBold(titleName, true);
+		StyleConstants.setAlignment(titleName, StyleConstants.ALIGN_CENTER);
+		StyleConstants.setFontSize(titleName, 16);
+		StyleConstants.setBold(fieldName, true);
+		int width = (int)DisplayWindow.windowDim.getWidth();
+//		setBounds(0, 0, 200, infoArea.getHeight());
+		infoArea.setPreferredSize(new Dimension(250, 200));
+		setBorder(BorderFactory.createEtchedBorder(1));
+		infoArea.setEditable(false);
+		namePanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		name.setFont(nameFont);
+		namePanel.add(name);
+		
+		if( a == DISPLAYPANEL){
+			this.add(namePanel, BorderLayout.NORTH);		
+			layout = createLayout(DISPLAYPANEL);
+			centerPlate.setLayout(layout);			
+			this.add(centerPlate, BorderLayout.CENTER);
+			
+		} else if ( a == SEARCHPANEL){
+			
+		isSearchPanel = true;
 		
 		clothes.setMaximumSize(new Dimension(120, 25));
 		clothes.addActionListener(actions);
@@ -103,13 +129,21 @@ public class itemPane extends JPanel{
 		ownedPanel.add(owned);
 		ownedPanel.add(ownedCheck);
 		
-		layout = createLayout(2);	
+		layout = createLayout(SEARCHPANEL);	
 
 		centerPlate.setLayout(layout);
-//		centerPlate.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.RAISED));
 		add(centerPlate);
+		panelType = 1;
 		
-		searchButton.setVisible(false);
+		} else if (a == DISPLAYPANELRO){
+			layout = createLayout(DISPLAYPANEL);
+			centerPlate.setLayout(layout);			
+			add(infoArea);
+			update(blankEntry);
+			panelType = 2;
+		} else{
+			
+		}
 
 	}
 	
@@ -315,8 +349,7 @@ public class itemPane extends JPanel{
 									.addComponent(setLabel).addComponent(set).addComponent(themeLabel).addComponent(theme))
 									.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 											.addComponent(clothesTypeLabel)
-											.addComponent(clothes).addComponent(clothesStyleLabel).addComponent(clothesStyle)
-											.addComponent(searchButton)));
+											.addComponent(clothes).addComponent(clothesStyleLabel).addComponent(clothesStyle)));
 
 			layout.setVerticalGroup(
 					layout.createSequentialGroup()
@@ -332,7 +365,7 @@ public class itemPane extends JPanel{
 															.addComponent(set).addComponent(clothesStyle))
 							.addComponent(themeLabel)
 							.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-																	.addComponent(ownedPanel).addComponent(theme).addComponent(searchButton)));
+																	.addComponent(ownedPanel).addComponent(theme)));
 						
 			break;
 			default:
@@ -344,6 +377,33 @@ public class itemPane extends JPanel{
 	
 	//update main entry when itemFields are changed
 	public void update(Entry search){
+		currentEntry = search;
+//		setReadOnly(DisplayWindow.readOnly);
+		if( DisplayWindow.readOnly){
+
+			try {
+			doc.remove(0, doc.getLength());
+			doc.insertString(doc.getLength(), String.format("%s\n\n", currentEntry.displayName), titleName);
+			doc.insertString(doc.getLength(), String.format("%s\t", "Item Category:", type.getItemAt(currentEntry.getType())), fieldName);
+			doc.insertString(doc.getLength(), String.format("%s\n", type.getItemAt(currentEntry.getType())), paramName);
+			doc.insertString(doc.getLength(), String.format("%s\t", "Furniture Type:"), fieldName);
+			doc.insertString(doc.getLength(), String.format("%s\n\n", furniture.getItemAt(currentEntry.getFurniture())), paramName);
+			doc.insertString(doc.getLength(), String.format("%s\t", "Furniture Series:"), fieldName);
+			doc.insertString(doc.getLength(), String.format("%s\n", series.getItemAt(currentEntry.getSeries())), paramName);
+			doc.insertString(doc.getLength(), String.format("%s\t", "Furniture Set:"), fieldName);
+			doc.insertString(doc.getLength(), String.format("%s\n", set.getItemAt(currentEntry.getSet())), paramName);
+			doc.insertString(doc.getLength(), String.format("%s\t", "Furniture Theme:"), fieldName);
+			doc.insertString(doc.getLength(), String.format("%s\n\n", theme.getItemAt(currentEntry.getTheme())), paramName);
+			doc.insertString(doc.getLength(), String.format("%s\t", "Clothing Type:"), fieldName);
+			doc.insertString(doc.getLength(), String.format("%s\n", clothes.getItemAt(currentEntry.getClothes())), paramName);
+			doc.insertString(doc.getLength(), String.format("%s\t", "Clothing Style:"), fieldName);
+			doc.insertString(doc.getLength(), String.format("%s", clothesStyle.getItemAt(currentEntry.getStyle())), paramName);
+			
+			} catch (BadLocationException e) {
+				System.out.println("Unable to add text outside of styled document in itemPane");
+				System.exit(-2);
+			}
+		} else {
 		if(search.searchName.length() == 0)
 			search = blankEntry;
 
@@ -359,6 +419,7 @@ public class itemPane extends JPanel{
 		furniture.setSelectedIndex(currentEntry.getFurniture());
 		skipListener = false;
 		updateComboBoxes();
+		}
 	}
 
 	public int getType(){
@@ -398,7 +459,7 @@ public class itemPane extends JPanel{
 		//disable listener while changes are being made to the JComboBoxes
 		skipListener = true;
 		
-		if( DisplayWindow.readOnly && !isSearchPanel){
+		if( DisplayWindow.readOnly && panelType == 0){
 			type.setEnabled(false);
 			series.setEnabled(false);
 			set.setEnabled(false);
@@ -457,6 +518,18 @@ public class itemPane extends JPanel{
 		
 		skipListener = false;
 
+	}
+	
+	public void setReadOnly(boolean a){
+		if(a){
+			removeAll();
+			add(infoArea);
+			update(blankEntry);
+		} else {
+			remove(infoArea);
+			add(namePanel, BorderLayout.NORTH);	
+			add(centerPlate, BorderLayout.CENTER);
+		}
 	}
 	
 	//method for handling search field behavior in browser pane
@@ -588,7 +661,7 @@ public class itemPane extends JPanel{
 				return;
 			
 			else {					
-				if( !isSearchPanel){
+				if( panelType == 0){
 					//updates item's attributes on change
 					currentEntry.setType((byte)type.getSelectedIndex());
 					currentEntry.setSeries((byte)series.getSelectedIndex());
@@ -603,7 +676,7 @@ public class itemPane extends JPanel{
 						files.saveFiles(2);
 				}
 
-				if( isSearchPanel ){
+				if( panelType == 1 ){
 					//change main setting according to owned items checkbox
 					if( e.getSource() == ownedCheck){
 						DisplayWindow.defaultOwned = ownedCheck.isSelected();

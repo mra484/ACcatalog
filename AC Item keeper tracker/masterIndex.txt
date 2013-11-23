@@ -2190,7 +2190,6 @@
 5 0 0 0 0 0 0 "Notebook paper" "Notebook paper" "Papier calepin" "Carta blocco" "Ringheftpapier" "Papel agenda" "ノートのびんせん" "images/358.jpg"
 2 0 0 0 0 0 0 "Notebook wall" "Notebook wall" "Mur agenda" "Muro quaderni" "Notizbuchwand" "Pared libreta" "Campusかべがみ" "images/736.jpg"
 1 0 0 0 0 0 10 "Notebook wardrobe" "Notebook wardrobe" "Armoire agenda" "Armadio quadernino" "Notizbuchschrank" "Armario agenda" "Campusクロゼット" "images/3337.jpg"
-0 0 0 0 0 0 0 "null" "null" "null" "null" "null" "null" "null" "null"
 4 0 0 0 4 3 0 "Nurse's cap" "Nurse's cap" "Coiffe d'infirmière" "Cuffia da infermiera" "Schwesternhaube" "Cofia enfermera" "ナースキャップ" "images/1772.jpg"
 4 0 0 0 3 3 0 "Nurse's uniform" "Nurse's uniform" "Blouse d'infirmière" "Vestito infermiera" "Schwesternkittel" "Vestido de enfermera" "ナースのふく" "images/1391.jpg"
 1 0 0 0 0 0 10 "Nutcracker" "Nutcracker" "Casse-noisettes" "Soldatino" "Nussknacker" "Soldado cascanueces" "くるみわりにんぎょう" "images/3251.jpg"

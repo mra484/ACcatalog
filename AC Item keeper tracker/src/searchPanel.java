@@ -42,10 +42,15 @@ public class searchPanel extends JPanel{
 	private GridBagConstraints c = new GridBagConstraints();
 	
 
-	public searchPanel(filer a, DisplayWindow mainWindow) {
+	public searchPanel(filer a, DisplayWindow mainWindow, itemPane c) {
 		this.setLayout(new BorderLayout());
 		this.mainWindow = mainWindow;
-		itemInfo = new itemPane();
+		itemInfo = c;
+//		if( DisplayWindow.readOnly )
+//			itemInfo = new itemPane(itemPane.DISPLAYPANELRO);
+//		else
+//			itemInfo = new itemPane(itemPane.DISPLAYPANEL);
+			
 		listManager = a;
 		itemInfo.setFiler(a);
 		

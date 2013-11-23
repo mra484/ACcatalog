@@ -34,13 +34,15 @@ public class optionPane extends JPanel{
 	private filer listManager = null;
 	private itemPane itemInfo = null;
 	private BrowserPanel browser = null;
+	private DisplayWindow window = null;
 	private ItemHandler actions = new ItemHandler();
 	private ActionHandler action = new ActionHandler();
 	
-	public optionPane(filer a, itemPane b, BrowserPanel c){
+	public optionPane(filer a, itemPane b, BrowserPanel c, DisplayWindow d){
 		listManager = a;
 		itemInfo = b;
 		browser = c;
+		window = d;
 		setLayout(new FlowLayout(FlowLayout.LEADING));
 		contentPanel.setLayout(new GridLayout(3,2,10,10));
 		
@@ -83,8 +85,10 @@ public class optionPane extends JPanel{
 			if(!DisplayWindow.programStarted)
 				return;
 			
-			if(e.getSource() == setRO)
+			if(e.getSource() == setRO){
 				DisplayWindow.readOnly = setRO.isSelected();
+				window.updateInfo();
+			}
 			if(e.getSource() == winSize)
 				DisplayWindow.smallWindow = winSize.isSelected();
 			if(e.getSource() == quickAdd){
