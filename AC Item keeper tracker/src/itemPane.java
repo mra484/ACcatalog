@@ -562,8 +562,16 @@ public class itemPane extends JPanel{
 				set.setSelectedIndex(0);
 				theme.setSelectedIndex(0);
 				break;
-			default:
+			case -1:
 				type.setSelectedIndex(0);
+				furniture.setSelectedIndex(0);
+				series.setSelectedIndex(0);
+				set.setSelectedIndex(0);
+				theme.setSelectedIndex(0);
+				clothes.setSelectedIndex(0);
+				clothesStyle.setSelectedIndex(0);
+				break;
+			default:
 				furniture.setSelectedIndex(0);
 				series.setSelectedIndex(0);
 				set.setSelectedIndex(0);

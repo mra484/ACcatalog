@@ -200,13 +200,14 @@ public class searchPanel extends JPanel{
 					return;
 				}
 				
-				current = itemInfo.getEntry();
-				
-				if( listManager.getUserSize() == 0 )
+				//get info from itemPane if saving attributes
+				if(!DisplayWindow.readOnly && listManager.getUserSize() != 0){
+					current = itemInfo.getEntry();
+				} else
 					current = new Entry(item, null);
-				
+
 				result = listManager.addWord(current);
-				
+
 				if (result == 2 ) {
 					text2.setForeground(new Color(5, 128, 15));
 					text2.setText(item + " successfully added to the list");
@@ -263,7 +264,9 @@ public class searchPanel extends JPanel{
 
 			//same function as pressing return
 			if( e.getSource() == add ){
-				if( listManager.getUserSize() != 0 )
+				
+				//get info from itemPane if saving selected attributes
+				if( listManager.getUserSize() != 0 && !DisplayWindow.readOnly )
 					searchWord = itemInfo.getEntry();
 				
 				if( checkDuplicates(searchWord.displayName) ){
