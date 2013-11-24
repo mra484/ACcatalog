@@ -37,7 +37,7 @@ public class itemPane extends JPanel{
 	public static final int SEARCHPANEL = 2;
 	public static final int DISPLAYPANELRO = 3;
 	
-	private static final long serialVersionUID = 1532607835222537991L;
+	private static final long serialVersionUID = 1L;
 	
 	private boolean skipListener = false;
 	private int panelType = 0;

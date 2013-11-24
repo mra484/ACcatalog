@@ -79,7 +79,7 @@ public class DisplayWindow extends JFrame{
 		
 		tabs.add("Add", search);
 		tabs.add("Browse", browse);
-		tabs.add("Option", option);
+		tabs.add("Options", option);
 		tabs.add("About", about);
 		
 		

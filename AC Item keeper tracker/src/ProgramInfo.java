@@ -29,9 +29,7 @@ import javax.swing.text.StyledDocument;
 public class ProgramInfo extends JPanel{
 	private static final long serialVersionUID = 1L;
 	
-	private JTextArea text = new JTextArea();
 	private JTextPane text2 = new JTextPane();
-//	private StyledDocument doc = text2.getStyledDocument();
 
 	public ProgramInfo(){
 		setLayout(new BorderLayout());
@@ -48,6 +46,7 @@ public class ProgramInfo extends JPanel{
 				"<b>gamefaqs.com : Animal Crossing Item List by Liquefy</b><br>" +
 				"Contains all information you could want to know about items in Animal Crossing.  " +
 				"Used their list of clothing styles<br><hr size =1>" + 
+				
 				"<font size=\"3\"><p>This program is free software: you can redistribute it and/or modify" +
 				"it under the terms of the GNU General Public License as published by"+
 				"the Free Software Foundation, either version 3 of the License, or"+
