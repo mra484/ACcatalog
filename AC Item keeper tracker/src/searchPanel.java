@@ -25,12 +25,19 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.*;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 public class searchPanel extends JPanel{
 
@@ -40,8 +47,15 @@ public class searchPanel extends JPanel{
 	private DisplayWindow mainWindow;
 	private Entry currentEntry = new Entry("", null);
 	private boolean listChange = false;
+	private int listSize = 0;
+	private String[] remainingList = null;
+	private JScrollPane scroll = null;
+	private JList<String> list = null;
+	private boolean skipSelection = true;
+	private boolean selectionMade = false;
 	
 	private JTextField textEntry = new JTextField(15);
+	private JPopupMenu pop = new JPopupMenu();
 	private JButton add = new JButton ("Add");
 	private JButton remove = new JButton ("Remove");
 	private JLabel text = new JLabel("Enter an item below, use the add button or return key to add it to your list.");
@@ -49,6 +63,7 @@ public class searchPanel extends JPanel{
 	
 	private ActionClass action = new ActionClass();
 	private KeyClass key = new KeyClass();
+	private SelectionHandler select = new SelectionHandler();
 	private filer listManager;
 	private BrowserPanel browser;
 	private JPanel centerPanel = new JPanel();
@@ -70,6 +85,8 @@ public class searchPanel extends JPanel{
 		layout = createLayout(layout);
 		
 		//set up text and buttons for the bottom of the tab
+		pop.setFocusable(false);
+		pop.setPopupSize(new Dimension(200, 100));
 		add.addActionListener(action);
 		remove.addActionListener(action);
 		textEntry.addKeyListener(key);
@@ -182,6 +199,40 @@ public class searchPanel extends JPanel{
 	public void setBrowser(BrowserPanel a){
 		browser = a;
 	}
+	
+	//creates a list of Strings that start with the text in the textEntry field and adds it to the popupmenu
+	public void populatePopup(){
+		list = new JList<String>();
+		TreeSet<String> sList = new TreeSet<String>();
+		list.addListSelectionListener(select);
+		if( scroll != null)
+			pop.remove(scroll);
+		pop.setVisible(false);
+		scroll = new JScrollPane(list);
+		
+		int i = 0;
+		if( listSize == 0){
+			for(Entry a: listManager.getList().values()){
+				if( a.searchName.startsWith(currentEntry.normalizeText(textEntry.getText()))){
+				sList.add(a.displayName);
+				i++;
+				}
+			}
+			
+		} else {
+			for(String a: remainingList){
+				if(currentEntry.normalizeText(a).startsWith(currentEntry.normalizeText(textEntry.getText()))){
+					sList.add(a);
+					i++;
+				}
+			}			
+		}
+		remainingList = sList.toArray(new String[i]);
+		list.setListData(remainingList);
+		listSize = i;
+		pop.add(scroll);
+		pop.setVisible(true);
+	}
 
 
 	private class KeyClass implements KeyListener{
@@ -191,6 +242,15 @@ public class searchPanel extends JPanel{
 			int result;
 			//perform "add word" function on enter, refresh search result and highlight text
 			if(e.getKeyCode() == KeyEvent.VK_ENTER){
+				if(list.getSelectedIndex() != -1){
+
+					textEntry.setText(list.getSelectedValue());
+					pop.setVisible(false);
+					list.setSelectedIndex(-1);
+					currentEntry = listManager.searchListControl(new Entry(textEntry.getText(), null));
+					itemInfo.update(currentEntry);
+					return;
+				}
 				listChange = true;
 				if(textEntry.getText() != null)
 					item = textEntry.getText();
@@ -213,9 +273,11 @@ public class searchPanel extends JPanel{
 					text2.setText(item + " successfully added to the list");
 					BrowserPanel.owned++;
 					listManager.searchListControl(new Entry(item, null));
+					pop.setVisible(false);
 					saveFiles();
 				} else{
 					text2.setForeground(Color.RED);
+					pop.setVisible(false);
 
 					if(result == 1)
 						text2.setText(item + " was not found in the main list");
@@ -242,13 +304,67 @@ public class searchPanel extends JPanel{
 			if( !listChange )
 				text2.setText(" ");
 			listChange = false;
+			if(listSize != 0){
+			if( e.getKeyCode() == KeyEvent.VK_UP ){
+				if( list.getSelectedIndex() == -1)
+					list.setSelectedIndex(0);
+				else if( list.getSelectedIndex() == 0 )
+					list.setSelectedIndex(listSize-1);
+				else
+					list.setSelectedIndex(list.getSelectedIndex()-1);
+				list.ensureIndexIsVisible(list.getSelectedIndex());
+				skipSelection = true;
+				return;
+			} else if( e.getKeyCode() == KeyEvent.VK_DOWN ){
+				if( list.getSelectedIndex() == -1)
+					list.setSelectedIndex(0);
+				else if( list.getSelectedIndex() == listSize-1 )
+					list.setSelectedIndex(0);
+				else
+					list.setSelectedIndex(list.getSelectedIndex()+1);
+				list.ensureIndexIsVisible(list.getSelectedIndex());
+				skipSelection = true;
+				return;
+			}
+			}
 			if(listManager.getUserSize() == 0 )
 				return;
+			if(listSize != 1 && !selectionMade)
+				populatePopup();
+			
 			if(/*e.getKeyCode() != KeyEvent.VK_ENTER &&*/ textEntry.getText() != null){
 				currentEntry = listManager.searchListControl(new Entry(textEntry.getText(), null));
 				itemInfo.update(currentEntry);
+				if( e.getKeyCode() == KeyEvent.VK_BACK_SPACE && textEntry.getText().compareTo("") == 0){
+					listSize = 0;		
+					pop.setVisible(false);
+					return;
+				}
+				if( e.getKeyCode() == KeyEvent.VK_ENTER)
+					return;
 			}
+			if(selectionMade){
+				selectionMade = false;
+				return;
+			}
+			pop.show(textEntry, textEntry.getX(), textEntry.getY()+10 );
 
+		}
+	}
+	
+	//handles the popupmenu's jlist
+	private class SelectionHandler implements ListSelectionListener{
+		public void valueChanged(ListSelectionEvent e){
+			if( skipSelection){
+				skipSelection = false;
+				return;
+			}
+			textEntry.setText(list.getSelectedValue());
+			pop.setVisible(false);
+			list.setSelectedIndex(-1);
+			currentEntry = listManager.searchListControl(new Entry(textEntry.getText(), null));
+			itemInfo.update(currentEntry);
+			selectionMade = true;
 		}
 	}
 
@@ -276,12 +392,14 @@ public class searchPanel extends JPanel{
 				
 				result = listManager.addWord(searchWord);
 				if( result == 2 ){
+					pop.setVisible(false);
 					text2.setForeground(new Color(5, 128, 15));
 					text2.setText(searchWord.displayName + " successfully added to the list");
 					BrowserPanel.owned++;
 					saveFiles();
 					currentEntry = listManager.searchListControl(searchWord);
 				} else {
+					pop.setVisible(false);
 					text2.setForeground(Color.RED);
 					if(result == 1)
 						text2.setText(searchWord.displayName + " was not found in the main list");
@@ -300,11 +418,13 @@ public class searchPanel extends JPanel{
 				if( listManager.removeWord(searchWord) ){
 					text2.setForeground(new Color(5, 128, 15));
 					text2.setText(searchWord.displayName + " successfully removed from the list");
+					pop.setVisible(false);
 					BrowserPanel.owned--;
 					if(!DisplayWindow.readOnly)
 						BrowserPanel.total--;
 					saveFiles();
 				} else {
+					pop.setVisible(false);
 					text2.setForeground(Color.RED);
 					text2.setText(searchWord.displayName + " not found in the list");
 				}
