@@ -250,7 +250,7 @@ public class searchPanel extends JPanel{
 		listSize = i;
 		pop.add(scroll);
 		pop.show(textEntry, textEntry.getX(), textEntry.getY()+9 );
-		pop.setPopupSize(textEntry.getWidth(), 100);
+		pop.setPopupSize(textEntry.getWidth(), (listSize <= 5 ? 20*listSize : 100));
 	}
 
 
