@@ -67,47 +67,39 @@ public class FileHandler{
 	private void readSettings(){
 		String read;
 		String[] readValues;
-		double x, y;
+		double x = 0, y = 0;
 		openPlainFileRead("settings.ini");
 		if(!fileReader.hasNext()){
 			fileReader.close();
 			return;
 		}
 		try{
-		//read from settings file, if anything doesn't fit, ignore the rest of the file and continue
-		read = fileReader.nextLine();
-		readValues = read.split("=");
-		DisplayWindow.language = Integer.parseInt(readValues[1]);
-
-		read = fileReader.nextLine();
-		readValues = read.split("=");
-		DisplayWindow.readOnly = Boolean.parseBoolean(readValues[1]);
-
-		read = fileReader.nextLine();
-		readValues = read.split("=");
-		DisplayWindow.defaultOwned = Boolean.parseBoolean(readValues[1]);
-		
-		read = fileReader.nextLine();
-		readValues = read.split("=");
-		x = Double.parseDouble(readValues[1]);
-	
-		read = fileReader.nextLine();
-		readValues = read.split("=");
-		y = Double.parseDouble(readValues[1]);
-		
-		DisplayWindow.windowPos = new Point();
-		DisplayWindow.windowPos.setLocation(x,y);
+			//parse settings file
+			while(fileReader.hasNext()){
+				read = fileReader.nextLine();
+				readValues = read.split("=");
+				
+				if(readValues[0].compareTo("language") == 0)
+					DisplayWindow.language = Integer.parseInt(readValues[1]);
+				else if(readValues[0].compareTo("readOnly") == 0)
+					DisplayWindow.readOnly = Boolean.parseBoolean(readValues[1]);
+				else if(readValues[0].compareTo("defaultOwned") == 0)
+					DisplayWindow.defaultOwned = Boolean.parseBoolean(readValues[1]);
+				else if(readValues[0].compareTo("DisableAutofinish") == 0)
+					DisplayWindow.popup = Boolean.parseBoolean(readValues[1]);
+				else if(readValues[0].compareTo("DisableListWarning") == 0)
+					DisplayWindow.listWarning = Boolean.parseBoolean(readValues[1]);
+				else if(readValues[0].compareTo("mainWindow.X") == 0)
+					x = Double.parseDouble(readValues[1]);
+				else if(readValues[0].compareTo("mainWindow.Y") == 0)
+					y = Double.parseDouble(readValues[1]);					
+			}
+			DisplayWindow.windowPos = new Point();
+			DisplayWindow.windowPos.setLocation(x,y);
+			
 		} catch (Exception e){
 			System.out.println("Error reading from settings.ini");
 		}
-		
-		read = fileReader.nextLine();
-		readValues = read.split("=");
-		DisplayWindow.popup = Boolean.parseBoolean(readValues[1]);
-		
-		read = fileReader.nextLine();
-		readValues = read.split("=");
-		DisplayWindow.listWarning = Boolean.parseBoolean(readValues[1]);
 		
 		openFileRead("userIndex.txt");
 		try {
