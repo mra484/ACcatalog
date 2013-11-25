@@ -35,6 +35,12 @@ public class optionPane extends JPanel{
 	
 	private JComboBox<String> language = new JComboBox<String>();
 	private JLabel languageLabel = new JLabel("Language");
+
+	private JCheckBox noPopup = new JCheckBox();
+	private JLabel noPopupLabel = new JLabel("Disable autofinish");
+	
+	private JCheckBox noWarning = new JCheckBox();
+	private JLabel noWarningLabel = new JLabel("Disable list size warning");
 	
 	private JCheckBox setRO = new JCheckBox();
 	private JLabel setROLabel = new JLabel("Make master list read only");
@@ -58,12 +64,43 @@ public class optionPane extends JPanel{
 		browser = c;
 		window = d;
 		setLayout(new FlowLayout(FlowLayout.LEADING));
-		contentPanel.setLayout(new GridLayout(3,2,10,10));
+		contentPanel.setLayout(new GridLayout(5,2,10,10));
 		
+		String languageHelp = "Change the language that the item names appear";
+		
+		String readOnlyHelp = "Choose whether or not the main list can be edited.  " +
+				"Information panels will be replaced with combo boxes if disabled.  " +
+				"Should only need to be used if the entire main list is to be changed.  " +
+				"Be sure to check \"Disable list warning\"";
+		
+		String quickAddHelp = "When enabled, clicking on an item in the browser list will toggle whether or not it is on the user list.  " + 
+				"Can click and drag to toggle several at once.";
+		
+		String popupHelp = "When enabled, the auto complete will not be displayed in the \"Add\" tab.";
+		
+		String warningHelp = "When enabled, no warning message will be displayed when the main list item count drops below 3609.";
+				
 		language.addActionListener(action);
 		setRO.addItemListener(actions);
 		winSize.addItemListener(actions);
 		quickAdd.addItemListener(actions);
+		noPopup.addItemListener(actions);
+		noWarning.addItemListener(actions);
+		
+		language.setToolTipText(languageHelp);
+		languageLabel.setToolTipText(languageHelp);
+
+		setRO.setToolTipText(readOnlyHelp);		
+		setROLabel.setToolTipText(readOnlyHelp);
+		
+		quickAdd.setToolTipText(quickAddHelp);
+		quickAddLabel.setToolTipText(quickAddHelp);
+		
+		noPopup.setToolTipText(popupHelp);
+		noPopupLabel.setToolTipText(popupHelp);
+		
+		noWarning.setToolTipText(warningHelp);
+		noWarningLabel.setToolTipText(warningHelp);
 		
 		//fields for language selector
 		language.addItem("English (EU)");
@@ -80,6 +117,8 @@ public class optionPane extends JPanel{
 		setRO.setSelected(DisplayWindow.readOnly);
 		winSize.setSelected(DisplayWindow.smallWindow);
 		quickAdd.setSelected(DisplayWindow.quickAdd);
+		noPopup.setSelected(DisplayWindow.popup);
+		noWarning.setSelected(DisplayWindow.listWarning);
 		
 		contentPanel.add(languageLabel);
 		contentPanel.add(language);
@@ -87,8 +126,10 @@ public class optionPane extends JPanel{
 		contentPanel.add(setRO);
 		contentPanel.add(quickAddLabel);
 		contentPanel.add(quickAdd);
-//		contentPanel.add(winSizeLabel);
-//		contentPanel.add(winSize);
+		contentPanel.add(noPopupLabel);
+		contentPanel.add(noPopup);
+		contentPanel.add(noWarningLabel);
+		contentPanel.add(noWarning);
 		add(contentPanel);
 	}
 	
@@ -103,15 +144,21 @@ public class optionPane extends JPanel{
 				DisplayWindow.readOnly = setRO.isSelected();
 				window.updateInfo();
 			}
+			
+			if(e.getSource() == noPopup)
+				DisplayWindow.popup = noPopup.isSelected();
+			
+			if(e.getSource() == noWarning)
+				DisplayWindow.listWarning = noWarning.isSelected();
+			
 			if(e.getSource() == winSize)
 				DisplayWindow.smallWindow = winSize.isSelected();
+			
 			if(e.getSource() == quickAdd){
 				DisplayWindow.quickAdd = quickAdd.isSelected();
 				browser.update();
-			itemInfo.updateComboBoxes();
-			listManager.saveFiles(0);
-				
-
+				itemInfo.updateComboBoxes();
+				listManager.saveFiles(0);
 			}
 		}
 	}

@@ -101,6 +101,14 @@ public class FileHandler{
 			System.out.println("Error reading from settings.ini");
 		}
 		
+		read = fileReader.nextLine();
+		readValues = read.split("=");
+		DisplayWindow.popup = Boolean.parseBoolean(readValues[1]);
+		
+		read = fileReader.nextLine();
+		readValues = read.split("=");
+		DisplayWindow.listWarning = Boolean.parseBoolean(readValues[1]);
+		
 		openFileRead("userIndex.txt");
 		try {
 			
@@ -320,8 +328,9 @@ public class FileHandler{
 		
 		//System settings saved are the language, read only, display owned items checkbox status, and the x y coordinates of the main window
 		openPlainFileWrite("settings.ini.temp");
-		fileWriter.printf("language=%d\nreadOnly=%s\ndefaultOwned=%s\nmainWindow.X=%d\nmainWindow.Y=%d", DisplayWindow.language, DisplayWindow.readOnly,
-				DisplayWindow.defaultOwned, mainWindow.getX(), mainWindow.getY());
+		fileWriter.printf("language=%d\nreadOnly=%s\ndefaultOwned=%s\nmainWindow.X=%d\nmainWindow.Y=%d\n" + 
+				"DisableAutofinish=%s\nDisableListWarning=%s", DisplayWindow.language, DisplayWindow.readOnly,
+				DisplayWindow.defaultOwned, mainWindow.getX(), mainWindow.getY(), DisplayWindow.popup, DisplayWindow.listWarning);
 		fileWriter.flush();
 		fileWriter.close();
 		input2 = new File("settings.ini");

@@ -34,6 +34,8 @@ public class DisplayWindow extends JFrame{
 	public static boolean defaultOwned = false;
 	public static boolean smallWindow = true;
 	public static boolean quickAdd = false;
+	public static boolean popup = true;
+	public static boolean listWarning = true;
 	public static Point windowPos = null;
 	public static Dimension windowDim;
 	public static boolean programStarted = false;

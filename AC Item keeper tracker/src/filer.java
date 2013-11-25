@@ -247,7 +247,7 @@ public class filer {
 	}
 	
 	public void saveFiles(int a){
-		if( itemList.size() < 3609)
+		if( itemList.size() < 3609 && !DisplayWindow.listWarning)
 			JOptionPane.showMessageDialog(mainWindow, "Item Removed from master list");
 		switch (a){
 		case 0:
