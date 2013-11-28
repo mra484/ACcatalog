@@ -248,7 +248,7 @@ public class filer {
 	
 	public void saveFiles(int a){
 		if( itemList.size() < 3609 && !DisplayWindow.listWarning)
-			JOptionPane.showMessageDialog(mainWindow, "Item Removed from master list");
+			JOptionPane.showMessageDialog(mainWindow, "Item Removed from master list.\n If this was intentional, you can disable this message in the options.");
 		switch (a){
 		case 0:
 			fileManager.saveSettings();

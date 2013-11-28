@@ -49,7 +49,7 @@ public class optionPane extends JPanel{
 //	private JLabel winSizeLabel = new JLabel("Compact window");
 	
 	private JCheckBox quickAdd = new JCheckBox();
-	private JLabel quickAddLabel = new JLabel("Quick Add and Remove in Browser");
+	private JLabel quickAddLabel = new JLabel("Quick add and remove in browser");
 	
 	private filer listManager = null;
 	private itemPane itemInfo = null;

@@ -41,6 +41,12 @@ public class DisplayField extends JPanel{
 
 	public void updateList(Entry current, int state){
 		Entry head = current;
+		
+		if( current == null ){
+			for( int i = 0; i < DisplayWindow.listHeight; i++ )
+				labelList.get(i).setText("--------------------------");
+			return;
+		}
 
 		//move up from the center item
 		for( int i = (DisplayWindow.listHeight / 2) ; i >= 0 ; i-- ){

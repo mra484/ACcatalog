@@ -50,13 +50,13 @@ public class itemPane extends JPanel{
 	private SimpleAttributeSet paramName = new SimpleAttributeSet();
 	
 	private Entry currentEntry = new Entry(" ", null);
-	private Entry blankEntry = new Entry("--------------------------", null);
+	private Entry blankEntry = new Entry("----------------------", null);
 	private JPanel centerPlate = new JPanel();
 	private GroupLayout layout = new GroupLayout(centerPlate);
 	
 	private JPanel namePanel = new JPanel();
 	private Font nameFont = new Font("Large", Font.BOLD, 18);
-	private JLabel name = new JLabel("--------------------------");
+	private JLabel name = new JLabel("----------------------");
 
 	
 	private JLabel typeLabel = new JLabel("Item Type");
@@ -152,6 +152,7 @@ public class itemPane extends JPanel{
 				type.addItem("Wet Suits");
 				type.addItem("Streetpass");
 				type.addActionListener(actions);
+				type.setPreferredSize(new Dimension(127, 25));
 				type.setMaximumSize(new Dimension(127, 25));
 				
 				furniture.addItem("None");
@@ -167,6 +168,7 @@ public class itemPane extends JPanel{
 				furniture.addItem("Other");
 				furniture.addActionListener(actions);
 				furniture.setMaximumSize(new Dimension(127, 25));
+				furniture.setPreferredSize(new Dimension(127, 25));
 						
 				//add lists to furniture parameters
 				series.addItem("None");
@@ -209,6 +211,7 @@ public class itemPane extends JPanel{
 				series.addItem("trump");
 				series.addActionListener(actions);
 				series.setMaximumSize(new Dimension(127, 25));
+				series.setPreferredSize(new Dimension(127, 25));
 				
 				set.addItem("None");
 				set.addItem("Apple");
@@ -246,6 +249,7 @@ public class itemPane extends JPanel{
 				set.addItem("Watermelon");
 				set.addActionListener(actions);
 				set.setMaximumSize(new Dimension(127, 25));
+				set.setPreferredSize(new Dimension(127, 25));
 				
 				theme.addItem("None");
 				theme.addItem("Backyard");
@@ -262,6 +266,7 @@ public class itemPane extends JPanel{
 				theme.addItem("Western");
 				theme.addActionListener(actions);
 				theme.setMaximumSize(new Dimension(127, 25));
+				theme.setPreferredSize(new Dimension(127, 25));
 				
 				clothes.addItem("All");
 				clothes.addItem("Shirts");
@@ -273,6 +278,7 @@ public class itemPane extends JPanel{
 				clothes.addItem("Umbrellas");
 				clothes.addActionListener(actions);
 				clothes.setMaximumSize(new Dimension(127, 25));
+				clothes.setPreferredSize(new Dimension(127, 25));
 
 				clothesStyle.addItem("None");
 				clothesStyle.addItem("Flashy");
@@ -286,7 +292,8 @@ public class itemPane extends JPanel{
 				clothesStyle.addItem("Sporty");
 				clothesStyle.addItem("Iconic");
 				clothesStyle.addActionListener(actions);
-				clothesStyle.setMaximumSize(new Dimension(127, 25));				
+				clothesStyle.setMaximumSize(new Dimension(127, 25));	
+				clothesStyle.setPreferredSize(new Dimension(127, 25));			
 	}
 	
 	public GroupLayout createLayout(int a){
