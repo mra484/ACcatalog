@@ -370,10 +370,10 @@ public class searchPanel extends JPanel{
 				populatePopup();
 
 			//skip search operations if there are no items in the user list, arrow keys still need to be available
-			if(listManager.getUserSize() == 0 ){
-				listField.updateList(null, 0);
-				return;
-			}
+//			if(listManager.getUserSize() == 0 ){
+//				listField.updateList(null, 0);
+//				return;
+//			}
 
 			//perform a search to find the position the current string would fall in the display field
 			//search still needs to be performed after autofinish selection has taken place
@@ -386,6 +386,11 @@ public class searchPanel extends JPanel{
 				//if the last keystroke was a backspace, and the textField is empty, reset the popup menu
 				if( e.getKeyCode() == KeyEvent.VK_BACK_SPACE && textEntry.getText().compareTo("") == 0){
 					pop.setVisible(false);
+				}
+
+				if(listManager.getUserSize() == 0 ){
+					listField.updateList(null, 0);
+					return;
 				}
 			}
 		}
