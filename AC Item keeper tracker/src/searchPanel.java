@@ -250,7 +250,7 @@ public class searchPanel extends JPanel{
 		listSize = i;
 		pop.add(scroll);
 		pop.show(textEntry, textEntry.getX(), textEntry.getY()+9 );
-		pop.setPopupSize(textEntry.getWidth(), 100);
+		pop.setPopupSize(textEntry.getWidth(), (listSize <= 5 ? 20*listSize : 100));
 	}
 
 
@@ -360,10 +360,6 @@ public class searchPanel extends JPanel{
 				selectionMade = false;
 			}
 
-			//skip search operations if there are no items in the user list, arrow keys still need to be available
-			if(listManager.getUserSize() == 0 )
-				return;
-
 			if( e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
 				listSize = 0;
 				selectionMade = false;
@@ -372,6 +368,12 @@ public class searchPanel extends JPanel{
 			//compile a list of items that starts with the current textfield string if the size has not been narrowed to 1
 			if(listSize != 1 && !selectionMade)
 				populatePopup();
+
+			//skip search operations if there are no items in the user list, arrow keys still need to be available
+			if(listManager.getUserSize() == 0 ){
+				listField.updateList(null, 0);
+				return;
+			}
 
 			//perform a search to find the position the current string would fall in the display field
 			//search still needs to be performed after autofinish selection has taken place
@@ -462,8 +464,10 @@ public class searchPanel extends JPanel{
 					text2.setForeground(Color.RED);
 					text2.setText(searchWord.displayName + " not found in the list");
 				}
-				if(listManager.getUserSize() == 0 )
+				if(listManager.getUserSize() == 0 ){
+					listField.updateList(null, 0);
 					return;
+				}
 				currentEntry = listManager.searchListControl(searchWord);
 				itemInfo.update(currentEntry);
 			}
