@@ -221,7 +221,10 @@ public class ItemCheckDialog extends JDialog{
 			
 			if(e.getSource() == exit)
 				System.exit(2);
-			if(e.getSource() == cancel ){}
+			if(e.getSource() == cancel ){
+				if( missingItems.size() == 0 )
+					dispose();
+			}
 			if( missingItems.size() == 0){
 				dispose();
 				itemManager.saveFiles(1);
@@ -230,6 +233,8 @@ public class ItemCheckDialog extends JDialog{
 		}
 			
 			//actions for the duplicate item dialog, word selected will be added and updated in the main window
+			if( checkDuplicate ){
+				
 			if(e.getSource() == b1)
 				item = itemManager.getList().get(item1);
 			
@@ -240,8 +245,9 @@ public class ItemCheckDialog extends JDialog{
 			itemManager.searchListControl(item);
 			itemInfo.update(item);
 			itemManager.saveFiles(1);
-
 			dispose();
+			}
+
 		}
 	}
 }

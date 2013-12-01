@@ -60,8 +60,8 @@ public class FileHandler{
 			
 			openFileRead("userIndex.txt");
 			readUserList();
-			
-//			saveFiles();
+	
+//			saveReference();
 	}
 	
     private void readSettings(){
@@ -177,7 +177,7 @@ public class FileHandler{
 		Entry newEntry;
 		String a, b, c, d, e, f, g, h;
 		String[] splitArray, intArray;
-		byte type, series, set, theme, clothes, style, furniture;
+		byte type, series, set, theme, clothes, style, furniture, catalog;
 
 		try {
 			while(true){
@@ -196,6 +196,7 @@ public class FileHandler{
 				clothes = Byte.parseByte(intArray[4]);
 				style = Byte.parseByte(intArray[5]);
 				furniture = Byte.parseByte(intArray[6]);
+				catalog = Byte.parseByte(intArray[7]);
 				a = splitArray[1];
 				b = splitArray[3];
 				c = splitArray[5];
@@ -204,7 +205,7 @@ public class FileHandler{
 				f = splitArray[11];
 				g = splitArray[13];
 				h = splitArray[15];
-				newEntry = new Entry(a, b, c, d, e, f, g, h, type, series, set, theme, clothes, style, furniture, null);
+				newEntry = new Entry(a, b, c, d, e, f, g, h, type, series, set, theme, clothes, style, furniture, catalog, null);
 				listManager.getList().put(newEntry.searchName, newEntry);
 				listManager.incTotalItems();
 			}
@@ -221,6 +222,7 @@ public class FileHandler{
 		String name;
 		Entry prev = null;
 		Entry current = null;
+		boolean catalog;
 		
 		try {
 			while(true){
@@ -228,6 +230,8 @@ public class FileHandler{
 
 				if( name == null )
 					break;
+//				catalog = (name.endsWith("*" ) ? false : true );
+//				name = name.replace("*", "");
 
 				//check for the current item in the index, if it isn't listed, print it to the console and move to the next item
 				current = new Entry(name, null);
@@ -241,6 +245,7 @@ public class FileHandler{
 
 				//use with specific lists to edit item properties
 				//current.setStyle((byte)9);
+//				current.catalog = catalog;
 				
 				//set link for searches, owned for browsing, and inc user size for itemSorter
 				current.addPrev(prev);

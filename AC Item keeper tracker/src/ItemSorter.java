@@ -51,7 +51,8 @@ public class ItemSorter extends JScrollPane {
 		listReader.setLister(this);
 		lister.setCellRenderer(new CellRenderer());
 		lister.setListData(getList(searchInfo.getType(), searchInfo.getSeries(), searchInfo.getSet(),
-				searchInfo.getTheme(), searchInfo.getClothes(), searchInfo.getStyle(), searchInfo.getFurniture(), searchInfo.getOwned()));
+				searchInfo.getTheme(), searchInfo.getClothes(), searchInfo.getStyle(), searchInfo.getFurniture(), 
+				searchInfo.getCatalog(), searchInfo.getOwned()));
 		lister.addListSelectionListener(actions);
 	}
 	public ItemSorter(filer a, JList<String> d){
@@ -59,18 +60,18 @@ public class ItemSorter extends JScrollPane {
 		lister = d;
 		listReader = a;
 		listReader.setLister(this);
-		lister.setListData(getList(0, 0, 0, 0, 0, 0, 0, false));
+		lister.setListData(getList(0, 0, 0, 0, 0, 0, 0, false, false));
 	}
 	
 	//will use the arguments from the browser section to reduce the list down to items that satisfy those conditions
-	public String[] getList(int type, int series, int set, int theme, int clothes, int clothesStyle, int furniture, boolean owned){
+	public String[] getList(int type, int series, int set, int theme, int clothes, int clothesStyle, int furniture, boolean catalog, boolean owned){
 		ArrayList<String> list = new ArrayList<String>();
 		TreeSet<Entry> sortList = new TreeSet<Entry>();
 		int i = 0;
 		BrowserPanel.total = 0;
 		BrowserPanel.owned = 0;
 		for(Entry a: listReader.getList().values()){
-			if( a.match(type, series, set, theme, clothes, clothesStyle, furniture, owned) ){
+			if( a.match(type, series, set, theme, clothes, clothesStyle, furniture, catalog, owned) ){
 				sortList.add(a);
 				i++;
 			}
@@ -88,7 +89,8 @@ public class ItemSorter extends JScrollPane {
 	
 	public void update(){
 		lister.setListData(getList(searchInfo.getType(), searchInfo.getSeries(), searchInfo.getSet(),
-				searchInfo.getTheme(), searchInfo.getClothes(), searchInfo.getStyle(), searchInfo.getFurniture(), searchInfo.getOwned()));
+				searchInfo.getTheme(), searchInfo.getClothes(), searchInfo.getStyle(), searchInfo.getFurniture(),
+				searchInfo.getCatalog(), searchInfo.getOwned()));
 		browser.update();
 	}
 

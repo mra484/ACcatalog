@@ -24,6 +24,10 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -36,6 +40,8 @@ public class itemPane extends JPanel{
 	public static final int DISPLAYPANEL = 1;
 	public static final int SEARCHPANEL = 2;
 	public static final int DISPLAYPANELRO = 3;
+	public static final int GBYPAD = 10;
+	public static final int GBXPAD = 5;
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -52,7 +58,7 @@ public class itemPane extends JPanel{
 	private Entry currentEntry = new Entry(" ", null);
 	private Entry blankEntry = new Entry("----------------------", null);
 	private JPanel centerPlate = new JPanel();
-	private GroupLayout layout = new GroupLayout(centerPlate);
+//	private GroupLayout layout = new GroupLayout(centerPlate);
 	
 	private JPanel namePanel = new JPanel();
 	private Font nameFont = new Font("Large", Font.BOLD, 18);
@@ -86,6 +92,12 @@ public class itemPane extends JPanel{
 	private JLabel owned = new JLabel("Owned Items");
 	private JCheckBox ownedCheck = new JCheckBox();	
 	
+	private JPanel catalogPanel = new JPanel();
+	private JLabel catalog = new JLabel("Items Sold By Catalog");
+	private JCheckBox catalogCheck = new JCheckBox();
+	
+	private JPanel checkPanels = new JPanel();
+	
 	private JButton reset = new JButton("Reset");
 	
 	private ActionHandler actions = new ActionHandler();
@@ -109,27 +121,57 @@ public class itemPane extends JPanel{
 		
 		if( a == DISPLAYPANEL){
 			this.add(namePanel, BorderLayout.NORTH);		
-			layout = createLayout(DISPLAYPANEL);
-			centerPlate.setLayout(layout);			
+			centerPlate.setLayout(createGroupLayout(DISPLAYPANEL));
+//			layout = createLayout(DISPLAYPANEL);
+//			centerPlate.setLayout(layout);			
 			this.add(centerPlate, BorderLayout.CENTER);
 			
 		} else if ( a == SEARCHPANEL){
 		
 		ownedCheck.addActionListener(actions);
 		ownedCheck.setSelected(DisplayWindow.defaultOwned);
+		catalogCheck.addActionListener(actions);
+		ownedPanel.setLayout(new FlowLayout(FlowLayout.LEADING));
 		ownedPanel.add(owned);
 		ownedPanel.add(ownedCheck);
+
+		catalogPanel.setLayout(new FlowLayout(FlowLayout.LEADING));
+		catalogPanel.add(catalog);
+		catalogPanel.add(catalogCheck);
+		
+		checkPanels.setLayout(new GridLayout(2,0,0,0));
+		checkPanels.add(ownedPanel);
+		checkPanels.add(catalogPanel);
 		reset.addActionListener(actions);
 		
-		layout = createLayout(SEARCHPANEL);	
 
-		centerPlate.setLayout(layout);
+		centerPlate.setLayout(createGBLayout(SEARCHPANEL));
+//		layout = createLayout(SEARCHPANEL);	
+//
+//		centerPlate.setLayout(layout);
+		centerPlate.add(typeLabel);
+		centerPlate.add(seriesLabel);
+		centerPlate.add(clothesLabel);
+		centerPlate.add(type);
+		centerPlate.add(series);
+		centerPlate.add(clothes);
+		centerPlate.add(furnitureLabel);
+		centerPlate.add(setLabel);
+		centerPlate.add(clothesStyleLabel);
+		centerPlate.add(furniture);
+		centerPlate.add(set);
+		centerPlate.add(clothesStyle);
+		centerPlate.add(checkPanels);
+		centerPlate.add(themeLabel);
+		centerPlate.add(theme);
+		centerPlate.add(reset);
 		add(centerPlate);
 		panelType = 1;
 		
 		} else if (a == DISPLAYPANELRO){
-			layout = createLayout(DISPLAYPANEL);
-			centerPlate.setLayout(layout);			
+			centerPlate.setLayout(createGroupLayout(DISPLAYPANEL));
+//			layout = createLayout(DISPLAYPANEL);
+//			centerPlate.setLayout(layout);			
 			add(infoArea);
 			update(blankEntry);
 			panelType = 2;
@@ -296,9 +338,10 @@ public class itemPane extends JPanel{
 				clothesStyle.setPreferredSize(new Dimension(127, 25));			
 	}
 	
-	public GroupLayout createLayout(int a){
+	public GroupLayout createGroupLayout(int a){
+		GroupLayout layout = new GroupLayout(this);
 		switch(a){
-		case 1:
+		case DISPLAYPANEL:
 			//create a layout that has the type on the left and the furniture attributes on the right with a gap between choices
 			layout.setAutoCreateGaps(true);
 			layout.setAutoCreateContainerGaps(true);
@@ -333,15 +376,15 @@ public class itemPane extends JPanel{
 							.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 									.addComponent(clothes).addComponent(clothesStyle)));
 		break;
-		case 2:
-			//create a layout for the bottom panel of the browse tab
+		case SEARCHPANEL:
+			//create a layout for the bottom panel of the browse tab			
 			layout.setAutoCreateGaps(true);
 			layout.setAutoCreateContainerGaps(true);
 			layout.setHorizontalGroup(
 					layout.createSequentialGroup()
 					.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 							.addComponent(typeLabel).addComponent(type).addComponent(furnitureLabel)
-							.addComponent(furniture).addComponent(ownedPanel))
+							.addComponent(furniture).addComponent(ownedPanel).addComponent(catalogPanel))
 							.addGap(30)
 							.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 									.addComponent(seriesLabel).addComponent(series)
@@ -364,9 +407,10 @@ public class itemPane extends JPanel{
 							.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 															.addComponent(furniture)
 															.addComponent(set).addComponent(clothesStyle))
-							.addComponent(themeLabel)
 							.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-																	.addComponent(ownedPanel).addComponent(theme)
+									.addComponent(ownedPanel).addComponent(themeLabel))
+							.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+									.addComponent(catalogPanel).addComponent(theme)
 																	.addComponent(reset)));
 						
 			break;
@@ -375,6 +419,95 @@ public class itemPane extends JPanel{
 		}
 		return layout;
 		
+	}
+	
+	public GridBagLayout createGBLayout(int a){
+		GridBagLayout layout = new GridBagLayout();
+		GridBagConstraints c = new GridBagConstraints();
+		Insets label = new Insets(GBYPAD, GBXPAD, 0, GBXPAD);
+		Insets box = new Insets(0, GBXPAD, 0, GBXPAD);
+		switch (a){
+		case SEARCHPANEL:
+			c.fill = GridBagConstraints.HORIZONTAL;
+			c.anchor = GridBagConstraints.SOUTHWEST;
+
+			c.gridx = 0;
+			c.gridy = 0;
+			c.insets = label;
+			layout.setConstraints(typeLabel, c);
+
+			c.gridx = 1;
+			c.gridy = 0;
+			layout.setConstraints(seriesLabel, c);
+
+			c.gridx = 2;
+			c.gridy = 0;
+			layout.setConstraints(clothesLabel, c);
+
+			c.gridx = 0;
+			c.gridy = 1;
+			c.insets = box;
+			layout.setConstraints(type, c);
+
+			c.gridx = 1;
+			c.gridy = 1;
+			layout.setConstraints(series, c);
+
+			c.gridx = 2;
+			c.gridy = 1;
+			layout.setConstraints(clothes, c);
+
+			c.gridx = 0;
+			c.gridy = 2;
+			c.insets = label;
+			layout.setConstraints(furnitureLabel, c);
+
+			c.gridx = 1;
+			c.gridy = 2;
+			layout.setConstraints(setLabel, c);
+
+			c.gridx = 2;
+			c.gridy = 2;
+			layout.setConstraints(clothesStyleLabel, c);
+
+			c.gridx = 0;
+			c.gridy = 3;
+			c.insets = box;
+			layout.setConstraints(furniture, c);
+
+			c.gridx = 1;
+			c.gridy = 3;
+			layout.setConstraints(set, c);
+
+			c.gridx = 2;
+			c.gridy = 3;
+			layout.setConstraints(clothesStyle, c);
+
+			c.gridx = 0;
+			c.gridy = 4;
+			c.gridheight = 3;
+			layout.setConstraints(checkPanels, c);
+
+			c.gridx = 1;
+			c.gridy = 4;
+			c.gridheight = 1;
+			c.insets = label;
+			layout.setConstraints(themeLabel, c);
+
+			c.gridx = 1;
+			c.gridy = 5;
+			c.ipady = 0;
+			c.insets = box;
+			layout.setConstraints(theme, c);
+
+			c.gridx = 2;
+			c.gridy = 5;
+			layout.setConstraints(reset, c);
+
+		}
+		
+		
+		return layout;
 	}
 	
 	//update main entry when itemFields are changed
@@ -399,7 +532,11 @@ public class itemPane extends JPanel{
 			doc.insertString(doc.getLength(), String.format("%s\t", "Clothing Type:"), fieldName);
 			doc.insertString(doc.getLength(), String.format("%s\n", clothes.getItemAt(currentEntry.getClothes())), paramName);
 			doc.insertString(doc.getLength(), String.format("%s\t", "Clothing Style:"), fieldName);
-			doc.insertString(doc.getLength(), String.format("%s", clothesStyle.getItemAt(currentEntry.getStyle())), paramName);
+			doc.insertString(doc.getLength(), String.format("%s\n\n", clothesStyle.getItemAt(currentEntry.getStyle())), paramName);
+//			doc.insertString(doc.getLength(), String.format("%s\t", "Has Been Owned:"), fieldName);
+//			doc.insertString(doc.getLength(), String.format("%s\n\n", currentEntry.getOwned()), paramName);
+			doc.insertString(doc.getLength(), String.format("%s\t", "Sold By Catalog:"), fieldName);
+			doc.insertString(doc.getLength(), String.format("%s\n\n", currentEntry.getCatalog()), paramName);
 			
 			} catch (BadLocationException e) {
 				System.out.println("Unable to add text outside of styled document in itemPane");
@@ -448,6 +585,10 @@ public class itemPane extends JPanel{
 
 	public boolean getOwned(){
 		return ownedCheck.isSelected();
+	}
+	
+	public boolean getCatalog(){
+		return catalogCheck.isSelected();
 	}
 	public void setFiler(filer file){		
 		files = file;
@@ -700,6 +841,9 @@ public class itemPane extends JPanel{
 
 						if( files != null)
 							files.saveFiles(0);
+					} else 	if( e.getSource() == catalogCheck){
+						DisplayWindow.catalogOnly = catalogCheck.isSelected();
+						
 					} else if ( e.getSource() == reset){
 						type.setSelectedIndex(-1);
 						updateSearch(type);

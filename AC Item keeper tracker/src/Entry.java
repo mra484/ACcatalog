@@ -43,6 +43,7 @@ public class Entry implements Comparable<Entry>{
 	private byte clothes = 0;
 	private byte style = 0;
 	private byte furniture = 0;
+	public boolean catalog = false;
 	private boolean isOwned = false;
 	public Entry next;
 	public Entry prev;
@@ -77,7 +78,7 @@ public class Entry implements Comparable<Entry>{
 	
 	public Entry(String EU, String US, String FR, String IT, String DS, String ES, String JP,
 			String File, byte type, byte series, byte set, byte theme, byte clothes, 
-			byte style, byte furniture, Entry prev){
+			byte style, byte furniture, byte catalog, Entry prev){
 		
 		this.type = type;
 		this.series = series;
@@ -86,6 +87,7 @@ public class Entry implements Comparable<Entry>{
 		this.clothes = clothes;
 		this.style = style;
 		this.furniture = furniture;
+		this.catalog = (catalog == 1 ? true : false );
 		
 		displayNameEU = EU.trim();
 		displayNameUS = US.trim();
@@ -116,8 +118,8 @@ public class Entry implements Comparable<Entry>{
 	}
 	
 	public String toString(){
-		return String.format("%d %d %d %d %d %d %d \"%s\" \"%s\" \"%s\" \"%s\" \"%s\" \"%s\" \"%s\" \"%s\"",
-				type, series, set, theme, clothes, style, furniture, displayNameEU, displayNameUS, displayNameFR,
+		return String.format("%d %d %d %d %d %d %d %d \"%s\" \"%s\" \"%s\" \"%s\" \"%s\" \"%s\" \"%s\" \"%s\"",
+				type, series, set, theme, clothes, style, furniture, (catalog ? 1 : 0), displayNameEU, displayNameUS, displayNameFR,
 				displayNameIT, displayNameDS, displayNameES, displayNameJP, imageLocation);
 	}
 	
@@ -193,9 +195,12 @@ public class Entry implements Comparable<Entry>{
 	public boolean getOwned(){
 		return isOwned;
 	}
+	public boolean getCatalog(){
+		return catalog;
+	}
 	
 	//determines if an item is a match for the current search properies in the browser tab
-	public boolean match(int type, int series, int set, int theme, int clothes, int clothesStyle, int furniture, boolean owned){
+	public boolean match(int type, int series, int set, int theme, int clothes, int clothesStyle, int furniture, boolean catalog, boolean owned){
 		if( !((byte) type == this.type) && type > 0 )
 			return false;
 		if( !((byte) series == this.series) && series > 0 )
@@ -209,6 +214,8 @@ public class Entry implements Comparable<Entry>{
 		if( !((byte) clothesStyle == this.style) && clothesStyle > 0)
 			return false;
 		if( !((byte) furniture == this.furniture) && furniture > 0)
+			return false;
+		if( catalog && !this.catalog )
 			return false;
 		
 		//an item that reaches here will be in the effective list, increment total
