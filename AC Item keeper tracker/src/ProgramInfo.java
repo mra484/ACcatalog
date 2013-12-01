@@ -37,7 +37,7 @@ public class ProgramInfo extends JPanel{
 		text2.setEditable(false);
 		text2.setBackground(new JFrame().getBackground());
 		text2.setContentType("text/html");
-		text2.setText("<font size=\"5\"><b>Animal Crossing Item Cataloger</b></font><br> (C) 2013 Mark Andrews<br>" + "github.com/mra484<br><hr size=1>" +
+		text2.setText("<font size=\"5\"><b>Animal Crossing Item Cataloger v2.1</b></font><br> (C) 2013 Mark Andrews<br>" + "github.com/mra484<br><hr size=1>" +
 				"AC Item Cataloger was created using information from the following websites:<br><br>" +
 				"<b>thonky.com</b><br>" + "Contains tons of helpful information about every aspect of Animal Crossing.  " +
 				"Used information for furniture series, sets, themes<br><br>" +
